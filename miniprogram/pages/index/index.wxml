@@ -1,2 +1,32 @@
 <!--miniprogram/pages/index/index.wxml-->
-<text>miniprogram/pages/index/index.wxml</text>
+<view >
+ <scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}">
+
+  <view class="tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="switchNav"><image class="img" style="width:100rpx; height:100rpx;" mode="aspectFit" src="images/burger.png" ></image></view>
+  <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="switchNav"><image class="img" style="width:100rpx; height:100rpx;" mode="aspectFit" src="images/coffee.png"></image></view>
+  <view class="tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="switchNav"><image class="img" style="width:100rpx; height:100rpx;" mode="aspectFit" src="images/soup.png" ></image></view>
+  <view class="tab-item {{currentTab==3?'active':''}}" data-current="3" bindtap="switchNav"><image class="img" style="width:100rpx; height:100rpx;" mode="aspectFit" src="images/sushi.png" ></image></view>
+  <view class="tab-item {{currentTab==4?'active':''}}" data-current="4" bindtap="switchNav"><image class="img" style="width:100rpx; height:100rpx;" mode="aspectFit" src="images/vegan.png" ></image></view>
+  <view class="tab-item {{currentTab==5?'active':''}}" data-current="5" bindtap="switchNav"><image class="img" style="width:100rpx; height:100rpx;" mode="aspectFit" src="images/noodles.png" ></image></view>
+ </scroll-view>
+ <swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab"
+  style="height:{{winHeight}}rpx">
+  <swiper-item wx:for="{{[0,1,2,3,4,5]}}">
+   <scroll-view scroll-y="true" class="scoll-h" >
+    <block wx:for="{{[1,2,3,4,5,6,7,8]}}" wx:key="*this">
+     <view class="item-ans">
+      <!-- <view class="avatar">
+       <image class="img" src="/avatar.png"></image>
+      </view> -->
+      <view class="expertInfo">
+       <view class="name">欢颜</view>
+       <view class="tag">知名情感博主</view>
+       <view class="answerHistory">134个回答，2234人听过 </view>
+      </view>
+      <navigator url="/pages/askExpert/expertDetail" class="askBtn">问TA</navigator> 
+     </view>
+    </block>
+   </scroll-view>
+  </swiper-item>
+ </swiper>
+</view>
