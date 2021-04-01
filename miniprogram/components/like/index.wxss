@@ -1,0 +1,18 @@
+/* components/like/index.wxss */
+
+.container {
+  display: inline-flex;
+  flex-direction: row;
+}
+
+.container image {
+  width: 60rpx;
+  height: 60rpx;
+}
+.container text {
+  font-size: 35rpx;
+  color: #292D37;
+  line-height: 35rpx;
+  position: relative;
+  top: 8rpx;
+}

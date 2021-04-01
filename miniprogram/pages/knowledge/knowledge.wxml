@@ -1,2 +1,2 @@
 <!--miniprogram/pages/knowledge.wxml-->
-<text>miniprogram/pages/knowledge.wxml</text>
+<v-like like="true" count="99"/>
