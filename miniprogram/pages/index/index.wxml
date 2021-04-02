@@ -1,17 +1,31 @@
 <!--miniprogram/pages/index/index.wxml-->
-<view >
- <scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}">
-
-  <view class="tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="switchNav"><image class="img" style="width:100rpx; height:100rpx;" mode="aspectFit" src="images/burger.png" ></image></view>
-  <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="switchNav"><image class="img" style="width:100rpx; height:100rpx;" mode="aspectFit" src="images/coffee.png"></image></view>
-  <view class="tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="switchNav"><image class="img" style="width:100rpx; height:100rpx;" mode="aspectFit" src="images/soup.png" ></image></view>
-  <view class="tab-item {{currentTab==3?'active':''}}" data-current="3" bindtap="switchNav"><image class="img" style="width:100rpx; height:100rpx;" mode="aspectFit" src="images/sushi.png" ></image></view>
-  <view class="tab-item {{currentTab==4?'active':''}}" data-current="4" bindtap="switchNav"><image class="img" style="width:100rpx; height:100rpx;" mode="aspectFit" src="images/vegan.png" ></image></view>
-  <view class="tab-item {{currentTab==5?'active':''}}" data-current="5" bindtap="switchNav"><image class="img" style="width:100rpx; height:100rpx;" mode="aspectFit" src="images/noodles.png" ></image></view>
+<view class="header">
+  <view class="userinfo" style="position: relative; top: auto">
+    <block class="userinfo-opendata">
+      <view class="userinfo-block-avatar" bindtap="bindViewTap">
+        <open-data type="userAvatarUrl"></open-data>
+      </view>
+    </block>
+    <!-- <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-block-avatar" src="{{avatarUrl}}" mode="cover"></image>
+    </block> -->
+    <view class="userinfo-nickname-wrapper">
+      Hey,<open-data type="userNickName"></open-data>
+    </view>
+  </view>
+</view>
+<view class="body">
+  <view class="title">Categories</view>
+  <scroll-view scroll-x="true" class="tab-h" enable-flex="true" scroll-left="{{scrollLeft}}"  showScrollbar="{{ false }}">
+    <view class="tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="switchNav"><image class="img-cat"  mode="aspectFit" src="images/burger.png" ></image></view>
+    <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="switchNav" ><image class="img-cat"  mode="aspectFit" src="images/coffee.png"></image></view>
+    <view class="tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="switchNav" ><image class="img-cat"  mode="aspectFit" src="images/soup.png" ></image></view>
+    <view class="tab-item {{currentTab==3?'active':''}}" data-current="3" bindtap="switchNav" ><image class="img-cat"  mode="aspectFit" src="images/sushi.png" ></image></view>
  </scroll-view>
+ <view class="title">Recommended</view>
  <swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab"
   style="height:{{winHeight}}rpx">
-  <swiper-item wx:for="{{[0,1,2,3,4,5]}}">
+  <swiper-item wx:for="{{[0,1,2,3]}}">
    <scroll-view scroll-y="true" class="scoll-h" >
     <block wx:for="{{[1,2,3,4,5,6,7,8]}}" wx:key="*this">
      <view class="item-ans">

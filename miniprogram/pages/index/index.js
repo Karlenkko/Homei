@@ -6,6 +6,14 @@ Page({
    * 页面的初始数据
    */
   data: {
+    avatarUrl: './user-unlogin.png',
+    userInfo: {},
+    hasUserInfo: false,
+    logged: false,
+    takeSession: false,
+    requestResult: '',
+    canIUseGetUserProfile: true,
+    canIUseOpenData: true// wx.canIUse('open-data.type.userAvatarUrl') // 如需尝试获取用户信息可改为false
   },
 
   changeIndicatorDots() {
@@ -36,7 +44,6 @@ Page({
   this.setData({
    currentTab:e.detail.current
   });
-  this.checkCor();
  },
  // 点击标题切换当前页时改变样式
  switchNav:function(e){
@@ -48,23 +55,17 @@ Page({
    })
   }
  },
- //判断当前滚动超过一屏时，设置tab标题滚动条。
- checkCor:function(){
-  if (this.data.currentTab>4){
-  this.setData({
-   scrollLeft:300
-  })
-  }else{
-  this.setData({
-   scrollLeft:0
-  })
-  }
- },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     var that = this; 
+    if (!wx.cloud) {
+      wx.redirectTo({
+        url: '../chooseLib/chooseLib',
+      })
+      return
+    }
     // 高度自适应
     wx.getSystemInfo( { 
     success: function( res ) { 
@@ -85,16 +86,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    // wx.createSelectorQuery().select('.scroll-view').boundingClientRect((rect)=>{
-    //   this.data.scrollViewWidth = 800
-    // }).exec()
   },
-  // switchClass(){
-  //   let offsetLeft = e.currentTarget.offsetLeft
-  //   this.setData({
-  //   scrollLeft: offsetLeft - this.data.scrollViewWidth/2
-  //   })
-  // },
   /**
    * 生命周期函数--监听页面显示
    */
@@ -126,13 +118,6 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
 
   },
   footerTap:app.footerTap
