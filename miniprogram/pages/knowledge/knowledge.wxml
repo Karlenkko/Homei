@@ -1,2 +1,6 @@
 <!--miniprogram/pages/knowledge.wxml-->
+<text>Food & Health</text>
+<text>Let's take a quiz to get your coupons!</text>
+<button type="primary" bindtap="start">start</button>
+
 <v-like like="true" count="99"/>
