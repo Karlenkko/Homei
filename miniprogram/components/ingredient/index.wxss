@@ -1,0 +1,18 @@
+/* components/oneIngredient/index.wxss */
+
+.text {
+  margin-bottom: 25rpx;
+  padding-left: 20rpx;
+}
+
+.grid {
+  margin-top: 0rpx;
+  margin-bottom: 0rpx;
+  display: flex;
+  justify-content: space-around;
+}
+
+.grid image {
+  width: 140rpx;
+  height: 140rpx;
+}
