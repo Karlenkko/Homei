@@ -1,0 +1,33 @@
+/* components/small_rating/small_rating.wxss */
+.container {
+  margin-top: 20rpx;
+  margin-left: 20rpx;
+  width: 96rpx;
+  height: 96rpx;
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+  border-bottom-right-radius: 14px;
+  border-bottom-left-radius: 14px;
+  background-color: #ffffff;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+}
+.star{
+  width: 40rpx;
+  height: 40rpx;
+  border: 0;
+  margin-left: 28rpx;
+  margin-right: 28rpx;
+  margin-bottom: 10rpx;
+}
+.star image{
+  width: 40rpx;
+  height: 40rpx;
+}
+.number{
+  margin-top: 8rpx;
+  height: 40rpx;
+  font-size: 26rpx;
+  text-align: center;
+}

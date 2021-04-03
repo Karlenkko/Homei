@@ -1,0 +1,9 @@
+<!--components/small_rating/small_rating.wxml-->
+<view class="container">
+  <view class="number">
+    <text>{{rating}}</text>
+  </view> 
+  <view class="star">
+    <image src="{{rating>=2.5?yesSrc:noSrc}}"/>
+  </view>
+</view>
