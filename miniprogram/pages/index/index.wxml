@@ -10,6 +10,9 @@
       <image bindtap="bindViewTap" class="userinfo-block-avatar" src="{{avatarUrl}}" mode="cover"></image>
     </block> -->
     <view class="userinfo-nickname-wrapper">
+      <view class="location" bindtap="getLocation">
+        <image class="img-icon" mode="aspectFit" src="images/icon_map.png"></image><text decode="{{true}}">&nbsp;&nbsp;{{location}}</text> 
+      </view>
       Hey,<open-data type="userNickName"></open-data>
     </view>
   </view>
@@ -37,7 +40,7 @@
        <view class="tag">知名情感博主</view>
        <view class="answerHistory">134个回答，2234人听过 </view>
       </view>
-      <navigator url="/pages/askExpert/expertDetail" class="askBtn">问TA</navigator> 
+      <navigator url="/pages/index/menu/menu" class="askBtn">问TA</navigator> 
      </view>
     </block>
    </scroll-view>

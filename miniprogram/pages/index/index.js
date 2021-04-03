@@ -1,5 +1,9 @@
 // miniprogram/pages/index/index.js
 var app = getApp();
+const key = "MDDBZ-N2XCF-7OUJX-JGXZD-GTAR3-NAFTS";
+const referer = "HOMEI";
+const chooseLocation = requirePlugin('chooseLocation');
+
 Page({
 
   /**
@@ -13,7 +17,8 @@ Page({
     takeSession: false,
     requestResult: '',
     canIUseGetUserProfile: true,
-    canIUseOpenData: true// wx.canIUse('open-data.type.userAvatarUrl') // 如需尝试获取用户信息可改为false
+    canIUseOpenData: true,// wx.canIUse('open-data.type.userAvatarUrl') // 如需尝试获取用户信息可改为false\
+    location: 'Please select your location'
   },
 
   changeIndicatorDots() {
@@ -46,15 +51,20 @@ Page({
   });
  },
  // 点击标题切换当前页时改变样式
- switchNav:function(e){
-  var cur=e.currentTarget.dataset.current;
-  if(this.data.currentTaB==cur){return false;}
-  else{
-   this.setData({
-    currentTab:cur
-   })
-  }
- },
+  switchNav:function(e){
+    var cur=e.currentTarget.dataset.current;
+    if(this.data.currentTaB==cur){return false;}
+    else{
+    this.setData({
+      currentTab:cur
+    })
+    }
+  },
+  getLocation:function(e){
+    wx.navigateTo({
+      url: 'plugin://chooseLocation/index?key=' + key + '&referer=' + referer
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -91,6 +101,13 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    const location = chooseLocation.getLocation(); // 如果点击确认选点按钮，则返回选点结果对象，否则返回null
+    if (location){
+      console.log(location)
+      this.setData({
+        location: location.address
+      })
+    }
   },
 
   /**
@@ -104,7 +121,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    chooseLocation.setLocation(null);
   },
 
   /**

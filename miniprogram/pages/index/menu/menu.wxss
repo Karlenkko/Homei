@@ -1,0 +1,25 @@
+/* miniprogram/pages/index/menu/menu.wxss */
+.header{
+  background-color: #FF9F48;
+  height: 200rpx;
+  width: 100%;
+  position: fixed;
+  z-index: -1;
+  border-bottom: 50rpx solid #FF9F48;
+}
+.body{
+  position: fixed;
+  top: 200rpx;
+  bottom: 0;
+  width: 100%;
+  z-index: 1;
+  background-color: #F2F2F2;
+  border: 1px solid #F2F2F2;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.title{
+  text-align: center;
+  font-size: 20px;
+  margin-top: 20rpx;
+}

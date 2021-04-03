@@ -1,0 +1,8 @@
+<!--miniprogram/pages/index/menu/menu.wxml-->
+<view class="header">
+</view>
+<view class="body">
+  <view class="title">Restaurant</view>
+  <view class="menu"></view>
+  <view class="menu"></view>
+</view>

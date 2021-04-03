@@ -15,20 +15,20 @@
   flex-direction: row;
   border: none;
   align-items: center;
-  padding-left: 100rpx;
+  padding-left: 80rpx;
   background-color: #FF9F48;
 }
 .userinfo-avatar {
   width: 100rpx;
   height: 100rpx;
-  margin: 20rpx;
+  margin: 16rpx;
   border-radius: 50%;
   box-shadow: 2rpx, 2rpx, 4rpx;
 }
 .userinfo-block-avatar {
   width: 100rpx;
   height: 100rpx;
-  margin: 20rpx;
+  margin: 8rpx;
   border-radius: 50%;
   overflow: hidden;
   box-shadow: 0rpx 4rpx 10rpx;
@@ -36,19 +36,15 @@
 .userinfo-avatar[size] {
   width: 100rpx;
 }
-.userinfo-nickname {
-  font-size: 32rpx;
-  color: #007aff;
+.userinfo-nickname-wrapper {
+  width: 60%;
+  font-size: 12px;
   background-size: cover;
   text-align: left;
   padding-left: 0;
-  margin-left: 10px;
-}
-.userinfo-nickname::after {
-  border: none;
-}
-.userinfo-nickname-wrapper {
-  flex: 1;
+  margin-left: 12px;
+  margin-right: 20px;
+  word-wrap: normal;
 }
 
 .tab-h{
@@ -83,6 +79,10 @@
   width:100rpx; 
   height:100rpx;
 }
+.img-icon{
+  width: 14px;
+  height: 14px;
+}
 .item-ans{ 
   width: 100%;display: flex; flex-grow: row no-wrap;justify-content: space-between; padding: 30rpx;box-sizing: border-box; height: 180rpx;align-items: center;border-bottom: 1px solid #F2F2F2;
 }
@@ -101,6 +101,7 @@
 .body{
   position: fixed;
   top: 200rpx;
+  bottom: 0;
   width: 100%;
   background-color: #F2F2F2;
   border: 1px solid #F2F2F2;
