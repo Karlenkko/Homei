@@ -4,6 +4,7 @@
     "pages/index/index",
     "pages/order/order",
     "pages/knowledge/knowledge",
+    "pages/knowledge/quizz",
     "pages/account/account",
     "pages/index/menu/menu"
   ],

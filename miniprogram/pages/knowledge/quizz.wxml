@@ -1,0 +1,16 @@
+<!--miniprogram/pages/knowledge/quizz.wxml-->
+<view class="header">
+</view>
+<view class="body">
+  <view class="content">
+    <view class="title">{{q_final[q_num].question}}</view>
+  <view class="choice">
+    <view class="{{item.status}}" wx:for="{{q_final[q_num].options}}" wx:key="index" wx:for-item="item" bindtap="select" data-id="{{item.id}}">{{item.value}}</view>
+  </view>
+ </view>
+ <scroll-view scroll-x="true" class="tab-h" enable-flex="true" scroll-left="{{scrollLeft}}"  showScrollbar="{{ false }}">
+    <view bindtap="switch_left"><image class="img-cat"  mode="aspectFit" src="images/btn_left.png" ></image></view>
+    <button bindtap="process">{{submitted? '':'Submit'}}</button>
+    <view bindtap="switch_right" ><image class="img-cat"  mode="aspectFit" src="images/btn_right.png"></image></view>
+ </scroll-view>
+</view>

@@ -1,6 +1,28 @@
 <!--miniprogram/pages/knowledge.wxml-->
-<text>Food & Health</text>
-<text>Let's take a quiz to get your coupons!</text>
-<button type="primary" bindtap="start">start</button>
-
-<v-like like="true" count="99"/>
+<view class="header">
+  <text class="title">Food & Health\n</text>
+  <text calss="subtitle">Let's take a quiz to get your coupons!</text>
+  <button class="btn" bindtap="start" style="position: relative; left: -273rpx; top: 0rpx; width: 141rpx; height: 64rpx; display: block; box-sizing: border-box"><text>start</text></button>
+</view>
+<view class="body">
+  <view class="expertInfo">
+       <view class="name">How to make a nutrition plan?</view>
+       <view class="tag">31 March 2021</view>
+       <v-like like="true" count="5"/>
+  </view>
+  <view class="expertInfo">
+       <view class="name">How to make a nutrition plan?</view>
+       <view class="tag">31 March 2021</view>
+       <v-like like="true" count="3"/>
+  </view>
+  <view class="expertInfo">
+       <view class="name">How to make a nutrition plan?</view>
+       <view class="tag">31 March 2021</view>
+       <v-like like="true" count="7"/>
+  </view>
+  <view class="expertInfo">
+       <view class="name">How to make a nutrition plan?</view>
+       <view class="tag">31 March 2021</view>
+       <v-like like="true" count="9"/>
+  </view>
+</view>

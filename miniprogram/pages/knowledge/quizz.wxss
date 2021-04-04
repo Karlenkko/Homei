@@ -1,0 +1,60 @@
+/* miniprogram/pages/knowledge/quizz.wxss */
+.header{
+  background-color: #FF9F48;
+  height: 200rpx;
+  width: 100%;
+  position: fixed;
+  z-index: -1;
+  border-bottom: 50rpx solid #FF9F48;
+}
+.tab-h{
+  display: flex;
+  flex-wrap: wrap;
+  flex-flow: row;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 140rpx;
+  width: 100%; 
+  line-height: 80rpx;
+  background: #FFFFFF;
+  bottom: 120rpx;
+}
+.img-cat{
+  width:100rpx; 
+  height:100rpx;
+}
+.title{
+  font-size: 16px;
+  margin: 20rpx 40rpx 20rpx 40rpx;
+}
+.body{
+  position: fixed;
+  top: 200rpx;
+  width: 100%;
+  background-color: #FFFFFF;
+  border: 1px solid #FFFFFF;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.choice > view{
+  color: #333333;
+  font-size: 24.8rpx;
+  background: #F4F5F9;
+  padding: 11rpx 27rpx;
+  border-radius: 24rpx;
+  margin-top: 16rpx;
+  margin-right: 16rpx;
+  cursor: pointer;
+}
+.choice .chosen{
+  color:#333333;
+  background-color: #FF9F48;
+}
+.choice .correct{
+  color:#ffffff;
+  background-color: #00ff00;
+}
+.choice .incorrect{
+  color:#ffffff;
+  background-color: #ffb6c1;
+}
