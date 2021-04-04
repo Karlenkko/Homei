@@ -1,0 +1,50 @@
+/* components/restaurant_card/restaurant_card.wxss */
+.container {
+  width: 88%;
+  height: 350rpx;
+  margin: 1% 6% 1% 6%;
+  position: relative;
+  border-top-left-radius: 36rpx;
+  border-top-right-radius: 36rpx;
+  border-bottom-right-radius: 36rpx;
+  border-bottom-left-radius: 36rpx;
+  border: none;
+  box-shadow: 0rpx 8rpx 10rpx #f0f0f0; 
+  background-color: #ffffff;
+  z-index: -2;
+}
+.briefbackground {
+  height: 200rpx;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  border-top-left-radius: 36rpx;
+  border-top-right-radius: 36rpx;
+  border-bottom-right-radius: 36rpx;
+  border-bottom-left-radius: 36rpx;
+}
+.brief {
+  width: 100%;
+  height: 200rpx;
+  padding-top: 18rpx;
+  padding-left: 20rpx;
+  border-top-left-radius: 36rpx;
+  border-top-right-radius: 36rpx;
+  border-bottom-right-radius: 36rpx;
+  border-bottom-left-radius: 36rpx;
+}
+.intro{
+  height: 150rpx;
+  position: absolute;
+  top: 200rpx;
+}
+.name{
+  font-size: 28rpx;
+  font-weight: bold;
+}
+.img-icon{
+  width: 22rpx;
+  height: 22rpx;
+}

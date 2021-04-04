@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "like": "../like/index",
+    "small_rating": "../small_rating/small_rating"
+  }
+}

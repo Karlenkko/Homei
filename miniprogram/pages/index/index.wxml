@@ -26,6 +26,7 @@
     <view class="tab-item {{currentTab==3?'active':''}}" data-current="3" bindtap="switchNav" ><image class="img-cat"  mode="aspectFit" src="images/sushi.png" ></image></view>
  </scroll-view>
  <view class="title">Recommended</view>
+ <restaurant_card tags="pizza;gourmet"></restaurant_card>
  <swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab"
   style="height:{{winHeight}}rpx">
   <swiper-item wx:for="{{[0,1,2,3]}}">

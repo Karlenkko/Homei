@@ -1,0 +1,4 @@
+<!--components/tag/tag.wxml-->
+<view class="tag">
+  {{name?name:"name"}}
+</view>

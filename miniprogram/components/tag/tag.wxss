@@ -1,0 +1,6 @@
+/* components/tag/tag.wxss */
+.tag{
+  height: 28rpx;
+  font-size: 22rpx;
+  background-color: #c0c0c0;
+}

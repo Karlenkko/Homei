@@ -1,3 +1,5 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "restaurant_card": "/components/restaurant_card/restaurant_card"
+  }
 }

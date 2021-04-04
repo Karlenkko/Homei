@@ -1,2 +1,4 @@
 <!--miniprogram/pages/order/order.wxml-->
 <v-ingredient ingredientName="pumpkin,milk,potato,pumpkin,milk,potato"> </v-ingredient>
+<text>miniprogram/pages/order/order.wxml</text>
+<small_rating rating="3.6"></small_rating>
