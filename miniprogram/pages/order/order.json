@@ -1,6 +1,8 @@
 {
   "usingComponents": {
     "v-ingredient" : "/components/ingredient/index",
-    "small_rating": "/components/small_rating/small_rating"
+    "small_rating": "/components/small_rating/small_rating",
+    "v-nutrition": "/components/nutrition/index"
+
   }
 }

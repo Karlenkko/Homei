@@ -2,3 +2,4 @@
 <v-ingredient ingredientName="pumpkin,milk,potato,pumpkin,milk,potato"> </v-ingredient>
 <text>miniprogram/pages/order/order.wxml</text>
 <small_rating rating="3.6"></small_rating>
+<v-nutrition calories='100' fat='25' protein='25' carbo='40'></v-nutrition>

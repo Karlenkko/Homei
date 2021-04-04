@@ -1,0 +1,25 @@
+<!--components/nutrition/index.wxml-->
+
+<view class="text">Analyse Nutritionelle</view>
+<view class="container">
+  <view>
+    <view class="block">
+      <text decode="true">CALORIES: &nbsp;&nbsp;&nbsp;</text>
+      <text>{{calories}}kcal</text>
+    </view>
+    <view class="block">
+      <text decode="true">FAT: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>
+      <text>{{fat}}g</text>
+    </view>
+  </view>
+  <view>
+    <view class="block">
+      <text decode="true">PROTEIN: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>
+      <text>{{protein}}g</text>
+    </view>
+    <view class="block">
+      <text decode="true">CARBO: &nbsp;&nbsp;&nbsp;</text>
+      <text>{{carbo}}g</text>
+    </view>
+  </view>
+</view>

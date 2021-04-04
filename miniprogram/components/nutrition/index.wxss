@@ -1,0 +1,26 @@
+/* components/nutrition/index.wxss */
+.text {
+  margin-bottom: 25rpx;
+  padding-left: 20rpx;
+}
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.container view {
+  display: flex;
+  flex-direction: row;
+  justify-content: baseline;
+}
+
+.block {
+  padding-left: 40rpx;
+  width: 50%;
+}
+
+.block text {
+  font-size: 30rpx;
+}
