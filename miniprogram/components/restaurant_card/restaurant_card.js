@@ -25,15 +25,18 @@ Component({
    * 组件的初始数据
    */
   data: {
-    tags: []
+    tags: ["healthy", "traceable", "inspiring"]
   },
   lifetimes: {
     attached: function() {
       // 在组件实例进入页面节点树时执行
-      let tagArray = this.properties.self_tags.split(";");
-      this.setData({
-        tags: tagArray,
-      })
+      let tagArray = [];
+      if (this.properties.self_tags){
+        tagArray = this.properties.self_tags.split(";");
+        this.setData({
+          tags: tagArray,
+        })
+      }
     },
   },
   /**

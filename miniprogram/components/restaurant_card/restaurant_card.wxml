@@ -5,8 +5,17 @@
     <small_rating rating="{{rating?rating:3}}" style="margin-top:20rpx;position:relative;"></small_rating>
   </view>
   <view class="intro">
-    <text class="name" decode="true">&nbsp;&nbsp;&nbsp;&nbsp;{{name?name:"Homei"}}</text>
-    <text class="name" decode="true">\n&nbsp;&nbsp;&nbsp;&nbsp;</text><image class="img-icon" src="images/time.png"  mode="aspectFill"></image>
-    <text decode="true" style="font-size:22rpx;border:none;">&nbsp;~{{eta?eta:"?"}}mins</text>
+    <view style="display:inline;margin-bottom:0;">
+      <text class="name" decode="true">&nbsp;&nbsp;&nbsp;&nbsp;{{name?name:"Homei"}}</text>
+    </view>
+    <view style="display:inline;margin-top:0;">
+      <text class="name" decode="true">\n&nbsp;&nbsp;&nbsp;&nbsp;</text><image class="img-icon" src="images/time.png"  mode="aspectFill"></image>
+      <text decode="true" style="font-size:22rpx;border:none;">&nbsp;~{{eta?eta:"?"}}mins</text>
+    </view>
+    <view class="tags">
+      <view  wx:for='{{tags}}'>
+          <tag name="{{item}}"></tag>
+      </view>
+    </view>
   </view>
 </view>

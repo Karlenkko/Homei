@@ -1,6 +1,14 @@
 /* components/tag/tag.wxss */
 .tag{
-  height: 28rpx;
+  margin: 0 18rpx 0 10rpx;
+  height: 40rpx;
+  padding-top: 8rpx;
   font-size: 22rpx;
-  background-color: #c0c0c0;
+  background-color: #eeeeee;
+  width: fit-content;
+  vertical-align: bottom;
+  border-bottom-right-radius: 16rpx;
+  border-bottom-left-radius: 16rpx;
+  border-top-right-radius: 16rpx;
+  border-top-left-radius: 16rpx;
 }
