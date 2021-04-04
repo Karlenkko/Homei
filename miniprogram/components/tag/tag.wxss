@@ -1,6 +1,6 @@
 /* components/tag/tag.wxss */
 .tag{
-  margin: 0 18rpx 0 10rpx;
+  margin: 0 10rpx 0 10rpx;
   height: 40rpx;
   padding-top: 8rpx;
   font-size: 22rpx;

@@ -5,7 +5,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    selftags: ["healthy", "traceable", "inspiring"],
+    name: "Homei Restaurant",
+    rating: "5",
+    nbr: "9999"
   },
 
   /**

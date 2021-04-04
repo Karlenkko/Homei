@@ -2,7 +2,13 @@
 <view class="header">
 </view>
 <view class="body">
-  <view class="title">Restaurant</view>
+  <view class="title">{{name}}</view>
+  <view class="tags">
+    <view  wx:for='{{selftags}}'>
+        <tag name="{{item}}"></tag>
+    </view>
+  </view>
+  <customerreviews nbr="{{nbr}}" rating="{{rating}}"></customerreviews>
   <view class="menu"></view>
   <view class="menu"></view>
 </view>

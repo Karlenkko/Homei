@@ -1,0 +1,31 @@
+/* components/customerreviews/customerreviews.wxss */
+.container {
+  position: relative;
+  width: 100%;
+  height: 48rpx;
+  border-top-left-radius: 20rpx;
+  border-top-right-radius: 20rpx;
+  border-bottom-right-radius: 20rpx;
+  border-bottom-left-radius: 20rpx;
+  background-color: #ffffff;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+}
+.star{
+  width: 26rpx;
+  height: 26rpx;
+  border: 0;
+  margin-bottom: 14rpx;
+  margin-top: 7rpx;
+}
+.img-icon{
+  width: 26rpx;
+  height: 26rpx;
+}
+.detail{
+  height: 26rpx;
+  border: 0;
+  margin-top: 2rpx;
+  padding-bottom: 20rpx;
+}

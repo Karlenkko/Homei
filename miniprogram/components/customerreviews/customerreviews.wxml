@@ -1,0 +1,14 @@
+<!--components/customerreviews/customerreviews.wxml-->
+<view class="container">
+  <view class="star">
+    <image class="img-icon" src="{{rating>=2.5?(rating>4.2?yesSrc:halfSrc):noSrc}}" mode="aspectFit"/>
+  </view>
+  <view class="detail">
+    <text style="font-size:20rpx;font-weight:bold" decode="true">&nbsp;&nbsp;{{rating}}</text>
+    <text style="font-size:20rpx;color:#c0c0c0" decode="true">&nbsp;&nbsp;({{reviewcount>999.0?reviewcount:"999+"}})</text>
+    <text style="font-size:20rpx;" decode="true">&nbsp;&nbsp;&nbsp;See Review&nbsp;</text>
+  </view>
+  <view class="star">
+    <image class="img-icon" src="images/right.png" mode="aspectFit"/>
+  </view>
+</view>

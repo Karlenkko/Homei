@@ -15,6 +15,7 @@ Component({
   data: {
     yesSrc: 'images/full_star.png',
     noSrc: 'images/empty_star.png',
+    halfSrc: 'images/half_star.png'
   },
 
   /**

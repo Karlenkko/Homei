@@ -4,6 +4,6 @@
     <text>{{rating}}</text>
   </view> 
   <view class="star">
-    <image src="{{rating>=2.5?yesSrc:noSrc}}" mode="aspectFit"/>
+    <image src="{{rating>=2.5?(rating>4.2?yesSrc:halfSrc):noSrc}}" mode="aspectFit"/>
   </view>
 </view>
