@@ -1,0 +1,13 @@
+<!--components/large_rating/large_rating.wxml-->
+<view class="container">
+  <view class="name">
+    {{name}}
+  </view>
+  <view class="stars">
+    <image class="star" mode="aspectFit" src="{{img1}}"></image>
+    <image class="star" mode="aspectFit" src="{{img2}}"></image>
+    <image class="star" mode="aspectFit" src="{{img3}}"></image>
+    <image class="star" mode="aspectFit" src="{{img4}}"></image>
+    <image class="star" mode="aspectFit" src="{{img5}}"></image>
+  </view>
+</view>

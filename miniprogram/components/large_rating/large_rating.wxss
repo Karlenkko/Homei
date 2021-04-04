@@ -1,0 +1,21 @@
+/* components/large_rating/large_rating.wxss */
+.container{
+  width: 100%;
+  height: 60rpx;
+  display: flex;
+  flex-direction: row;
+  background-color: #ffffff;
+}
+.name{
+  font-size: 28rpx;
+  font-weight: bold;
+}
+.stars{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.star{
+  width: 26rpx;
+  height: 26rpx;
+}
