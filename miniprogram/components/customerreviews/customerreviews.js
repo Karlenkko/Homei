@@ -4,10 +4,10 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    "nbr": {
+    nbr: {
       type: String
     },
-    "rating": {
+    rating: {
       type: Number
     }
   },
@@ -24,8 +24,12 @@ Component({
   lifetimes: {
     attached: function() {
       // 在组件实例进入页面节点树时执行
+      let temp = parseInt(this.properties.nbr)
+      if (temp > 999){
+        temp = "999+"
+      }
       this.setData({
-        reviewcount: parseInt(nbr),
+        reviewcount: temp,
       })
     },
   },
