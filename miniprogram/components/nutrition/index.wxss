@@ -1,26 +1,46 @@
 /* components/nutrition/index.wxss */
-.text {
-  margin-bottom: 25rpx;
-  padding-left: 20rpx;
+.container{
+  width: 88%;
+  margin: 1% 6% 1% 6%;
+  display: flex;
+  flex-flow: column;
+  border-top-left-radius: 36rpx;
+  border-top-right-radius: 36rpx;
+  border-bottom-right-radius: 36rpx;
+  border-bottom-left-radius: 36rpx;
+  border: none;
+  box-shadow: 0rpx 6rpx 4rpx #cccccc; 
+  background-color: #ffffff;
 }
-
-
-.container {
+.text {
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+  padding-left: 32rpx;
+  font-size: 28rpx;
+}
+.labelcontainer {
   display: flex;
   flex-direction: column;
+  padding-bottom: 24rpx;
 }
 
-.container view {
+.labelcontainer view {
   display: flex;
   flex-direction: row;
   justify-content: baseline;
 }
-
+.row{
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
 .block {
-  padding-left: 40rpx;
   width: 50%;
 }
 
 .block text {
-  font-size: 30rpx;
+  font-size: 24rpx;
 }

@@ -2,6 +2,7 @@
 .container {
   width: 88%;
   height: 360rpx;
+  padding-bottom: 12rpx;
   margin: 1% 6% 1% 6%;
   position: relative;
   border-top-left-radius: 36rpx;

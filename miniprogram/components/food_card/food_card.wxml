@@ -6,7 +6,7 @@
   <view class="food">
     <view class="name"><text decode="true">{{name?name:"Name"}}</text></view>
     <view class="ingredients">
-      <text style="color:#a0a0a0;">Ingredients:&nbsp;{{ingredients}}</text>
+      <text style="color:#a0a0a0;" decode="true">Ingredients:&nbsp;{{ingredients}}</text>
     </view>
     <view class="price">
       <text style="{{price_style1}}" decode="true">￥{{standard_price}}</text>
