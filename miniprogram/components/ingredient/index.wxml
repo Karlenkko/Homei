@@ -1,9 +1,11 @@
 <!--components/oneIngredient/index.wxml-->
-<view class="text">Ingredients</view>
+<view class="container">
+  <view class="text">Ingredients</view>
 
-<view class='grid' wx:for='{{ingredients}}' wx:if='{{index%4 === 0}}'>
-  <view wx:for='{{[ingredients[index], ingredients[index+1], ingredients[index+2], ingredients[index+3]]}}' wx:for-item='dataItem'> 
-    <image src="{{dataItem}}"></image>
+  <view class='grid' wx:for='{{ingredients}}' wx:if='{{index%4 === 0}}'>
+    <view wx:for='{{[ingredients[index], ingredients[index+1], ingredients[index+2], ingredients[index+3]]}}' wx:for-item='dataItem'> 
+      <image src="{{dataItem}}"></image>
+    </view>
   </view>
 </view>
 

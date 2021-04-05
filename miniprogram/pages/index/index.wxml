@@ -19,7 +19,7 @@
 </view>
 <view class="body">
   <view class="title">Categories</view>
-  
+  <food_card standard_price="150" discount_price="80"></food_card>
   <scroll-view scroll-x="true" class="tab-h" enable-flex="true" scroll-left="{{scrollLeft}}"  showScrollbar="{{ false }}">
     <view class="tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="switchNav"><image class="img-cat"  mode="aspectFit" src="images/burger.png" ></image></view>
     <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="switchNav" ><image class="img-cat"  mode="aspectFit" src="images/coffee.png"></image></view>

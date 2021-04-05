@@ -1,0 +1,54 @@
+/* components/food_card/food_card.wxss */
+.container{
+  width: 88%;
+  height: 160rpx;
+  position: relative;
+  margin: 1% 6% 1% 6%;
+  background-color: #ffffff;
+  border-bottom-color: #c0c0c0;
+  border-bottom-style: solid;
+  border-bottom-width: 1rpx;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+  display: flex;
+  flex-flow: row;
+}
+.foodimg{
+  width: 160rpx;
+  height: 160rpx;
+  margin-left: 20rpx;
+  border-top-left-radius: 28rpx;
+  border-top-right-radius: 28rpx;
+  border-bottom-right-radius: 28rpx;
+  border-bottom-left-radius: 28rpx;
+  box-shadow: 0rpx 4rpx 6rpx #cccccc; 
+}
+.image{
+  width: 160rpx;
+  height: 160rpx;
+  border-top-left-radius: 28rpx;
+  border-top-right-radius: 28rpx;
+  border-bottom-right-radius: 28rpx;
+  border-bottom-left-radius: 28rpx;
+}
+.food{
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  margin-left: 28rpx;
+}
+.name{
+  font-size: 28rpx;
+  font-weight: bold;
+  display: inline;
+  inline-size: 28rpx;
+}
+.ingredients{
+  height: 60rpx;
+  font-size: 18rpx;
+  /* word-break: break-all; */
+  word-wrap: break-word;
+}
+.price{
+  font-size: 24rpx;
+}
