@@ -1,25 +1,30 @@
-// miniprogram/pages/knowledge.js
+// miniprogram/pages/knowledge/result.js
 var app = getApp();
-const db = wx.cloud.database();
-
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    score : 0,
+    q1 : 0,   // 0 for wrong answers, 1 for correct answers
+    q2 : 0,
+    q3 : 0,
+  },
 
-  },
-  // start the questionnaire
-  start(){
-    wx.navigateTo({
-      url : 'quizz',
-    })
-  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    // load the results from the previous page
+    const {score, q1, q2, q3} = options;
+    this.setData({
+      score : score,
+      q1 : q1,   
+      q2 : q2,
+      q3 : q3,
+    });
+
     var that = this; 
     if (!wx.cloud) {
       wx.redirectTo({
@@ -40,18 +45,21 @@ Page({
       }); 
     } 
     });
-  
+
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
+
   },
+
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+
   },
 
   /**
@@ -81,5 +89,11 @@ Page({
   onReachBottom: function () {
 
   },
-  footerTap:app.footerTap
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
+  }
 })

@@ -1,0 +1,102 @@
+/* miniprogram/pages/knowledge/result.wxss */
+.header{
+  background-color: #FF9F48;
+  height: 200rpx;
+  width: 100%;
+  position: fixed;
+  z-index: -1;
+  border-bottom: 50rpx solid #FF9F48;
+  text-align:center;
+}
+.title{
+  font-weight: 500;
+  font-size: 40px;
+}
+.score{
+  margin: 50rpx;
+  height: 100rpx;
+  width: 100%;
+}
+.coupon{
+  margin: 15rpx;
+}
+.img-cat{
+  width:700rpx; 
+  height:350rpx;
+  clear: both;
+  display: block;
+  margin: auto;
+}
+.btn{
+  color: #333333;
+  font-size: 30rpx;
+  background: #F4F5F9;
+}
+.body{
+  position: fixed;
+  top: 200rpx;
+  width: 100%;
+  background-color: #F4F5F9;
+  border: 1px solid #F4F5F9;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.review{
+  text-align: center;
+}
+.ques_correct{
+  background-color: #00ff00;
+  height: 60rpx;
+  width: 80%;
+  text-align:center;
+  border-radius: 10px;
+  font-size: 40rpx;
+  margin: auto;
+  margin-top: 25rpx;
+}
+.ques_incorrect{
+  background-color: #ffb6c1;
+  height: 60rpx;
+  width: 80%;
+  text-align:center;
+  margin-top: 25rpx;
+  border-radius: 10px;
+  font-size: 40rpx;
+  margin: auto;
+  margin-top: 25rpx;
+}
+text{
+  color: #333333;
+}
+.description{
+  color: #333333;
+  font-weight: 500;
+  font-size: 46rpx;
+  position: relative; 
+  left: 0rpx; 
+  top: 25rpx
+}
+.description-review{
+  position: relative; 
+  left: 49rpx; 
+  top: -15rpx;
+  color: #333333;
+  font-weight: 500;
+  font-size: 46rpx;
+}
+.given_score{
+  color: #00ff00;
+  font-weight: 700;
+  font-size: 60rpx;
+  position: relative; 
+  left: 0rpx;
+  top: 25rpx
+}
+.full_score{
+  color: #333333;
+  font-weight: 700;
+  font-size: 50rpx;
+  position: relative; 
+  left: 0rpx;
+  top: 25rpx
+}

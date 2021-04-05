@@ -1,16 +1,19 @@
 <!--miniprogram/pages/knowledge/quizz.wxml-->
 <view class="header">
+  <view class="title" style="position: relative; left: 450rpx; top: 110rpx; width: 220rpx; height: 85rpx; display: block; box-sizing: border-box">QUIZZ</view>
+  <view class="subtitle" style="position: relative; left: 383rpx; top: 144rpx; width: 287rpx; height: 58rpx; display: block; box-sizing: border-box">{{'Question ' + (1 + q_num) + '/3'}}</view>
 </view>
-<view class="body">
-  <view class="content">
-    <view class="title">{{q_final[q_num].question}}</view>
+<view class="body" style="position: fixed; left: 1rpx; top: 345rpx; width: 750rpx; height: 1109rpx; display: block; box-sizing: border-box">
+  <image mode="aspectFit" src="images/person_2.png"  style="position: relative; left: 57rpx; top: -321rpx; width: 319rpx; height: 386rpx; display: inline-block; box-sizing: border-box"></image>
+  <view class="content" style="width: 750rpx; height: 750rpx; display: block; position: relative; box-sizing: border-box; left: 0rpx; top: -276rpx">
+    <view class="question" style="width: 649rpx; height: 194rpx; position: relative; left: 49rpx; top: 49rpx; display: block; box-sizing: border-box">{{q_final[q_num].question}}</view>
   <view class="choice">
-    <view class="{{item.status}}" wx:for="{{q_final[q_num].options}}" wx:key="index" wx:for-item="item" bindtap="select" data-id="{{item.id}}">{{item.value}}</view>
+    <view class="{{item.status}}" wx:for="{{q_final[q_num].options}}" wx:key="index" wx:for-item="item" bindtap="select" data-id="{{item.id}}" style="width: 645rpx; height: 90rpx; position: relative; display: block; box-sizing: border-box; left: 50rpx; text-align: center;">{{item.value}}</view>
   </view>
  </view>
  <scroll-view scroll-x="true" class="tab-h" enable-flex="true" scroll-left="{{scrollLeft}}"  showScrollbar="{{ false }}">
-    <view bindtap="switch_left"><image class="img-cat"  mode="aspectFit" src="images/btn_left.png" ></image></view>
+    <view bindtap="switch_left"><image class="img-cat"  mode="aspectFit" src="images/btn_left.png"  style="width: 140rpx; height: 140rpx; display: inline-block; box-sizing: border-box; left: NaNrpx; top: NaNrpx"></image></view>
     <button bindtap="process">{{submitted? '':'Submit'}}</button>
-    <view bindtap="switch_right" ><image class="img-cat"  mode="aspectFit" src="images/btn_right.png"></image></view>
+    <view bindtap="switch_right" ><image class="img-cat"  mode="aspectFit" src="images/btn_right.png" style="width: 140rpx; height: 140rpx; display: inline-block; box-sizing: border-box; left: NaNrpx; top: NaNrpx"></image></view>
  </scroll-view>
 </view>

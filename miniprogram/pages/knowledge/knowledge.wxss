@@ -1,7 +1,7 @@
 /* miniprogram/pages/knowledge.wxss */
 .header{
   background-color: #FF9F48;
-  height: 200rpx;
+  height: 320rpx;
   width: 100%;
   position: fixed;
   z-index: -1;
@@ -9,29 +9,31 @@
 }
 .title{
   font-weight: 700;
-  font-size: 20px;
-}
-.subtitle{
-  font-weight: 100;
-  font-size: 8px;
-}
-.img-cat{
-  width:100rpx; 
-  height:100rpx;
+  font-size: 60rpx;
+  position: relative;
+  left: 44rpx;
+  top: 10rpx
 }
 .btn{
   color: #333333;
   font-size: 30rpx;
   background: #F4F5F9;
+  position: relative;
+  text-align: center;
+  border-radius: 10rpx;
+}
+.btn-text{
+  position: relative;
 }
 .body{
   position: fixed;
-  top: 200rpx;
+  top: 320rpx;
   width: 100%;
   background-color: #F4F5F9;
   border: 1px solid #F4F5F9;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 }
-.expertInfo{font-size: 12px;flex-grow: 2;color: #B0B0B0;line-height: 1.5em;}
-.expertInfo .name{font-size: 16px;color:#000;margin-bottom: 6px;}
+article{
+  margin-top: 30rpx;
+}

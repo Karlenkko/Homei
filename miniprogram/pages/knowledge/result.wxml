@@ -1,0 +1,20 @@
+<!--miniprogram/pages/knowledge/result.wxml-->
+<view class="header">
+  <text class="title">QUIZZ</text>
+</view>
+<view class="body">
+  <view class="score">
+    <text class="description">Your score of this quizz  : </text>
+    <text class="given_score"> {{score}}</text>
+    <text class="full_score"> / 3</text>
+  </view>
+  <view class="coupon" ><image class="img-cat"  mode="aspectFit" src="images/coupon.png" ></image></view>
+  <text class="description-review" style="position: relative; left: 49rpx; top: -15rpx">Review of the quizz</text>
+  <view class="review">
+       <view class="{{q1 == 1? 'ques_correct' : 'ques_incorrect'}}"><text>Q1</text></view>
+       <view class="{{q2 == 1? 'ques_correct' : 'ques_incorrect'}}"><text>Q2</text></view>
+       <view class="{{q3 == 1? 'ques_correct' : 'ques_incorrect'}}"><text>Q3</text></view>
+  </view>
+  
+</view>
+

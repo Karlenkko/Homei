@@ -2,7 +2,7 @@
 var app = getApp();
 const db = wx.cloud.database();
 const Questionnaire = db.collection('Questionnaire');
-const num_ques = 4; //Total number of questions in the DB
+const num_ques = 12; //Total number of questions in the DB
 
 Page({
 
@@ -65,19 +65,22 @@ Page({
       }
   },
 
-  // submit the quizz/End review if already aubmitted
+  // submit the quizz
   process(){
     if(!this.data.submitted){
     var points = 0;
+    var results = [];
     for (var i = 0; i < 3; i++){
       let chosen_id = this.data.q_final[i].options.filter(item => item.status == "chosen").map(item=>item.id);
       if(chosen_id.length == 0){chosen_id = 0;}  //in case that no choices are chosen
       var answer_id = this.data.q_final[i].answer;
       if(chosen_id == answer_id){
+        results[i] = 1;
         points++;
         var str = 'q_final[' + i + '].options[' + chosen_id + '].status';
         this.setData({submitted : true, [str] : "correct"});
       }else{
+        results[i] = 0;
         var str1 = 'q_final[' + i + '].options[' + chosen_id + '].status';
         var str2 = 'q_final[' + i + '].options[' + answer_id + '].status';
         this.setData({submitted : true, [str1] : "incorrect", [str2] : "correct"});
@@ -88,31 +91,21 @@ Page({
     }else{
       console.log('Good luck next time!');
     }
+    var destination = 'result?score=' + points + '&q1=' + results[0] + '&q2=' + results[1] + '&q3=' + results[2];
+    wx.navigateTo({
+      url : destination,
+    })
   }},
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
     var q_tem = [];
     let  PromiseArr = [];
     for (var i = 0; i < 3; i++) {
       PromiseArr.push(new Promise((reslove,reject)=>{
-        var ques_id = (Math.floor(Math.random()*num_ques)).toString();
+        var ques_id = Math.floor(Math.random()*num_ques);
         Questionnaire.where({_id : ques_id}).get({
           success: function(res){
             let object = {};
@@ -136,6 +129,20 @@ Page({
         q_final : q_tem,
       })
     })
+    
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
     
   },
 

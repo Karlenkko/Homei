@@ -1,0 +1,41 @@
+/* components/article/article.wxss */
+.container {
+  width: 88%;
+  height: 360rpx;
+  margin: 1% 6% 1% 6%;
+  position: relative;
+  border-top-left-radius: 36rpx;
+  border-top-right-radius: 36rpx;
+  border-bottom-right-radius: 36rpx;
+  border-bottom-left-radius: 36rpx;
+  border: none;
+  box-shadow: 0rpx 8rpx 10rpx #f0f0f0; 
+  background-color: #ffffff;
+  z-index: -2;
+  display: flex;
+}
+.background {
+  height: 200rpx;
+  position: absolute;
+  width: 200rpx;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  border-top-left-radius: 36rpx;
+  border-top-right-radius: 36rpx;
+  border-bottom-right-radius: 36rpx;
+  border-bottom-left-radius: 36rpx;
+}
+.title{
+  position: relative;
+  word-break: break-all;
+  font-weight: 500;
+  font-size: 35rpx;
+}
+.time{
+  position: relative;
+  color:  #888888;
+  font-weight: 400;
+  font-size: 25rpx;
+  width: 200rpx;
+}

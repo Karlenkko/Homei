@@ -1,28 +1,13 @@
 <!--miniprogram/pages/knowledge.wxml-->
 <view class="header">
   <text class="title">Food & Health\n</text>
-  <text calss="subtitle">Let's take a quiz to get your coupons!</text>
-  <button class="btn" bindtap="start" style="position: relative; left: -273rpx; top: 0rpx; width: 141rpx; height: 64rpx; display: block; box-sizing: border-box"><text>start</text></button>
+  <text calss="sub-title" style="font-weight: 500;font-size: 25rpx;position: relative;left: 44rpx;top: 10rpx">Let's take a quiz to get your coupons!</text>
+  <button class="btn" bindtap="start" style="left: -255rpx;top: 28rpx;width: 144rpx;height: 62rpx;display: block;box-sizing: border-box"><text class="btn-text" style="position: relative; left: -2rpx; top: -8rpx">start</text></button>
+  <image class="img-person"  mode="aspectFit" src="images/person_1.png"  style="width: 417rpx; height: 598rpx; display: inline-block; box-sizing: border-box; left: 357rpx; top: -149rpx; position: relative"></image>
 </view>
 <view class="body">
-  <view class="expertInfo">
-       <view class="name">How to make a nutrition plan?</view>
-       <view class="tag">31 March 2021</view>
-       <v-like like="true" count="5"/>
-  </view>
-  <view class="expertInfo">
-       <view class="name">How to make a nutrition plan?</view>
-       <view class="tag">31 March 2021</view>
-       <v-like like="true" count="3"/>
-  </view>
-  <view class="expertInfo">
-       <view class="name">How to make a nutrition plan?</view>
-       <view class="tag">31 March 2021</view>
-       <v-like like="true" count="7"/>
-  </view>
-  <view class="expertInfo">
-       <view class="name">How to make a nutrition plan?</view>
-       <view class="tag">31 March 2021</view>
-       <v-like like="true" count="9"/>
-  </view>
+  <article title="How to make a nutrition plan?" time="31 March 2021" image_url="images/article_1.png" style="top: 70rpx; position: relative"></article>
+  <article title="How to make a nutrition plan?" time="31 March 2021" image_url="images/article_2.png" style="top: 90rpx; position: relative"></article>
+  <article title="How to make a nutrition plan?" time="31 March 2021" image_url="images/article_3.png" style="top: 110rpx; position: relative"></article>
+  <article title="How to make a nutrition plan?" time="31 March 2021" image_url="images/article_4.png" style="top: 130rpx; position: relative"></article>
 </view>

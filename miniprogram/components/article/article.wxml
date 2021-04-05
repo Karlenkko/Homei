@@ -1,0 +1,7 @@
+<!--components/article/article.wxml-->
+<view class="container" style="width: 662rpx; height: 200rpx; display: flex; box-sizing: border-box; left: 0rpx; top: 0rpx">
+  <image class="background" src="{{image_url}}" mode="aspectFill"></image>
+  <view class="title" style="width: 415rpx; height: 100rpx; display: block; box-sizing: border-box; left: 220rpx; top: 5rpx"><text>{{title}}</text></view>
+  <view class="time" style="right: 200rpx; top: 105rpx"><text>{{time}}</text></view>
+</view>
+
