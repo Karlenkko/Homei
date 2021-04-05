@@ -18,7 +18,6 @@
   </view>
 </view>
 <view class="body">
-  
   <view class="title">Categories</view>
   
   <scroll-view scroll-x="true" class="tab-h" enable-flex="true" scroll-left="{{scrollLeft}}"  showScrollbar="{{ false }}">

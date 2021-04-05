@@ -8,7 +8,9 @@ Page({
     selftags: ["healthy", "traceable", "inspiring"],
     name: "Homei Restaurant",
     rating: "5",
-    nbr: "9999"
+    nbr: "9999",
+    hygiene_positive_tags: "High Quality (14);Fresh (9)",
+    hygiene_negative_tags: "Too much oil (3)"
   },
 
   /**

@@ -1,0 +1,12 @@
+<!--components/hygiene/hygiene.wxml-->
+<view class="container">
+  <large_rating name="Food Hygiene" rating="{{rating}}" style="width:100%;"></large_rating>
+  <view class="tags">
+    <view  wx:for='{{positivetags}}' style="margin-top:10rpx;margin-bottom:10rpx;">
+        <tag name="{{item}}" ></tag>
+    </view>
+    <view  wx:for='{{negativetags}}' style="margin-top:10rpx;margin-bottom:10rpx;">
+        <tag name="{{item}}" color="#FF9F48" ></tag>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "large_rating": "/components/large_rating/large_rating",
+    "tag": "/components/tag/tag"
+  }
+}

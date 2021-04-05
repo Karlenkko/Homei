@@ -1,4 +1,4 @@
 <!--components/tag/tag.wxml-->
 <view class="tag" >
-  <text decode="true">&nbsp;&nbsp;{{name?name:"name"}}&nbsp;&nbsp;</text>
+  <text decode="true" style="color:{{color}}">&nbsp;&nbsp;&nbsp;{{name?name:"name"}}&nbsp;&nbsp;&nbsp;</text>
 </view>
