@@ -6,6 +6,9 @@ Component({
   properties: {
     name: {
       type: String,
+    },
+    color: {
+      type: String,
     }
   },
 

@@ -2,18 +2,31 @@
 .container{
   width: 100%;
   height: 60rpx;
+  position: relative;
   display: flex;
   flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
   background-color: #ffffff;
+  border-top-left-radius: 36rpx;
+  border-top-right-radius: 36rpx;
+  border-bottom-right-radius: 36rpx;
+  border-bottom-left-radius: 36rpx;
 }
 .name{
+  padding-top: 12rpx;
   font-size: 28rpx;
   font-weight: bold;
+  padding-left: 36rpx;
 }
 .stars{
+  position: relative;
+  width: 160rpx;
   display: flex;
+  padding-top: 17rpx;
+  padding-right: 24rpx;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 .star{
   width: 26rpx;

@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "tag": "/components/tag/tag",
-    "customerreviews": "/components/customerreviews/customerreviews"
+    "customerreviews": "/components/customerreviews/customerreviews",
+    "hygiene": "/components/hygiene/hygiene"
   }
 }

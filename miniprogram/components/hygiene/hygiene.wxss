@@ -1,0 +1,26 @@
+/* components/hygiene/hygiene.wxss */
+.container{
+  width: 88%;
+  margin: 1% 6% 1% 6%;
+  position: relative;
+  border-top-left-radius: 36rpx;
+  border-top-right-radius: 36rpx;
+  border-bottom-right-radius: 36rpx;
+  border-bottom-left-radius: 36rpx;
+  border: none;
+  box-shadow: 0rpx 6rpx 4rpx #fccfa6; 
+  background-color: #ffffff;
+  display: flex;
+  flex-flow: column;
+  flex-wrap: wrap;
+}
+.tags{
+  padding-left: 16rpx;
+  width: 100%;
+  margin-top: 12rpx;
+  margin-bottom: 12rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}

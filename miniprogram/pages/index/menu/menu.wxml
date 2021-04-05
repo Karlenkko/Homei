@@ -9,6 +9,7 @@
     </view>
   </view>
   <customerreviews nbr="{{nbr}}" rating="{{rating}}"></customerreviews>
+  <hygiene rating="3.7" positive_tags="{{hygiene_positive_tags}}" negative_tags="{{hygiene_negative_tags}}"></hygiene>
   <view class="menu"></view>
   <view class="menu"></view>
 </view>
