@@ -8,7 +8,7 @@
     <text class="given_score"> {{score}}</text>
     <text class="full_score"> / 3</text>
   </view>
-  <view class="coupon" ><image class="img-cat"  mode="aspectFit" src="{{parseInt(score) > 1? 'images/coupon.png':'images/notification.png'}}" ></image></view>
+  <view class="coupon" ><image class="img-cat"  mode="aspectFit" src="{{score > 1? 'images/coupon.png':'images/notification.png'}}" ></image></view>
   <text class="description-review" style="position: relative; left: 49rpx; top: -15rpx">Review of the quizz</text>
   <view class="review">
        <view class="{{q1 == 1? 'ques_correct' : 'ques_incorrect'}}"><text>Q1</text></view>
