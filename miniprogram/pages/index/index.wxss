@@ -1,7 +1,7 @@
 /* miniprogram/pages/index/index.wxss */
 .header{
   background-color: #FF9F48;
-  height: 140rpx;
+  height: 160rpx;
   width: 100%;
   position: fixed;
   z-index: -1;
@@ -9,7 +9,7 @@
 }
 .userinfo{
   margin: 0;
-  height: 140rpx;
+  height: 160rpx;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -46,20 +46,25 @@
   margin-right: 20px;
   word-wrap: normal;
 }
-
+.scroll-h{
+  width: 100%;
+  height: 180rpx;
+  position: fixed;
+  top: 160rpx;
+}
 .tab-h{
   display: flex;
   flex-wrap: wrap;
   flex-flow: row;
   flex-direction: row;
   justify-content: space-around;
-  height: 120rpx;
+  height: 140rpx;
   width: 100%; 
   background: #f2f2f2;
 }
 .tab-item{
-  width: 100rpx;
-  height:100rpx;
+  width: 120rpx;
+  height:120rpx;
   display: inline-block;
   box-sizing: border-box;
 }
@@ -74,8 +79,8 @@
   border-radius: 0;
 }
 .img-cat{
-  width:100rpx; 
-  height:100rpx;
+  width:120rpx; 
+  height:120rpx;
 }
 .img-icon{
   width: 14px;
@@ -93,8 +98,13 @@
 .expertInfo{font-size: 12px;flex-grow: 2;color: #B0B0B0;line-height: 1.5em;}
 .expertInfo .name{font-size: 16px;color:#000;margin-bottom: 6px;}
 .askBtn{ width: 120rpx;height: 60rpx;line-height: 60rpx;text-align: center;font-size: 14px; border-radius: 60rpx;border: 1px solid #4675F9; color:#4675F9;}
-.tab-content{margin-top: 80rpx;}
-.scoll-h{height: 100%;}
+.tab-content{
+  position: relative;
+  margin-top: 220rpx;
+}
+.scroll-v{
+  overflow: auto;
+}
 .title{
   font-size: 16px;
   margin: 20rpx 40rpx 20rpx 40rpx;
@@ -102,7 +112,7 @@
 
 .body{
   position: fixed;
-  top: 140rpx;
+  top: 160rpx;
   bottom: 0;
   width: 100%;
   background-color: #F2F2F2;

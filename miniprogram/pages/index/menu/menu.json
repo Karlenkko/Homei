@@ -2,6 +2,7 @@
   "usingComponents": {
     "tag": "/components/tag/tag",
     "customerreviews": "/components/customerreviews/customerreviews",
-    "hygiene": "/components/hygiene/hygiene"
+    "hygiene": "/components/hygiene/hygiene",
+    "food_card": "/components/food_card/food_card"
   }
 }

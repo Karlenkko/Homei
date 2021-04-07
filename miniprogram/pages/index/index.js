@@ -4,6 +4,8 @@ const key = "MDDBZ-N2XCF-7OUJX-JGXZD-GTAR3-NAFTS";
 const referer = "HOMEI";
 const chooseLocation = requirePlugin('chooseLocation');
 
+const db = wx.cloud.database();
+
 Page({
 
   /**
@@ -18,9 +20,23 @@ Page({
     requestResult: '',
     canIUseGetUserProfile: true,
     canIUseOpenData: true,// wx.canIUse('open-data.type.userAvatarUrl') // 如需尝试获取用户信息可改为false\
-    location: 'Please select your location'
+    location: 'Please select your location',
+    restaurants: [],
+    burger_normal: [],
+    burger_recom: [],
+    asian_normal: [],
+    asian_recom: [],
+    dessert_recom: [],
+    dessert_normal: [],
+    drink_normal: [],
+    drink_recom: [],
   },
-
+  gotoMenu(e){
+    console.log(e)
+    wx.navigateTo({
+      url: './menu/menu',
+    })
+  },
   changeIndicatorDots() {
     this.setData({
       indicatorDots: !this.data.indicatorDots
@@ -53,7 +69,7 @@ Page({
  // 点击标题切换当前页时改变样式
   switchNav:function(e){
     var cur=e.currentTarget.dataset.current;
-    if(this.data.currentTaB==cur){return false;}
+    if(this.data.currentTab==cur){return false;}
     else{
     this.setData({
       currentTab:cur
@@ -89,7 +105,43 @@ Page({
       }); 
     } 
     });
-  
+    db.collection('Restaurant').get().then((res) => {
+      this.setData({
+        restaurants: res.data
+      })
+      console.log(res)
+    }).then(() => {
+      let burger1 = []
+      let burger2 = []
+      let asian1 = []
+      let asian2 = []
+      let dessert1 = []
+      let dessert2 = []
+      let drink1 = []
+      let drink2 = []
+      for (let index = 0; index < this.data.restaurants.length; index++) {
+        const type = this.data.restaurants[index].type;
+        if ("burger" == type) {
+          burger1.push(this.data.restaurants[index])
+        } else if ("asian" == type) {
+          asian1.push(this.data.restaurants[index])
+        } else if ("dessert" == type) {
+          dessert1.push(this.data.restaurants[index])
+        } else if ("drinks" == type) {
+          drink1.push(this.data.restaurants[index])
+        }
+      }
+      this.setData({
+        burger_normal: burger1,
+        burger_recom: burger2,
+        asian_normal: asian1,
+        asian_recom: asian2,
+        dessert_normal: dessert1,
+        dessert_recom: dessert2,
+        drink_normal: drink1,
+        drink_recom: drink2
+      })
+    })
   },
 
   // add new client tags

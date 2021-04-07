@@ -19,33 +19,43 @@
   </view>
 </view>
 <view class="body">
-  <view class="title">Categories</view>
-  <food_card standard_price="150" discount_price="80"></food_card>
-  <scroll-view scroll-x="true" class="tab-h" enable-flex="true" scroll-left="{{scrollLeft}}"  showScrollbar="{{ false }}">
-    <view class="tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="switchNav"><image class="img-cat"  mode="aspectFit" src="images/burger.png" ></image></view>
-    <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="switchNav" ><image class="img-cat"  mode="aspectFit" src="images/coffee.png"></image></view>
-    <view class="tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="switchNav" ><image class="img-cat"  mode="aspectFit" src="images/soup.png" ></image></view>
-    <view class="tab-item {{currentTab==3?'active':''}}" data-current="3" bindtap="switchNav" ><image class="img-cat"  mode="aspectFit" src="images/sushi.png" ></image></view>
- </scroll-view>
- <view class="title">Recommended</view>
- <restaurant_card self_tags="pizza;gourmet"></restaurant_card>
- <swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab"
+  <view class="scroll-h">
+    <view class="title">Categories</view>
+    <scroll-view scroll-x="true" class="tab-h" enable-flex="true" scroll-left="{{scrollLeft}}"  showScrollbar="{{ false }}">
+      <view class="tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="switchNav"><image class="img-cat"  mode="aspectFit" src="images/burger.png" ></image></view>
+      <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="switchNav" ><image class="img-cat"  mode="aspectFit" src="images/asian.png"></image></view>
+      <view class="tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="switchNav" ><image class="img-cat"  mode="aspectFit" src="images/coffee.png" ></image></view>
+      <view class="tab-item {{currentTab==3?'active':''}}" data-current="3" bindtap="switchNav" ><image class="img-cat"  mode="aspectFit" src="images/drink.png" ></image></view>
+    </scroll-view>
+  </view>
+  <swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab"
   style="height:{{winHeight}}rpx">
   <swiper-item wx:for="{{[0,1,2,3]}}">
-   <scroll-view scroll-y="true" class="scoll-h" >
-    <block wx:for="{{[1,2,3,4,5,6,7,8]}}" wx:key="*this">
-     <view class="item-ans">
-      <!-- <view class="avatar">
-       <image class="img" src="/avatar.png"></image>
-      </view> -->
-      <view class="expertInfo">
-       <view class="name">欢颜</view>
-       <view class="tag">知名情感博主</view>
-       <view class="answerHistory">134个回答，2234人听过 </view>
+   <scroll-view scroll-y="true" class="scroll-v" enable-flex="true" style="height:{{winHeight}}rpx;overflow:auto;">
+    <view wx:if="{{currentTab==0}}" style="height:1500rpx">
+      <view class="title">Recommended Burger</view>
+      <view wx:for="{{burger_normal}}" style="margin-top:40rpx;margin-bottom:20rpx" bindtap="gotoMenu">
+        <restaurant_card name="{{item.description}}" eta="{{item.delivery_time}}" rating="{{item.rating}}" self_tags="{{item.description_string}}"></restaurant_card>
       </view>
-      <navigator url="/pages/index/menu/menu" class="askBtn">问TA</navigator> 
-     </view>
-    </block>
+    </view>
+    <view wx:if="{{currentTab==1}}" style="height:1500rpx">
+      <view class="title">Recommended Asian Food</view>
+      <view wx:for="{{asian_normal}}" style="margin-top:40rpx;margin-bottom:20rpx">
+        <restaurant_card name="{{item.description}}" eta="{{item.delivery_time}}" rating="{{item.rating}}" self_tags="{{item.description_string}}"></restaurant_card>
+      </view>
+    </view>
+    <view wx:if="{{currentTab==2}}" style="height:1500rpx">
+      <view class="title">Recommended Bakery</view>
+      <view wx:for="{{dessert_normal}}" style="margin-top:40rpx;margin-bottom:20rpx">
+        <restaurant_card name="{{item.description}}" eta="{{item.delivery_time}}" rating="{{item.rating}}" self_tags="{{item.description_string}}"></restaurant_card>
+      </view>
+    </view>
+    <view wx:if="{{currentTab==3}}" style="height:1000rpx">
+      <view class="title">Recommended Drinks</view>
+      <view wx:for="{{drink_normal}}" style="margin-top:40rpx;margin-bottom:20rpx">
+        <restaurant_card name="{{item.description}}" eta="{{item.delivery_time}}" rating="{{item.rating}}" self_tags="{{item.description_string}}"></restaurant_card>
+      </view>
+    </view>
    </scroll-view>
   </swiper-item>
  </swiper>

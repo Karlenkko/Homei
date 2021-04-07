@@ -1,6 +1,5 @@
 {
   "usingComponents": {
-    "restaurant_card": "/components/restaurant_card/restaurant_card",
-    "food_card": "/components/food_card/food_card"
+    "restaurant_card": "/components/restaurant_card/restaurant_card"
   }
 }
