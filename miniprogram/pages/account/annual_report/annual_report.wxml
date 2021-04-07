@@ -1,0 +1,14 @@
+<!--miniprogram/pages/account/annual_report/annual_report.wxml-->
+<scroll-view scroll-y="true" class="scoll-h" >
+  <view wx:if="{{page_index == 0}}">
+    <image mode="widthFix" src="images/0.png" class="img"></image>
+    <button bindtap="start" class="btn" style="width: 400rpx;height: 140rpx"><text class="txt">Get Started</text></button>
+  </view>
+  <view wx:else>
+    <image mode="widthFix" src="{{'images/' + page_index + '.png'}}" class="img"></image>
+    <view wx:if="{{page_index < total_page}}">
+      <button bindtap="turn" style="position: fixed;bottom: 100rpx;right: 70rpx;height: 120rpx;width: 120rpx;"><image mode="aspectFit" src="images/down.png" class="img_icon"></image></button>
+    </view>
+  </view>
+</scroll-view>
+
