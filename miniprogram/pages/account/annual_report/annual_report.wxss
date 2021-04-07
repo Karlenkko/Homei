@@ -1,0 +1,30 @@
+/* miniprogram/pages/account/annual_report/annual_report.wxss */
+.scoll-h{height: 100%;}
+.img{
+  width: 100%; 
+  position: relative; 
+  left: 0rpx; 
+  top: 0rpx;
+  z-index: -1;
+}
+.btn{
+  border-top-left-radius: 70rpx;
+  border-bottom-left-radius: 70rpx;
+  background-color: #ffffff;
+  position: fixed;
+  bottom: 250rpx;
+  right: 0rpx;
+  font-weight: 300;
+  font-size: 55rpx;
+}
+.txt{
+  position: relative;
+  top: 20rpx;
+}
+.img_icon{
+  position: fixed;
+  bottom: 100rpx;
+  right: 70rpx;
+  height: 120rpx;
+  width: 120rpx;
+}

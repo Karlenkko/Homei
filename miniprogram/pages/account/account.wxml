@@ -33,12 +33,6 @@
     </view>
   </view>
 
-
-
-
-
-
-
   <!-- 云调用 -->
   <view class="uploader">
     <navigator url="../openapi/openapi" open-type="navigate" class="uploader-text">
@@ -46,5 +40,10 @@
     </navigator>
   </view>
 
+  <view class="uploader">
+    <view class="uploader-text">
+      <text bindtap="report">Annual report</text>
+    </view>
+  </view>
 
 </view>

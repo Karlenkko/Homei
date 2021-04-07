@@ -1,0 +1,81 @@
+// miniprogram/pages/account/annual_report/annual_report.js
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    page_index : 0,  // show the cover
+    total_page : 4,
+  },
+
+  start: function() {
+    this.setData({             
+      page_index : 1,  // turn to the first page
+    })
+  },
+
+  turn: function() {
+    var curr = this.data.page_index;
+    curr++;
+    this.setData({             
+      page_index : curr,  // turn to the next page
+    })
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
+  }
+})
