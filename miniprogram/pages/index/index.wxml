@@ -15,6 +15,7 @@
       </view>
       Hey,<open-data type="userNickName"></open-data>
     </view>
+    <image class="img-icon_add" mode="aspectFit" src="images/icon_add.png" bindtap="add"></image>
   </view>
 </view>
 <view class="body">

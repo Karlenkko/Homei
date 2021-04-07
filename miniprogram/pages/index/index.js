@@ -92,6 +92,13 @@ Page({
   
   },
 
+  // add new client tags
+  add: function () {
+    wx.navigateTo({
+      url : 'client_tag/client_tag?id=29',
+    })
+  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

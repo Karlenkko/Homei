@@ -7,7 +7,8 @@
     "pages/knowledge/quizz",
     "pages/account/account",
     "pages/index/menu/menu",
-    "pages/knowledge/result"
+    "pages/knowledge/result",
+    "pages/index/client_tag/client_tag"
   ],
   "window": {
     "backgroundColor": "#FF9F48",

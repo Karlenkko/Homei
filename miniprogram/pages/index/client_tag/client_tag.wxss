@@ -1,0 +1,52 @@
+/* miniprogram/pages/index/client_tag/client_tag.wxss */
+.header{
+  background-color: #FF9F48;
+  height: 180rpx;
+  width: 100%;
+  position: fixed;
+  z-index: -1;
+  border-bottom: 50rpx solid #FF9F48;
+  text-align: center;
+}
+.title{
+  font-weight: 500;
+  font-size: 60rpx;
+  position: relative;
+  top: 20rpx
+}
+.description{
+  font-weight: 500;
+  font-size: 40rpx;
+}
+.grid {
+  margin-top: 0rpx;
+  margin-bottom: 0rpx;
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+}
+.img-icon{
+  width: 20px;
+  height: 20px;
+}
+.body{
+  position: fixed;
+  top: 180rpx;
+  width: 100%;
+  background-color: #FFFFFF;
+  border: 1px solid #FFFFFF;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  height: 1250rpx;
+}
+.btn{
+  border-radius: 40rpx;
+  position: relative; 
+  left: -22rpx; 
+  top: 170rpx; 
+  height: 100rpx; 
+  display: block; 
+  box-sizing: border-box; 
+  font-size: 35rpx;
+}

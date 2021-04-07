@@ -1,0 +1,4 @@
+<!--components/large_tag/large_tag.wxml-->
+<view class="large_tag" style="background-color:{{back_color}}">
+  <text decode="true" style="color:{{font_color}}">{{name}}</text>
+</view>

@@ -1,0 +1,32 @@
+<!--miniprogram/pages/index/client_tag/client_tag.wxml-->
+<view class="header">
+  <text class="title">My Preferences</text>
+</view>
+<view class="body">
+  <text class="description" style="position: relative; left: 55rpx; top: 80rpx">My actual preferences</text>
+  <view class="grid" wx:for="{{tag.length > 0? tag:['']}}" wx:if="{{index%3 === 0}}" style="position: relative; left: 55rpx; top: 100rpx; width: 596rpx; height: 100rpx; display: flex; box-sizing: border-box">
+    <view wx:for='{{[tag[index], tag[index+1], tag[index+2]]}}' wx:for-item='dataItem'> 
+      <large_tag name="{{dataItem}}" back_color="{{dataItem? '#FFCE4B':'#FFFFFF'}}" font_color="{{dataItem? '#000000':'#FFFFFF'}}" style="{{(dataItem == 'vegan' || dataItem == 'vegetarian' || dataItem == 'on diet' || dataItem == 'halal')? '':'text-decoration: line-through'}}"></large_tag>
+      <view wx:if="{{dataItem}}" data-current="{{dataItem}}" bindtap="delete"><image class="img-icon" mode="aspectFit" src="../images/icon_cross.png" style="position: relative; left: 170rpx; top: -98rpx"></image></view>
+    </view>
+  </view>
+  <text class="description" style="position: relative; left: 55rpx; top: 110rpx">Add new preferences</text>
+  <view class='grid'  style="position: relative; left: 55rpx; top: 140rpx">
+      <large_tag name="vegan" back_color="{{new_tag_list[0]? '#FFCE4B':'#F4F5F9'}}" font_color="{{new_tag_list[0]? '#000000':'#888888'}}" data-chosen="0" bindtap="click"></large_tag>
+      <large_tag name="vegetarian" back_color="{{new_tag_list[1]? '#FFCE4B':'#F4F5F9'}}" font_color="{{new_tag_list[1]? '#000000':'#888888'}}" data-chosen="1" bindtap="click"></large_tag>
+      <large_tag name="" back_color="#FFFFFF" font_color="#FFFFFF"></large_tag>
+  </view>
+  <view class='grid'  style="position: relative; left: 55rpx; top: 140rpx">
+      <large_tag name="on diet" back_color="{{new_tag_list[2]? '#FFCE4B':'#F4F5F9'}}" font_color="{{new_tag_list[2]? '#000000':'#888888'}}" data-chosen="2" bindtap="click"></large_tag>
+      <large_tag name="halal" back_color="{{new_tag_list[3]? '#FFCE4B':'#F4F5F9'}}" font_color="{{new_tag_list[3]? '#000000':'#888888'}}" data-chosen="3" bindtap="click"></large_tag>
+      <large_tag name="" back_color="#FFFFFF" font_color="#FFFFFF"></large_tag>
+  </view>
+  <view class='grid' wx:for='{{allergen}}' wx:if='{{index%3 === 0}}' style="position: relative; left: 55rpx; top: 140rpx">
+    <view wx:for='{{[allergen[index], allergen[index+1], allergen[index+2]]}}' wx:for-item='dataItem' wx:for-index='inner_index'> 
+      <view wx:if="{{dataItem}}"><large_tag name="{{dataItem}}" back_color="{{new_tag_list[index+inner_index+4]? '#FFCE4B':'#F4F5F9'}}" font_color="{{new_tag_list[index+inner_index+4]? '#000000':'#888888'}}" data-chosen="{{index+inner_index+4}}" bindtap="click" style="text-decoration: line-through"></large_tag></view>
+      <view wx:else><large_tag name="" back_color="#FFFFFF" font_color="#FFFFFF"></large_tag></view>
+    </view>
+  </view>
+  <button class="btn" bindtap="add" style="width: 550rpx; background-color: {{num_new_pre == 0? '#F4F5F9':'#FFCE4B'}}; color: {{num_new_pre == 0? '#888888':'#000000'}}">Add {{num_new_pre}} new preferences</button>
+</view>
+
