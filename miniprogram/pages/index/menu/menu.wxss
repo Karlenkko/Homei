@@ -1,7 +1,7 @@
 /* miniprogram/pages/index/menu/menu.wxss */
 .header{
   background-color: #FF9F48;
-  height: 60rpx;
+  height: 0rpx;
   width: 100%;
   position: fixed;
   z-index: -1;
@@ -9,7 +9,7 @@
 }
 .body{
   position: fixed;
-  top: 60rpx;
+  top: 0rpx;
   bottom: 0;
   width: 100%;
   z-index: 1;

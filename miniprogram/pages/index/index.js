@@ -33,9 +33,8 @@ Page({
     currentTab: 0
   },
   gotoMenu(e){
-    console.log(e)
     wx.navigateTo({
-      url: './menu/menu',
+      url: './menu/menu?name='+e.currentTarget.dataset.name,
     })
   },
   changeIndicatorDots() {

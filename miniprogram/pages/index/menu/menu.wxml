@@ -9,7 +9,7 @@
     </view>
   </view>
   <customerreviews nbr="{{nbr}}" rating="{{rating}}"></customerreviews>
-  <hygiene rating="3.7" positive_tags="{{hygiene_positive_tags}}" negative_tags="{{hygiene_negative_tags}}"></hygiene>
+  <hygiene  rating_pac="{{rating_pac}}" rating_coh="{{rating_coh}}" rating_eco="{{rating_eco}}" rating_qua="{{rating_qua}}" positive_tags="{{positive_tags}}" negative_tags="{{negative_tags}}"></hygiene>
   <view class="menu">
     <food_card standard_price="150" discount_price="80"></food_card>
   </view>

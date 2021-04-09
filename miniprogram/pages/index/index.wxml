@@ -34,26 +34,26 @@
    <scroll-view scroll-y="true" class="scroll-v" enable-flex="true" style="height:{{winHeight}}rpx;overflow:auto;">
     <view wx:if="{{currentTab==0}}" style="height:1500rpx">
       <view class="title">Recommended Burger</view>
-      <view wx:for="{{burger_normal}}" style="margin-top:40rpx;margin-bottom:20rpx" bindtap="gotoMenu">
-        <restaurant_card name="{{item.description}}" eta="{{item.delivery_time}}" rating="{{item.rating}}" self_tags="{{item.description_string}}"></restaurant_card>
+      <view wx:for="{{burger_normal}}" style="margin-top:40rpx;margin-bottom:20rpx" >
+        <restaurant_card name="{{item.description}}" eta="{{item.delivery_time}}" rating="{{item.rating}}" self_tags="{{item.description_string}}" bindtap="gotoMenu" data-name="{{item.description}}"></restaurant_card>
       </view>
     </view>
     <view wx:if="{{currentTab==1}}" style="height:1500rpx">
       <view class="title">Recommended Asian Food</view>
       <view wx:for="{{asian_normal}}" style="margin-top:40rpx;margin-bottom:20rpx">
-        <restaurant_card name="{{item.description}}" eta="{{item.delivery_time}}" rating="{{item.rating}}" self_tags="{{item.description_string}}"></restaurant_card>
+        <restaurant_card name="{{item.description}}" eta="{{item.delivery_time}}" rating="{{item.rating}}" self_tags="{{item.description_string}}" bindtap="gotoMenu" data-name="{{item.description}}"></restaurant_card>
       </view>
     </view>
     <view wx:if="{{currentTab==2}}" style="height:1500rpx">
       <view class="title">Recommended Bakery</view>
       <view wx:for="{{dessert_normal}}" style="margin-top:40rpx;margin-bottom:20rpx">
-        <restaurant_card name="{{item.description}}" eta="{{item.delivery_time}}" rating="{{item.rating}}" self_tags="{{item.description_string}}"></restaurant_card>
+        <restaurant_card name="{{item.description}}" eta="{{item.delivery_time}}" rating="{{item.rating}}" self_tags="{{item.description_string}}" bindtap="gotoMenu" data-name="{{item.description}}"></restaurant_card>
       </view>
     </view>
     <view wx:if="{{currentTab==3}}" style="height:1000rpx">
       <view class="title">Recommended Drinks</view>
       <view wx:for="{{drink_normal}}" style="margin-top:40rpx;margin-bottom:20rpx">
-        <restaurant_card name="{{item.description}}" eta="{{item.delivery_time}}" rating="{{item.rating}}" self_tags="{{item.description_string}}"></restaurant_card>
+        <restaurant_card name="{{item.description}}" eta="{{item.delivery_time}}" rating="{{item.rating}}" self_tags="{{item.description_string}}" bindtap="gotoMenu" data-name="{{item.description}}"></restaurant_card>
       </view>
     </view>
    </scroll-view>

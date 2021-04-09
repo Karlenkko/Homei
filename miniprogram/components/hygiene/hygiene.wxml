@@ -1,6 +1,9 @@
 <!--components/hygiene/hygiene.wxml-->
 <view class="container">
-  <large_rating name="Food Hygiene" rating="{{rating}}" style="width:100%;"></large_rating>
+  <large_rating name="Food Quality" rating="{{ratingqua}}" style="width:100%;"></large_rating>
+  <large_rating name="Description Coherence" rating="{{ratingcoh}}" style="width:100%;"></large_rating>
+  <large_rating name="Package Bag" rating="{{ratingpac}}" style="width:100%;"></large_rating>
+  <large_rating name="Eco Package" rating="{{ratingeco}}" style="width:100%;"></large_rating>
   <view class="tags">
     <view  wx:for='{{positivetags}}' style="margin-top:10rpx;margin-bottom:10rpx;">
         <tag name="{{item}}" ></tag>
