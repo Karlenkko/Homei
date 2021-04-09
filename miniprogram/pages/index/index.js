@@ -147,7 +147,7 @@ Page({
   // add new client tags
   add: function () {
     wx.navigateTo({
-      url : 'client_tag/client_tag?id=29',
+      url : 'client_tag/client_tag?id=24',
     })
   },
 

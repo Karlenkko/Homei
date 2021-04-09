@@ -2,7 +2,7 @@
 var app = getApp();
 const db = wx.cloud.database();
 const Client = db.collection('Client');
-const tag_name_list = ["vegan", "vegetarian", "on diet", "halal", "wheat", "soy", "tree nuts", "fish", "peanut", "sellfish", "eggs", "milk"]
+const tag_name_list = ["vegan", "vegetarian", "on diet", "halal", "wheat", "soy", "tree nuts", "fish", "peanuts", "shellfish", "eggs", "milk"]
 
 Page({
 
@@ -11,7 +11,7 @@ Page({
    */
   data: {
 
-    allergen : ["wheat", "soy", "tree nuts", "fish", "peanut", "sellfish", "eggs", "milk"],
+    allergen : ["wheat", "soy", "tree nuts", "fish", "peanuts", "shellfish", "eggs", "milk"],
     num_new_pre : 0,
     new_tag_list : [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
   },
