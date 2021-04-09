@@ -30,6 +30,7 @@ Page({
     dessert_normal: [],
     drink_normal: [],
     drink_recom: [],
+    currentTab: 0
   },
   gotoMenu(e){
     console.log(e)
