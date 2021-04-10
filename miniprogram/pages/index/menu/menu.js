@@ -15,20 +15,25 @@ Page({
     rating_eco: "5",
     nbr: "9999",
     positive_tags: "",
-    negative_tags: ""
+    negative_tags: "",
+    menu_normal: [],
+    menu_recom: [],
+    id: ""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let screenHeight = wx.getSystemInfoSync().windowHeight;
     this.setData({
-      name: options.name
+      name: options.name,
+      height: screenHeight + 80
     })
     db.collection('Restaurant').where({description : this.data.name}).get().then((res) => {
-      console.log(res.data[0].positive_string)
       let hyg_ratings = res.data[0].hygiene_rating.split(";");
       this.setData({
+        id : res.data[0]._id,
         selftags: res.data[0].description_string.split(";"),
         rating: res.data[0].rating,
         positive_tags: res.data[0].positive_string,
@@ -38,8 +43,14 @@ Page({
         rating_pac: hyg_ratings[2],
         rating_eco: hyg_ratings[3]
       })
-      console.log(this.data.rating_coh)
+      db.collection('Menu').where({restaurant_id : parseInt(this.data.id)}).get().then((res) => {
+        console.log(res.data)
+        this.setData({
+          menu_normal: res.data
+        })
+      })
     })
+    
   },
 
   /**

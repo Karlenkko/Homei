@@ -109,7 +109,6 @@ Page({
       this.setData({
         restaurants: res.data
       })
-      console.log(res)
     }).then(() => {
       let burger1 = []
       let burger2 = []

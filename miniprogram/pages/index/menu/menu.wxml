@@ -11,7 +11,10 @@
   <customerreviews nbr="{{nbr}}" rating="{{rating}}"></customerreviews>
   <hygiene  rating_pac="{{rating_pac}}" rating_coh="{{rating_coh}}" rating_eco="{{rating_eco}}" rating_qua="{{rating_qua}}" positive_tags="{{positive_tags}}" negative_tags="{{negative_tags}}"></hygiene>
   <view class="menu">
-    <food_card standard_price="150" discount_price="80"></food_card>
+    <scroll-view class="scrollmenu" scroll-y="true" style="height:{{height}}rpx;">
+      <view wx:for="{{menu_normal}}">
+        <food_card img_url="{{item.food_photo_link}}" name="{{item.food_name}}" ingredients="{{item.ingredients}}" standard_price="{{item.price}}" discount_price="{{item.discount_price}}"></food_card>
+      </view>
+    </scroll-view>
   </view>
-  <view class="menu"></view>
 </view>

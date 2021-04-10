@@ -24,6 +24,7 @@
   box-shadow: 0rpx 4rpx 6rpx #cccccc; 
 }
 .image{
+  min-width: 64%;
   width: 160rpx;
   height: 160rpx;
   border-top-left-radius: 28rpx;
@@ -38,10 +39,10 @@
   margin-left: 28rpx;
 }
 .name{
+  width: 100%;
   font-size: 28rpx;
   font-weight: bold;
-  display: inline;
-  inline-size: 28rpx;
+  /* inline-size: 28rpx; */
 }
 .ingredients{
   height: 60rpx;

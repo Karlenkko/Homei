@@ -73,7 +73,7 @@
   content: "";
   display: block;
   height: 10rpx;
-  width: 80rpx;
+  width: 100rpx;
   background: #FFCE4B;
   margin-left: 10rpx;
   border-radius: 0;
