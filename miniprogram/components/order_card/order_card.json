@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "large_rating": "../large_rating/large_rating"
+  }
+}

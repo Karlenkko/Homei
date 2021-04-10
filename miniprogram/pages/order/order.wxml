@@ -3,3 +3,4 @@
 <text>miniprogram/pages/order/order.wxml</text>
 <small_rating rating="3.6"></small_rating>
 <v-nutrition calories='100' fat='25' protein='25' carbo='40'></v-nutrition>
+<order_card rest_name="WesternFlavor" food_name="pizza" price="47" rating="3" order_id="3423" date="2021-04-10"></order_card>

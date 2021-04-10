@@ -1,0 +1,74 @@
+/* components/order_card/order_card.wxss */
+.container{
+  width: 88%;
+  height: 160rpx;
+  position: relative;
+  margin: 1% 6% 1% 6%;
+  background-color: #ffffff;
+  border-bottom-color: #c0c0c0;
+  border-bottom-style: solid;
+  border-bottom-width: 1rpx;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+  display: flex;
+  flex-flow: row;
+}
+.foodimg{
+  width: 160rpx;
+  height: 160rpx;
+  margin-left: 20rpx;
+  border-top-left-radius: 28rpx;
+  border-top-right-radius: 28rpx;
+  border-bottom-right-radius: 28rpx;
+  border-bottom-left-radius: 28rpx;
+  box-shadow: 0rpx 4rpx 6rpx #cccccc; 
+}
+.image{
+  width: 160rpx;
+  height: 160rpx;
+  border-top-left-radius: 28rpx;
+  border-top-right-radius: 28rpx;
+  border-bottom-right-radius: 28rpx;
+  border-bottom-left-radius: 28rpx;
+}
+.food{
+  min-width: 64%;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  margin-left: 28rpx;
+}
+.name{
+  padding-top: 10rpx;
+  width: 50%;
+  max-width: 50%;
+  font-size: 28rpx;
+  font-weight: bold;
+  word-wrap: break-word;
+}
+.order{
+  height: 60rpx;
+  font-size: 18rpx;
+  /* word-break: break-all; */
+  word-wrap: break-word;
+}
+.order_header{
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+}
+.button_tag{
+  margin: 0 14rpx 0 14rpx;
+  height: 40rpx;
+  margin-top: 6rpx;
+  padding-top: 4rpx;
+  font-size: 22rpx;
+  background-color: #FF9F48;
+  width: fit-content;
+  vertical-align: bottom;
+  border-bottom-right-radius: 16rpx;
+  border-bottom-left-radius: 16rpx;
+  border-top-right-radius: 16rpx;
+  border-top-left-radius: 16rpx;
+}

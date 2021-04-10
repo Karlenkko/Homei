@@ -2,7 +2,8 @@
   "usingComponents": {
     "v-ingredient" : "/components/ingredient/index",
     "small_rating": "/components/small_rating/small_rating",
-    "v-nutrition": "/components/nutrition/index"
+    "v-nutrition": "/components/nutrition/index",
+    "order_card": "/components/order_card/order_card"
 
   }
 }
