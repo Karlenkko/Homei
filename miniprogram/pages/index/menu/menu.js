@@ -23,7 +23,7 @@ Page({
   },
   gotoFood(e){
     wx.navigateTo({
-      url: './food/food?id='+e.currentTarget.dataset.foodid+"&eta="+this.data.eta,
+      url: './food/food?id='+e.currentTarget.dataset.foodid+"&eta="+this.data.eta+"&rest="+this.data.name,
     })
   },
 

@@ -25,6 +25,8 @@ Page({
         rating: "",
         takeaway: "1",
         state: "0",
+        food: this.data.name,
+        rest_name: this.data.rest_name,
         created_at: util.formatTime(new Date())
       }
     }).then((res) => {
@@ -43,6 +45,8 @@ Page({
         rating: "",
         takeaway: "0",
         state: "0",
+        food: this.data.name,
+        rest_name: this.data.rest_name,
         created_at: util.formatTime(new Date())
       }
     }).then((res) => {
@@ -57,7 +61,8 @@ Page({
   onLoad: function (options) {
     this.setData({
       id: options.id,
-      eta: options.eta
+      eta: options.eta,
+      rest_name: options.rest,
     })
     db.collection('Menu').where({_id: parseInt(options.id)}).get().then((res) => {
       this.setData({

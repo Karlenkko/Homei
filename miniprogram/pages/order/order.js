@@ -1,18 +1,25 @@
 // miniprogram/pages/order/order.js
+const db = wx.cloud.database();
+var app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    orders_wait: [],
+    orders_finish: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let screenHeight = wx.getSystemInfoSync().windowHeight;
+    this.setData({
+      height: screenHeight * 1.9 - 180
+    })
+    
   },
 
   /**
@@ -26,7 +33,18 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    db.collection('Order').where({client_id: app.globalData.openid}).get().then((res) => {
+      function deleteWait(item) {
+        return item.rating > 0;
+      }
+      function leaveWait(item) {
+        return item.rating=="";
+      }
+      this.setData({
+        orders_wait: res.data.filter(leaveWait),
+        orders_finish: res.data.filter(deleteWait)
+      })
+    })
   },
 
   /**
