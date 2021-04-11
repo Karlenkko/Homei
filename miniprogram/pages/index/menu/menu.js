@@ -18,7 +18,13 @@ Page({
     negative_tags: "",
     menu_normal: [],
     menu_recom: [],
-    id: ""
+    id: "",
+    eta: ""
+  },
+  gotoFood(e){
+    wx.navigateTo({
+      url: './food/food?id='+e.currentTarget.dataset.foodid+"&eta="+this.data.eta,
+    })
   },
 
   /**
@@ -41,7 +47,8 @@ Page({
         rating_qua: hyg_ratings[0],
         rating_coh: hyg_ratings[1],
         rating_pac: hyg_ratings[2],
-        rating_eco: hyg_ratings[3]
+        rating_eco: hyg_ratings[3],
+        eta: res.data[0].delivery_time
       })
       db.collection('Menu').where({restaurant_id : parseInt(this.data.id)}).get().then((res) => {
         console.log(res.data)

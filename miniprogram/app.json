@@ -10,7 +10,8 @@
     "pages/knowledge/result",
     "pages/index/client_tag/client_tag",
     "pages/account/annual_report/annual_report",
-    "pages/order/rate_order/rate_order"
+    "pages/order/rate_order/rate_order",
+    "pages/index/menu/food/food"
   ],
   "window": {
     "backgroundColor": "#FF9F48",

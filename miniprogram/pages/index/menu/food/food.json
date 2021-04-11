@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "v-ingredient" : "/components/ingredient/index",
+    "v-nutrition": "/components/nutrition/index"
+  }
+}

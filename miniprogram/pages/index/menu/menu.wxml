@@ -13,7 +13,7 @@
   <view class="menu">
     <scroll-view class="scrollmenu" scroll-y="true" style="height:{{height}}rpx;">
       <view wx:for="{{menu_normal}}">
-        <food_card img_url="{{item.food_photo_link}}" name="{{item.food_name}}" ingredients="{{item.ingredients}}" standard_price="{{item.price}}" discount_price="{{item.discount_price}}"></food_card>
+        <food_card img_url="{{item.food_photo_link}}" name="{{item.food_name}}" ingredients="{{item.ingredients}}" standard_price="{{item.price}}" discount_price="{{item.discount_price}}" bindtap="gotoFood" data-foodid="{{item._id}}"></food_card>
       </view>
     </scroll-view>
   </view>

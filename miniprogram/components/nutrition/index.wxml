@@ -4,22 +4,32 @@
   <view class="labelcontainer">
     <view class="row">
       <view class="block">
-        <text decode="true">calories: &nbsp;&nbsp;&nbsp;</text>
+        <text decode="true">calories: &nbsp;&nbsp;</text>
         <text>{{calories}}kcal</text>
       </view>
       <view class="block">
-        <text decode="true">total fat: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>
-        <text>{{fat}}g</text>
+        <text decode="true">total fat (%daily): &nbsp;&nbsp;&nbsp;</text>
+        <text>{{fat}}%</text>
       </view>
     </view>
     <view class="row">
       <view class="block">
-        <text decode="true">protein: &nbsp;&nbsp;&nbsp;</text>
-        <text>{{protein}}g</text>
+        <text decode="true">protein (%daily): &nbsp;&nbsp;</text>
+        <text>{{protein}}%</text>
       </view>
       <view class="block">
-        <text decode="true">total carbohydrate: &nbsp;&nbsp;&nbsp;</text>
-        <text>{{carbo}}g</text>
+        <text decode="true">carbo (%daily): &nbsp;&nbsp;</text>
+        <text>{{carbo}}%</text>
+      </view>
+    </view>
+    <view class="row">
+      <view class="block">
+        <text decode="true">calcium (%daily): &nbsp;&nbsp;</text>
+        <text>{{calcium}}%</text>
+      </view>
+      <view class="block">
+        <text decode="true">sodium (%daily): &nbsp;&nbsp;</text>
+        <text>{{sodium}}%</text>
       </view>
     </view>
   </view>

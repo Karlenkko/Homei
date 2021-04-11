@@ -15,6 +15,12 @@ Component({
     },
     carbo : {
       type: Number,
+    },
+    calcium : {
+      type: Number,
+    },
+    sodium : {
+      type: Number,
     }
   },
 
@@ -27,6 +33,8 @@ Component({
         fat: this.properties.fat,
         protein: this.properties.protein,
         carbo: this.properties.carbo,
+        calcium: this.properties.calcium,
+        sodium: this.properties.sodium
       })
     },
   },

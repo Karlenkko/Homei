@@ -47,8 +47,8 @@
 .ingredients{
   height: 60rpx;
   font-size: 18rpx;
-  /* word-break: break-all; */
-  word-wrap: break-word;
+  word-break: break-all;
+  /* word-wrap: break-word; */
 }
 .price{
   font-size: 24rpx;

@@ -1,0 +1,51 @@
+/* miniprogram/pages/index/menu/food/food.wxss */
+.body{
+  position: fixed;
+  top: 0rpx;
+  display: flex;
+  flex-flow: column;
+  bottom: 0;
+  width: 100%;
+  z-index: 1;
+  background-color: #FFFFFF;
+  border: 1px solid #FFFFFF;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.description{
+  width: 88%;
+  padding-top: 32rpx;
+  padding-bottom: 24rpx;
+  font-size: 24rpx;
+  margin-left: 6%;
+  margin-right: 6%;
+}
+.title{
+  text-align: center;
+  font-size: 20px;
+  margin-top: 20rpx;
+}
+.buttons{
+  padding-top: 32rpx;
+  width: 88%;
+  margin-left: 6%;
+  margin-left: 6%;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+}
+.button{
+  margin: 1 14rpx 1 14rpx;
+  height: 60rpx;
+  padding-top: 12rpx;
+  
+  font-size: 32rpx;
+  background-color: #FF9F48;
+  width: 32%;
+  text-align: center;
+  vertical-align: bottom;
+  border-bottom-right-radius: 16rpx;
+  border-bottom-left-radius: 16rpx;
+  border-top-right-radius: 16rpx;
+  border-top-left-radius: 16rpx;
+}

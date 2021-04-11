@@ -1,0 +1,12 @@
+<!--miniprogram/pages/index/menu/food/food.wxml-->
+<view class="body">
+  <view class="title">{{name}}</view>
+  <view class="description">{{description}}</view>
+  <!-- <v-ingredient></v-ingredient> -->
+  <v-nutrition calcium="{{calcium}}" calories="{{calories}}" fat="{{fat}}" protein="{{protein}}" carbo="{{carbo}}" sodium="{{sodium}}"></v-nutrition>
+  <view class="description">price : ￥ {{price}} , estimated time: {{eta}} mins</view>
+  <view class="buttons">
+   <view class="button" bindtap="orderTA">Take away</view>
+   <view class="button" bindtap="orderDI">Dine in</view>
+  </view>
+</view>
