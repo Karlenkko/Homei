@@ -22,7 +22,7 @@
 }
 .title{
   text-align: center;
-  font-size: 20px;
+  font-size: 40rpx;
   margin-top: 20rpx;
 }
 .tags{

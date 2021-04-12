@@ -1,4 +1,4 @@
-// miniprogram/pages/order/rate_order/rate_order.js
+// miniprogram/pages/order/rate_order3/rate_order3.js
 Page({
 
   /**

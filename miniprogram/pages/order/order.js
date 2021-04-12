@@ -11,6 +11,11 @@ Page({
     orders_finish: []
   },
 
+  gotoRating(e) {
+    wx.navigateTo({
+      url: './rate_order1/rate_order1?id='+e.currentTarget.dataset.id+"&name="+e.currentTarget.dataset.name,
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

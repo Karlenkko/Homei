@@ -1,0 +1,31 @@
+<!--miniprogram/pages/order/rate_order1/rate_order1.wxml-->
+<view class="header"></view>
+<view class="body">
+<view class="title">{{name}}</view>
+<text class="question" decode="true">&nbsp;&nbsp;&nbsp;&nbsp;How was {{name}}?</text>
+  <view class="stars">
+    <view class="star" bindtap="set1"><image class="star" src="{{star1}}" mode="aspectFit"></image></view>
+    <view class="star" bindtap="set2"><image class="star" src="{{star2}}" mode="aspectFit"></image></view>
+    <view class="star" bindtap="set3"><image class="star" src="{{star3}}" mode="aspectFit"></image></view>
+    <view class="star" bindtap="set4"><image class="star" src="{{star4}}" mode="aspectFit"></image></view>
+    <view class="star" bindtap="set5"><image class="star" src="{{star5}}" mode="aspectFit"></image></view>
+  </view>
+  <text class="question" decode="true">&nbsp;&nbsp;&nbsp;&nbsp;How would you praise {{name}}?</text>
+  <view class="grid" wx:for="{{positive_tags}}" wx:if='{{index%3 === 0}}'>
+    <view wx:for="{{[positive_tags[index], positive_tags[index + 1], positive_tags[index + 2]]}}" wx:for-index='inner_index'>
+      <view class="tag" style="background-color:{{positive_selected[index+inner_index]>0?'#FF9F48':'#F4F5F6'}};" bindtap="positive_click" data-selected="{{index+inner_index}}">
+        <text decode="true">&nbsp;&nbsp;&nbsp;{{item}}&nbsp;&nbsp;&nbsp;</text>
+      </view>
+    </view>
+  </view>
+  <text class="question" decode="true">&nbsp;&nbsp;&nbsp;&nbsp;Is there anything that you dislike?</text>
+  <view class="grid" wx:for="{{negative_tags}}" wx:if='{{index%3 === 0}}'>
+    <view wx:for="{{[negative_tags[index], negative_tags[index + 1], negative_tags[index + 2]]}}" wx:for-index='inner_index'>
+      <view class="tag" style="background-color:{{negative_selected[index+inner_index]>0?'#FF9F48':'#F4F5F6'}};" bindtap="negative_click" data-selected="{{index+inner_index}}">
+        <text decode="true">&nbsp;&nbsp;&nbsp;{{item}}&nbsp;&nbsp;&nbsp;</text>
+      </view>
+    </view>
+  </view>
+
+  <button class="btn"  style="background-color:#FFCE4B;" bindtap="gotoRate2">Continue</button>
+</view>
