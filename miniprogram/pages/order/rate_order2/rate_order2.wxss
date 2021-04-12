@@ -49,11 +49,10 @@
 }
 .btn{
   border-radius: 40rpx;
-  position: relative; 
+  position: fixed; 
+  bottom: 100rpx;
+  align-self: center;
   width: 88%;
-  margin-left: 14%;
-  margin-right: 14%;
-  top: 100rpx; 
   height: 76rpx; 
   font-size: 32rpx;
 }

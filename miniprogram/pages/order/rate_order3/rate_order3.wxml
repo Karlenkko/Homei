@@ -1,2 +1,22 @@
 <!--miniprogram/pages/order/rate_order3/rate_order3.wxml-->
-<text>miniprogram/pages/order/rate_order3/rate_order3.wxml</text>
+<view class="header"></view>
+<view class="body">
+  <view class="title"><text decode="true">&nbsp;</text> </view>
+  <text class="question" decode="true">&nbsp;&nbsp;&nbsp;&nbsp;How was the package bag?</text>
+  <view class="stars">
+    <view class="star" bindtap="set1"><image class="star" src="{{star1}}" mode="aspectFit"></image></view>
+    <view class="star" bindtap="set2"><image class="star" src="{{star2}}" mode="aspectFit"></image></view>
+    <view class="star" bindtap="set3"><image class="star" src="{{star3}}" mode="aspectFit"></image></view>
+    <view class="star" bindtap="set4"><image class="star" src="{{star4}}" mode="aspectFit"></image></view>
+    <view class="star" bindtap="set5"><image class="star" src="{{star5}}" mode="aspectFit"></image></view>
+  </view>
+  <text class="question" decode="true">&nbsp;&nbsp;&nbsp;&nbsp;Was the package sustainable?</text>
+  <view class="stars">
+    <view class="star" bindtap="set6"><image class="star" src="{{star6}}" mode="aspectFit"></image></view>
+    <view class="star" bindtap="set7"><image class="star" src="{{star7}}" mode="aspectFit"></image></view>
+    <view class="star" bindtap="set8"><image class="star" src="{{star8}}" mode="aspectFit"></image></view>
+    <view class="star" bindtap="set9"><image class="star" src="{{star9}}" mode="aspectFit"></image></view>
+    <view class="star" bindtap="set10"><image class="star" src="{{star10}}" mode="aspectFit"></image></view>
+  </view>
+  <button class="btn"  style="background-color:#FFCE4B;" bindtap="submit">Submit</button>
+</view>
