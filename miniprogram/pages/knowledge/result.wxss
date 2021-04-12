@@ -100,3 +100,8 @@ text{
   left: 0rpx;
   top: 25rpx
 }
+button{
+  background-color: #FF9F48;
+  color: #333333;
+  top: 70rpx;
+}

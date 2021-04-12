@@ -13,7 +13,8 @@
     "pages/index/menu/food/food",
     "pages/order/rate_order1/rate_order1",
     "pages/order/rate_order2/rate_order2",
-    "pages/order/rate_order3/rate_order3"
+    "pages/order/rate_order3/rate_order3",
+    "pages/knowledge/out/out"
   ],
   "window": {
     "backgroundColor": "#FF9F48",

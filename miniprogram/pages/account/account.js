@@ -12,6 +12,13 @@ Page({
     })
   },
 
+  // edit my preferences
+  edit:function(){
+    wx.navigateTo({
+      url : '../index/client_tag/client_tag?id=24',
+    })
+  },
+
   onLoad: function() {
   },
 

@@ -6,8 +6,8 @@
   <image class="img-person"  mode="aspectFit" src="images/person_1.png"  style="width: 417rpx; height: 598rpx; display: inline-block; box-sizing: border-box; left: 357rpx; top: -149rpx; position: relative"></image>
 </view>
 <view class="body">
-  <article title="How to make a nutrition plan?" time="31 March 2021" image_url="images/article_1.png" style="top: 70rpx; position: relative"></article>
-  <article title="How to make a nutrition plan?" time="31 March 2021" image_url="images/article_2.png" style="top: 90rpx; position: relative"></article>
-  <article title="How to make a nutrition plan?" time="31 March 2021" image_url="images/article_3.png" style="top: 110rpx; position: relative"></article>
-  <article title="How to make a nutrition plan?" time="31 March 2021" image_url="images/article_4.png" style="top: 130rpx; position: relative"></article>
+  <article title="How to make a nutrition plan?" time="Source: WHO" image_url="images/article_1.png" style="top: 70rpx; position: relative" bindtap="read" data-url="https://www.who.int/westernpacific/health-topics/healthy-diet"></article>
+  <article title="Want to know more about food safety?" time="Source: WHO" image_url="images/article_2.png" style="top: 90rpx; position: relative" bindtap="read" data-url="https://www.who.int/southeastasia/health-topics/food-safety"></article>
+  <article title="More facts about obesity" time="Source: WHO" image_url="images/article_3.png" style="top: 110rpx; position: relative" bindtap="read" data-url="https://www.who.int/southeastasia/health-topics/obesity"></article>
+  <article title="Key facts about salt reduction" time="Source: WHO" image_url="images/article_4.png" style="top: 130rpx; position: relative" bindtap="read" data-url="https://www.who.int/news-room/fact-sheets/detail/salt-reduction"></article>
 </view>

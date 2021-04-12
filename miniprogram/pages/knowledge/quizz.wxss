@@ -65,3 +65,11 @@
   background-color: #ffb6c1;
   font-size: 42rpx;
 }
+button{
+  background-color: #FF9F48;
+  color: #333333;
+  width: 120rpx;
+  height: 80rpx;
+  font-size: 40rpx;
+  top: 40rpx;
+}

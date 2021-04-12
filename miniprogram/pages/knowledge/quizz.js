@@ -14,7 +14,7 @@ Page({
     submitted : false, 
   },
 
-  //switch to the next question (to the right)
+   //switch to the next question (to the right)
   switch_right:function(){
     var curr_num = this.data.q_num;
     curr_num++;
@@ -50,11 +50,7 @@ Page({
         var q_num = this.data.q_num;
         let update_q_final = this.data.q_final[q_num].options.map(item=>{
           if(item.id===e.currentTarget.dataset.id){
-            if(item.status == ""){
               item.status = "chosen";
-            }else{
-              item.status = "";
-            }
           }else{
             item.status=""
           }
@@ -62,6 +58,10 @@ Page({
         })    
         var str = 'q_final[' + q_num + '].options';
         this.setData({[str]:update_q_final});
+        if(q_num != 2){
+          q_num++;
+          this.setData({q_num : q_num})
+        }
       }
   },
 

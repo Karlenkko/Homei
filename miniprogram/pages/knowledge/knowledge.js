@@ -10,12 +10,22 @@ Page({
   data: {
 
   },
+
   // start the questionnaire
   start(){
     wx.navigateTo({
       url : 'quizz',
     })
   },
+
+  // go to the website and read about more
+  read(e){
+    var url = 'out/out?url=' + e.currentTarget.dataset.url;
+    wx.navigateTo({
+      url : url,
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */

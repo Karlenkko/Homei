@@ -15,6 +15,7 @@
        <view class="{{q2 == 1? 'ques_correct' : 'ques_incorrect'}}"><text>Q2</text></view>
        <view class="{{q3 == 1? 'ques_correct' : 'ques_incorrect'}}"><text>Q3</text></view>
   </view>
+  <button bindtap="back" style="width:80%;height:80rpx;font-size:40rpx;font-weight: 400;border-radius: 15rpx;">Back to my knowledge</button>
   
 </view>
 

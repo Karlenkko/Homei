@@ -12,8 +12,13 @@
   </view>
  </view>
  <scroll-view scroll-x="true" class="tab-h" enable-flex="true" scroll-left="{{scrollLeft}}"  showScrollbar="{{ false }}">
-    <view bindtap="switch_left"><image class="img-cat"  mode="aspectFit" src="images/btn_left.png"  style="width: 140rpx; height: 140rpx; display: inline-block; box-sizing: border-box; left: NaNrpx; top: NaNrpx"></image></view>
-    <button bindtap="process">{{submitted? '':'Submit'}}</button>
-    <view bindtap="switch_right" ><image class="img-cat"  mode="aspectFit" src="images/btn_right.png" style="width: 140rpx; height: 140rpx; display: inline-block; box-sizing: border-box; left: NaNrpx; top: NaNrpx"></image></view>
+  <view wx:if="{{q_num > 0 || submitted}}"><view bindtap="switch_left"><image class="img-cat"  mode="aspectFit" src="images/btn_left.png"  style="width: 140rpx; height: 140rpx; display: inline-block; box-sizing: border-box; left: NaNrpx; top: NaNrpx"></image></view>
+  </view>
+  <view wx:if="{{q_num == 2 && !submitted}}">
+    <button bindtap="process">Submit</button>
+  </view>
+  <view wx:if="{{submitted}}">
+  <view bindtap="switch_right" ><image class="img-cat"  mode="aspectFit" src="images/btn_right.png" style="width: 140rpx; height: 140rpx; display: inline-block; box-sizing: border-box;left: NaNrpx; top: NaNrpx"></image></view>
+  </view>
  </scroll-view>
 </view>

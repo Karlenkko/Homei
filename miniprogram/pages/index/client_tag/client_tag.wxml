@@ -3,6 +3,7 @@
   <text class="title">My Preferences</text>
 </view>
 <view class="body">
+  <scroll-view scroll-y="true" style="height: 70%;">
   <text class="description" style="position: relative; left: 55rpx; top: 80rpx">My actual preferences</text>
   <view class="grid" wx:for="{{tag.length > 0? tag:['']}}" wx:if="{{index%3 === 0}}" style="position: relative; left: 55rpx; top: 100rpx; width: 596rpx; height: 100rpx; display: flex; box-sizing: border-box">
     <view wx:for='{{[tag[index], tag[index+1], tag[index+2]]}}' wx:for-item='dataItem'> 
@@ -27,6 +28,9 @@
       <view wx:else><large_tag name="" back_color="#FFFFFF" font_color="#FFFFFF"></large_tag></view>
     </view>
   </view>
-  <button class="btn" bindtap="add" style="width: 550rpx; background-color: {{num_new_pre == 0? '#F4F5F9':'#FFCE4B'}}; color: {{num_new_pre == 0? '#888888':'#000000'}}">Add {{num_new_pre}} new preferences</button>
+</scroll-view>
+<button class="btn" bindtap="add" style="width: 550rpx; background-color: {{num_new_pre == 0? '#F4F5F9':'#FFCE4B'}}; color: {{num_new_pre == 0? '#888888':'#000000'}}">Add {{num_new_pre}} new preferences</button>
 </view>
+
+
 

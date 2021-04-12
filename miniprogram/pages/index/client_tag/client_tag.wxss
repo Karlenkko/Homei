@@ -38,13 +38,13 @@
   border: 1px solid #FFFFFF;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-  height: 1250rpx;
+  height: 100%;
 }
 .btn{
   border-radius: 40rpx;
   position: relative; 
   left: -22rpx; 
-  top: 170rpx; 
+  bottom: -45rpx; 
   height: 100rpx; 
   display: block; 
   box-sizing: border-box; 
