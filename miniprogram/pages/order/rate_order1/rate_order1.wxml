@@ -26,6 +26,7 @@
       </view>
     </view>
   </view>
-
+  <view class="progress"></view>
+  <view class="currentprogress"></view>
   <button class="btn"  style="background-color:#FFCE4B;" bindtap="gotoRate2">Continue</button>
 </view>

@@ -26,6 +26,7 @@ Page({
         takeaway: "1",
         state: "0",
         food: this.data.name,
+        imgurl: this.data.imgurl,
         rest_name: this.data.rest_name,
         created_at: util.formatTime(new Date())
       }
@@ -46,6 +47,7 @@ Page({
         takeaway: "0",
         state: "0",
         food: this.data.name,
+        imgurl: this.data.imgurl,
         rest_name: this.data.rest_name,
         created_at: util.formatTime(new Date())
       }
@@ -69,6 +71,7 @@ Page({
         id: res.data[0]._id,
         name: res.data[0].food_name,
         description: res.data[0].description,
+        imgurl: res.data[0].food_photo_link,
         calcium: res.data[0]['calcium(%daily)'],
         calories: res.data[0].calories,
         fat: res.data[0]['fat(%daily)'],

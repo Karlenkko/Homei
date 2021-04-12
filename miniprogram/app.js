@@ -26,6 +26,16 @@ App({
       data: {},
       success: res => {
         this.globalData.openid = res.result.openid
+        const db = wx.cloud.database();
+        db.collection('Client').where({_openid: this.globalData.openid}).get().then((res) => {
+          if(res.data.length == 0) {
+            db.collection('Client').add({
+              data: {
+                client_tag: ""
+              }
+            })
+          }
+        })
       },
       fail: err => {
         wx.navigateTo({

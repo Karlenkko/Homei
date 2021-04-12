@@ -4,11 +4,11 @@
   <scroll-view scroll-y="true" class="scrollv" style="height:90vh;">
     <view><text decode="true">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Current Orders</text></view>
     <view wx:for="{{orders_wait}}">
-      <order_card rest_name="{{item.rest_name}}" food_name="{{item.food}}" price="{{item.price}}" rating="{{item.rating}}" order_id="{{item._id}}" date="{{item.date}}" bindtap="gotoRating" data-name="{{item.rest_name}}" data-id="{{item._id}}"></order_card>
+      <order_card rest_name="{{item.rest_name}}" food_name="{{item.food}}" price="{{item.price}}" rating="{{item.rating}}" order_id="{{item._id}}" date="{{item.created_at}}" img_url="{{item.imgurl}}" bindtap="gotoRating" data-name="{{item.rest_name}}"  data-id="{{item._id}}"></order_card>
     </view>
     <view><text decode="true">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Past Orders</text></view>
     <view wx:for="{{orders_finish}}">
-      <order_card rest_name="{{item.rest_name}}" food_name="{{item.food}}" price="{{item.price}}" rating="{{item.rating}}" order_id="{{item._id}}" date="{{item.date}}"></order_card>
+      <order_card rest_name="{{item.rest_name}}" food_name="{{item.food}}" price="{{item.price}}" rating="{{item.rating}}" img_url="{{item.imgurl}}" order_id="{{item._id}}" date="{{item.created_at}}"></order_card>
     </view>
 </scroll-view>
 </view>

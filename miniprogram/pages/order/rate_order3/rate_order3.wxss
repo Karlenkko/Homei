@@ -57,3 +57,13 @@
   height: 76rpx; 
   font-size: 32rpx;
 }
+.currentprogress{
+  z-index: 2;
+  position: fixed;
+  bottom: 188rpx;
+  height: 10rpx;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  background-color: #FF9F48;
+}

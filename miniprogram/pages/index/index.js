@@ -109,7 +109,7 @@ Page({
       this.setData({
         restaurants: res.data
       })
-    }).then(() => {
+      console.log(res.data)
       let burger1 = []
       let burger2 = []
       let asian1 = []
@@ -141,6 +141,7 @@ Page({
         drink_recom: drink2
       })
     })
+    
   },
 
   // add new client tags
@@ -154,6 +155,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
+    
   },
   /**
    * 生命周期函数--监听页面显示

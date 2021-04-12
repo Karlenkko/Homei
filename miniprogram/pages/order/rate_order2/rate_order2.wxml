@@ -18,5 +18,7 @@
     <view class="star" bindtap="set9"><image class="star" src="{{star9}}" mode="aspectFit"></image></view>
     <view class="star" bindtap="set10"><image class="star" src="{{star10}}" mode="aspectFit"></image></view>
   </view>
+  <view class="progress"></view>
+  <view class="currentprogress"></view>
   <button class="btn"  style="background-color:#FFCE4B;" bindtap="gotoRate3">Continue</button>
 </view>
