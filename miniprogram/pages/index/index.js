@@ -5,6 +5,7 @@ const referer = "HOMEI";
 const chooseLocation = requirePlugin('chooseLocation');
 
 const db = wx.cloud.database();
+const Client = db.collection('Client');
 
 Page({
 
@@ -99,7 +100,6 @@ Page({
       clientWidth=res.windowWidth,
       rpxR=750/clientWidth;
       var calc=clientHeight*rpxR-180;
-      console.log(calc)
       that.setData( { 
       winHeight: calc 
       }); 
@@ -109,7 +109,6 @@ Page({
       this.setData({
         restaurants: res.data
       })
-      console.log(res.data)
       let burger1 = []
       let burger2 = []
       let asian1 = []
@@ -147,7 +146,7 @@ Page({
   // add new client tags
   add: function () {
     wx.navigateTo({
-      url : 'client_tag/client_tag?id=24',
+      url : 'client_tag/client_tag',
     })
   },
 
@@ -168,6 +167,37 @@ Page({
         location: location.address
       })
     }
+    var std_tag;  // client_tag in the standard format
+    var final_tags = [];
+    let  PromiseArr = [];
+    var openid = app.globalData.openid;
+    PromiseArr.push(new Promise((reslove,reject)=>{
+      Client.where({_openid : openid}).get({
+        success: function(res){
+          // long tag format stored in the database ==> short tag format displayed at the front-end
+          std_tag = res.data[0].client_tag;
+          var ori_tags = std_tag.split(/[;]/);
+          if(ori_tags[0] != "normal"){
+            final_tags[final_tags.length] = ori_tags[0];
+          }
+          if(ori_tags[1] != "normal"){
+            final_tags[final_tags.length] = ori_tags[1];
+          }
+          if(ori_tags[2] != "non halal"){
+            final_tags[final_tags.length] = ori_tags[2];
+          }
+          for (var j = 3; j < ori_tags.length; j++){
+            final_tags[final_tags.length] = ori_tags[j];
+          }
+          reslove();
+        }
+      })
+    }))
+    Promise.all(PromiseArr).then(res=>{
+      this.setData({             
+        client_tag: final_tags
+      })
+    })
   },
 
   /**

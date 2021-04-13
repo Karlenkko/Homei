@@ -10,7 +10,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-
     allergen : ["wheat", "soy", "tree nuts", "fish", "peanuts", "shellfish", "eggs", "milk"],
     num_new_pre : 0,
     new_tag_list : [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
@@ -82,7 +81,7 @@ Page({
       std_tag : final_string,
     })
     // rewrite the data in the DB
-    Client.doc(this.data.user_id).update({
+    Client.doc(this.data.client_id).update({
       data:{
         client_tag:final_string
       },
@@ -150,7 +149,7 @@ Page({
         new_tag_list : [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
       })
       // rewrite the data in the DB
-      Client.doc(this.data.user_id).update({
+      Client.doc(this.data.client_id).update({
         data:{
           client_tag:std_tag
         },
@@ -162,18 +161,15 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var client_id;  //the id of the instance in the table "Client", not the openid
     var std_tag;  // client_tag in the standard format
     var final_tags = [];
     let  PromiseArr = [];
-    const {id} = options;
-    var user_id = parseInt(id);
-    this.setData({
-      user_id : user_id,
-    });
     PromiseArr.push(new Promise((reslove,reject)=>{
-      Client.where({_id : user_id}).get({
+      Client.where({_openid : app.globalData.openid}).get({
         success: function(res){
           // long tag format stored in the database ==> short tag format displayed at the front-end
+          client_id = res.data[0]._id;
           std_tag = res.data[0].client_tag;
           var ori_tags = std_tag.split(/[;]/);
           if(ori_tags[0] != "normal"){
@@ -196,6 +192,7 @@ Page({
       this.setData({             
         tag : final_tags,
         std_tag : std_tag,
+        client_id : client_id,
       })
     })
   },
@@ -211,7 +208,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    
   },
 
   /**

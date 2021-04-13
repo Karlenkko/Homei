@@ -1,7 +1,7 @@
 /* miniprogram/pages/index/index.wxss */
 .header{
   background-color: #FF9F48;
-  height: 160rpx;
+  height: 200rpx;
   width: 100%;
   position: fixed;
   z-index: -1;
@@ -9,7 +9,7 @@
 }
 .userinfo{
   margin: 0;
-  height: 160rpx;
+  height: 130rpx;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -50,7 +50,7 @@
   width: 100%;
   height: 180rpx;
   position: fixed;
-  top: 160rpx;
+  top: 200rpx;
 }
 .tab-h{
   display: flex;
@@ -61,6 +61,22 @@
   height: 140rpx;
   width: 100%; 
   background: #f2f2f2;
+}
+.tag-h{
+  white-space: nowrap;
+  flex-wrap: wrap;
+  flex-flow: row;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 60rpx;
+  width: 370rpx; 
+  position: relative;
+  left: 200rpx;
+  overflow: scroll;
+}
+.this_tag{
+  display: inline-block;
+  box-sizing: border-box;
 }
 .tab-item{
   width: 120rpx;
@@ -112,7 +128,7 @@
 
 .body{
   position: fixed;
-  top: 160rpx;
+  top: 200rpx;
   bottom: 0;
   width: 100%;
   background-color: #F2F2F2;

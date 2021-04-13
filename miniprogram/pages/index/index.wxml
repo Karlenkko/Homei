@@ -15,8 +15,13 @@
       </view>
       Hey,<open-data type="userNickName"></open-data>
     </view>
-    <image class="img-icon_add" mode="aspectFit" src="images/icon_add.png" bindtap="add"></image>
   </view>
+  <scroll-view scroll-x="true" showScrollbar="{{ false }}" class="tag-h" enable-flex="true">
+    <block wx:for='{{client_tag}}' wx:for-item='dataItem'>
+      <view class="this_tag"><tag name="{{dataItem}}" color="#000000"></tag></view>
+    </block>
+  </scroll-view>
+  <image class="img-icon_add" mode="aspectFit" src="images/icon_add.png" bindtap="add" style="position: relative; left: 600rpx; top: -60rpx"></image>
 </view>
 <view class="body">
   <view class="scroll-h">
