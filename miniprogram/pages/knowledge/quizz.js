@@ -87,9 +87,28 @@ Page({
       }
     }
     if(points > 1){
-      console.log('You win a coupon!!!');
-    }else{
-      console.log('Good luck next time!');
+      var myDate = new Date();
+			var y =	myDate.getFullYear() ;    
+			var m = myDate.getMonth() + 1;       
+			if(m<10){
+				m = "0"+m;
+			}
+			var d = myDate.getDate();        
+			if(d<10){
+				d = "0"+d;
+			}
+			var h = myDate.getHours();       
+			if(h<10){
+				h = "0"+h;
+			}
+			var s = myDate.getMinutes();    
+			var mytime= y +"/"+ m +"/"+ d+"-"+ h+"：" + s;
+      db.collection('Coupon').add({
+        data: {
+          amount : 2,
+          created_at :  mytime,
+        }
+      })
     }
     var destination = 'result?score=' + points + '&q1=' + results[0] + '&q2=' + results[1] + '&q3=' + results[2];
     wx.navigateTo({
