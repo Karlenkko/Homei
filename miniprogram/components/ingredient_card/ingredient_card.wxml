@@ -1,0 +1,5 @@
+<!--components/ingredient_card/ingredient_card.wxml-->
+<view class="container">
+  <image class="ingredient" src="{{source}}"></image>
+  <image class="chosen" src="{{ok==1?yesSrc:noSrc}}" mode="aspectFill"></image>
+</view>

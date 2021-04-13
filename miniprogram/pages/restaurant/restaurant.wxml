@@ -1,0 +1,38 @@
+<!--miniprogram/pages/restaurant/restaurant.wxml-->
+<view class="header">
+  <view class="title">Northwest Flavor</view>
+</view>
+<view class="body">
+  <text class="description" style="position: relative; top: 80rpx">{{order_name.length}} Pending Orders</text>
+  <view class="show-info" style="position: relative; top: 160rpx">
+    <scroll-view class='left' scroll-y="{{true}}" >
+      <view wx:for="{{order_name}}"  wx:for-item='dataItem' wx:for-index='inner_index'>
+        <view>
+          <order_tdw id="{{inner_index}}" name="{{dataItem}}" back_color="{{inner_index==orderCur?'#FF9F48':'#F4F5F9'}}" bindtap="showOrder" >
+          </order_tdw>
+        </view>
+      </view>
+    </scroll-view>
+    
+    <view class="right">
+      <scroll-view scroll-x class="navbar" scroll-with-animation scroll-left="{{scrollLeft}}rpx">
+        <view class="nav-item" wx:for="{{product_list}}" wx:key="id" bindtap="tabSelect" data-id="{{index}}">
+          <view class="nav-text">
+            <ingredient_card id="{{index}}" ingredientName="{{item}}" ok="{{product_ok[index]}}" bindtap="selectProduct"></ingredient_card>
+          </view>
+        </view>
+      </scroll-view>
+      <scroll-view class='list' scroll-y="{{true}}" >
+        <view class="ingredient-list">
+          <view wx:for="{{ingre_id}}"  wx:for-item='item' wx:for-index='index'>
+            <view>
+              <ingredient_tdw id="{{index}}" name="id:{{item}}" back_color="{{index==ingreChosen?'#FF9F48':'#F4F5F9'}}" bindtap="selectIngre">
+              </ingredient_tdw>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+        
+  </view>
+</view>

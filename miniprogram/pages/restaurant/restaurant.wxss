@@ -1,0 +1,116 @@
+/* miniprogram/pages/restaurant/restaurant.wxss */
+.header{
+  background-color: #FF9F48;
+  height: 160rpx;
+  width: 100%;
+  position: fixed;
+  z-index: -1;
+  border-bottom: 50rpx solid #FF9F48;
+  text-align: center;
+}
+.title{
+  font-weight: 500;
+  font-size: 60rpx;
+  position: relative;
+  top: 20rpx
+}
+.description{
+  font-weight: 500;
+  font-size: 40rpx;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.body{
+  position: fixed;
+  top: 160rpx;
+  width: 100%;
+  background-color: #FFFFFF;
+  border: 1px solid #FFFFFF;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  height: 1250rpx;
+}
+.show-info {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 20rpx 0;
+  box-sizing: border-box;
+}
+
+.left {
+  width: 45%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.price-item {
+  /* width: 130rpx; */
+  position: relative;
+  height: 100%;
+  line-height: 112rpx;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+  padding-left: 30rpx;
+}
+
+.right {
+  width: 55%;
+  height: 3000rpx;
+  display: flex;
+  flex-direction: column;
+  margin-left: 20rpx;
+}
+
+.list{
+  height:100%;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.navbar {
+  width: 100%;
+  height: 120rpx;
+  white-space: nowrap;
+  display: flex;
+  box-sizing: border-box;
+  border-bottom: 1rpx solid #eee;
+  background: #fff;
+  align-items: center;
+  position: relative;
+  left: 0rpx;
+  top: 0rpx;
+}
+
+
+.nav-item {
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+  height: 100%;
+  display: inline-block;
+  /* 普通文字大小 */
+  font-size: 28rpx;
+}
+
+.nav-text {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 4rpx;
+  box-sizing: border-box;
+}
+
+.img-ingre{
+  position: relative;
+  height: 120rpx;
+  width: 120 rpx
+}
+
+

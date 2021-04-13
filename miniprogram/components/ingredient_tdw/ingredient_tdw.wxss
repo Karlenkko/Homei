@@ -1,0 +1,17 @@
+/* components/ingredient_tdw/ingredient_tdw.wxss */
+.large_tag{
+  background-color: brown;
+  margin: 30rpx 20rpx 40rpx 20rpx;
+  height: 60rpx;
+  text-align: center;
+  font-size: 35rpx;
+  width: 370rpx;
+  vertical-align: bottom;
+  border-bottom-right-radius: 30rpx;
+  border-bottom-left-radius: 30rpx;
+  border-top-right-radius: 30rpx;
+  border-top-left-radius: 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

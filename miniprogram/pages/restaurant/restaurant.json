@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "order_tdw": "/components/order_tdw/order_tdw",
+    "ingredient_tdw": "/components/ingredient_tdw/ingredient_tdw",
+    "ingredient_card": "/components/ingredient_card/ingredient_card"
+  }
+}

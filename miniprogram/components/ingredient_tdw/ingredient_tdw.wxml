@@ -1,0 +1,4 @@
+<!--components/ingredient_tdw/ingredient_tdw.wxml-->
+<view class="large_tag" style="background-color:{{back_color}}">
+  <text decode="true" style="color:#000000">{{name}}</text>
+</view>
