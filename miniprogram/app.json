@@ -15,7 +15,8 @@
     "pages/order/rate_order2/rate_order2",
     "pages/order/rate_order3/rate_order3",
     "pages/knowledge/out/out",
-    "pages/order/trace/trace"
+    "pages/order/trace/trace",
+    "pages/restaurant/restaurant"
   ],
   "window": {
     "backgroundColor": "#FF9F48",
@@ -54,6 +55,12 @@
         "text": "Account",
         "iconPath": "pages/account/images/icon_account.png",
         "selectedIconPath": "pages/account/images/icon_account1.png"
+      },
+      {
+        "pagePath": "pages/restaurant/restaurant",
+        "text": "Restaurant",
+        "iconPath": "pages/restaurant/images/icon_restaurant.png",
+        "selectedIconPath": "pages/restaurant/images/icon_restaurant1.png"
       }
     ]
   },
