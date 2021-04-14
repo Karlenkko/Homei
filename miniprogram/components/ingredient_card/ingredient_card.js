@@ -16,7 +16,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-    path: 'images/',
+    path: 'cloud://cloud1-5g29tvav9c043e9d.636c-cloud1-5g29tvav9c043e9d-1305402077/ingredient_icons/',
     fileType: '.png',
     source:"",
     ok:0,

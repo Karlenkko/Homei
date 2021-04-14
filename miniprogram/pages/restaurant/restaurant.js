@@ -235,7 +235,7 @@ Page({
       console.log(order_id);
       Order.doc(order_id).update({
         data: {
-          state:"1"
+          state:"1",
         },
         success: function(res) {
           console.log("state更新成功！")

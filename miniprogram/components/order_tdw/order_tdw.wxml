@@ -1,4 +1,4 @@
 <!--components/order_tdw/order_tdw.wxml-->
 <view class="large_tag" style="background-color:{{back_color}}">
-  <text decode="true" style="color:#000000">{{name}}</text>
+  <text class="name" decode="true" style="color:#000000">{{name}}</text>
 </view>
