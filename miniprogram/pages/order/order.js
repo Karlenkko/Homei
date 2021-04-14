@@ -12,6 +12,8 @@ Page({
   },
 
   gotoRating(e) {
+    //console.log(e.currentTarget.dataset.id);
+    //console.log(e.currentTarget.dataset.name);
     wx.navigateTo({
       url: './rate_order1/rate_order1?id='+e.currentTarget.dataset.id+"&name="+e.currentTarget.dataset.name,
     })

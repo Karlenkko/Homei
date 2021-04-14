@@ -63,10 +63,14 @@ Component({
    */
   methods: {
     gotoRating(e) {
-      console.log(this.data.order_id)
-      // wx.navigateTo({
-      //   url: '/pages/index/index?order_id='+this.data.order_id
-      // })
+      //console.log(this.data.order_id);
+      //console.log(this.properties.rest_name)
+      /*wx.navigateTo({
+         url: '/pages/index/index?order_id='+this.data.order_id
+      })*/
+      wx.navigateTo({
+        url: '/pages/order/rate_order1/rate_order1?id='+this.data.order_id+'&name='+this.properties.rest_name,
+      });
     },
   }
 })
