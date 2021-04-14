@@ -37,3 +37,7 @@
   margin-top: 32rpx;
   width: 100%;
 }
+.sub_title{
+  font-size: 16px;
+  margin: 20rpx 40rpx 20rpx 40rpx;
+}

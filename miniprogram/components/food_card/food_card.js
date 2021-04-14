@@ -18,6 +18,9 @@ Component({
     },
     discount_price: {
       type: Number
+    },
+    color: {
+      type: String
     }
   },
 

@@ -1,5 +1,5 @@
 <!--components/food_card/food_card.wxml-->
-<view class="container" >
+<view class="container" style="{{'background-color: ' + color}}">
   <view class="foodimg">
     <image class="image" mode="aspectFit" src="{{img_url?img_url:'images/food.png'}}"></image>
   </view>
