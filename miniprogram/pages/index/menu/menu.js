@@ -51,7 +51,6 @@ Page({
         eta: res.data[0].delivery_time
       })
       db.collection('Menu').where({restaurant_id : parseInt(this.data.id)}).get().then((res) => {
-        console.log(res.data)
         this.setData({
           menu_normal: res.data
         })

@@ -94,53 +94,45 @@ Page({
       return
     }
     // 高度自适应
-    wx.getSystemInfo( { 
-    success: function( res ) { 
-      var clientHeight=res.windowHeight,
-      clientWidth=res.windowWidth,
-      rpxR=750/clientWidth;
-      var calc=clientHeight*rpxR-180;
-      that.setData( { 
-      winHeight: calc 
-      }); 
-    } 
+    wx.getSystemInfo({ 
+      success: function( res ) { 
+        var clientHeight=res.windowHeight,
+        clientWidth=res.windowWidth,
+        rpxR=750/clientWidth;
+        var calc=clientHeight*rpxR-180;
+        that.setData({ 
+          winHeight: calc 
+        }); 
+      } 
     });
-    db.collection('Restaurant').get().then((res) => {
-      this.setData({
-        restaurants: res.data
-      })
-      let burger1 = []
-      let burger2 = []
-      let asian1 = []
-      let asian2 = []
-      let dessert1 = []
-      let dessert2 = []
-      let drink1 = []
-      let drink2 = []
-      for (let index = 0; index < this.data.restaurants.length; index++) {
-        const type = this.data.restaurants[index].type;
-        if ("burger" == type) {
-          burger1.push(this.data.restaurants[index])
-        } else if ("asian" == type) {
-          asian1.push(this.data.restaurants[index])
-        } else if ("dessert" == type) {
-          dessert1.push(this.data.restaurants[index])
-        } else if ("drinks" == type) {
-          drink1.push(this.data.restaurants[index])
-        }
+  },
+
+  // check whether a restaurant should be recommended
+  recommend: function (description) {
+    var client_tag = this.data.client_tag;
+    var description_list = description.split(/[;]/);
+    var status = 1;  // 1 for recommended, 2 for not recommended, 0 for do not display
+    if (client_tag.indexOf("on diet") != -1 ){
+      if (description_list.indexOf("on diet") == -1){
+        status = 2;
       }
-      this.setData({
-        burger_normal: burger1,
-        burger_recom: burger2,
-        asian_normal: asian1,
-        asian_recom: asian2,
-        dessert_normal: dessert1,
-        dessert_recom: dessert2,
-        drink_normal: drink1,
-        drink_recom: drink2
-      })
-    })
-    
+    }
+    if (client_tag.indexOf("vegan") != -1){
+      if (description_list.indexOf("vegan") == -1){
+        status = 2;
+      }
+    }
+    if (client_tag.indexOf("vegetarian") != -1 ){
+      if (description_list.indexOf("vegetarian") == -1 && description_list.indexOf("vegan") == -1){
+        status = 2;
+      }
+    }
+    if (client_tag.indexOf("halal") != -1 ){
+      if (description_list.indexOf("halal") == -1){
+        status = 0;
+      }
+    }
+    return status;
   },
 
   // add new client tags
@@ -196,6 +188,59 @@ Page({
     Promise.all(PromiseArr).then(res=>{
       this.setData({             
         client_tag: final_tags
+      })
+      db.collection('Restaurant').limit(20).get().then((res) => {
+        this.setData({
+          restaurants: res.data
+        })
+        let burger1 = []
+        let burger2 = []
+        let asian1 = []
+        let asian2 = []
+        let dessert1 = []
+        let dessert2 = []
+        let drink1 = []
+        let drink2 = []
+        for (let index = 0; index < this.data.restaurants.length; index++) {
+          const type = this.data.restaurants[index].type;
+          const description = this.data.restaurants[index].description_string;
+          const recommendation = this.recommend(description);
+          if ("burger" == type) {
+            if(recommendation == 1){
+              burger1.push(this.data.restaurants[index])
+            }else if (recommendation == 2) {
+              burger2.push(this.data.restaurants[index])
+            }
+          } else if ("asian" == type) {
+            if(recommendation == 1){
+              asian1.push(this.data.restaurants[index])
+            }else if (recommendation == 2) {
+              asian2.push(this.data.restaurants[index])
+            }
+          } else if ("dessert" == type) {
+            if(recommendation == 1){
+              dessert1.push(this.data.restaurants[index])
+            }else if (recommendation == 2) {
+              dessert2.push(this.data.restaurants[index])
+            }
+          } else if ("drinks" == type) {
+            if(recommendation == 1){
+              drink1.push(this.data.restaurants[index])
+            }else if (recommendation == 2) {
+              drink2.push(this.data.restaurants[index])
+            }
+          }
+        }
+        this.setData({
+          burger_normal: burger2,
+          burger_recom: burger1,
+          asian_normal: asian2,
+          asian_recom: asian1,
+          dessert_normal: dessert2,
+          dessert_recom: dessert1,
+          drink_normal: drink2,
+          drink_recom: drink1
+        })
       })
     })
   },

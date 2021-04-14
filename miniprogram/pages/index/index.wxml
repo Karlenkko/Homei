@@ -37,27 +37,43 @@
   <swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab"
   style="height:{{winHeight}}rpx">
   <swiper-item wx:for="{{[0,1,2,3]}}">
-   <scroll-view scroll-y="true" class="scroll-v" enable-flex="true" style="height:{{winHeight}}rpx;overflow:auto;">
+   <scroll-view scroll-y="true" class="scroll-v" enable-flex="true" style="height:{{winHeight * 0.85}}rpx;overflow:auto;">
     <view wx:if="{{currentTab==0}}" style="height:1500rpx">
-      <view class="title">Recommended Burger</view>
+      <view class="title">{{burger_recom.length? 'Recommended Burger':'No Recommended Burger'}}</view>
+      <view wx:for="{{burger_recom}}" style="margin-top:40rpx;margin-bottom:20rpx" >
+        <restaurant_card name="{{item.description}}" eta="{{item.delivery_time}}" rating="{{item.rating}}" self_tags="{{item.description_string}}" image_url="{{item.imgurl}}" bindtap="gotoMenu"  data-name="{{item.description}}"></restaurant_card>
+      </view>
+      <view class="title">Other Choices</view>
       <view wx:for="{{burger_normal}}" style="margin-top:40rpx;margin-bottom:20rpx" >
         <restaurant_card name="{{item.description}}" eta="{{item.delivery_time}}" rating="{{item.rating}}" self_tags="{{item.description_string}}" image_url="{{item.imgurl}}" bindtap="gotoMenu"  data-name="{{item.description}}"></restaurant_card>
       </view>
     </view>
     <view wx:if="{{currentTab==1}}" style="height:1000rpx">
-      <view class="title">Recommended Asian Food</view>
+      <view class="title">{{asian_recom.length? 'Recommended Asian Food':'No Recommended Asian Food'}}</view>
+      <view wx:for="{{asian_recom}}" style="margin-top:40rpx;margin-bottom:20rpx">
+        <restaurant_card name="{{item.description}}" eta="{{item.delivery_time}}" rating="{{item.rating}}" self_tags="{{item.description_string}}" image_url="{{item.imgurl}}" bindtap="gotoMenu" data-name="{{item.description}}"></restaurant_card>
+      </view>
+      <view class="title">Other Choices</view>
       <view wx:for="{{asian_normal}}" style="margin-top:40rpx;margin-bottom:20rpx">
         <restaurant_card name="{{item.description}}" eta="{{item.delivery_time}}" rating="{{item.rating}}" self_tags="{{item.description_string}}" image_url="{{item.imgurl}}" bindtap="gotoMenu" data-name="{{item.description}}"></restaurant_card>
       </view>
     </view>
     <view wx:if="{{currentTab==2}}" style="height:1500rpx">
-      <view class="title">Recommended Bakery</view>
+      <view class="title">{{dessert_recom.length? 'Recommended Bakery':'No Recommended Bakery'}}</view>
+      <view wx:for="{{dessert_recom}}" style="margin-top:40rpx;margin-bottom:20rpx">
+        <restaurant_card name="{{item.description}}" eta="{{item.delivery_time}}" rating="{{item.rating}}" self_tags="{{item.description_string}}" image_url="{{item.imgurl}}" bindtap="gotoMenu" data-name="{{item.description}}"></restaurant_card>
+      </view>
+      <view class="title">Other Choices</view>
       <view wx:for="{{dessert_normal}}" style="margin-top:40rpx;margin-bottom:20rpx">
         <restaurant_card name="{{item.description}}" eta="{{item.delivery_time}}" rating="{{item.rating}}" self_tags="{{item.description_string}}" image_url="{{item.imgurl}}" bindtap="gotoMenu" data-name="{{item.description}}"></restaurant_card>
       </view>
     </view>
     <view wx:if="{{currentTab==3}}" style="height:1000rpx">
-      <view class="title">Recommended Drinks</view>
+      <view class="title">{{drink_recom.length? 'Recommended Drinks':'No Recommended Drinks'}}</view>
+      <view wx:for="{{drink_recom}}" style="margin-top:40rpx;margin-bottom:20rpx">
+        <restaurant_card name="{{item.description}}" eta="{{item.delivery_time}}" rating="{{item.rating}}" self_tags="{{item.description_string}}"image_url="{{item.imgurl}}"  bindtap="gotoMenu" data-name="{{item.description}}"></restaurant_card>
+      </view>
+      <view class="title">Other Choices</view>
       <view wx:for="{{drink_normal}}" style="margin-top:40rpx;margin-bottom:20rpx">
         <restaurant_card name="{{item.description}}" eta="{{item.delivery_time}}" rating="{{item.rating}}" self_tags="{{item.description_string}}"image_url="{{item.imgurl}}"  bindtap="gotoMenu" data-name="{{item.description}}"></restaurant_card>
       </view>
