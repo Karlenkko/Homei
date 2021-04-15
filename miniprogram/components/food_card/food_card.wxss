@@ -4,7 +4,6 @@
   height: 160rpx;
   position: relative;
   margin: 1% 6% 1% 6%;
-  background-color: #ffffff;
   border-bottom-color: #c0c0c0;
   border-bottom-style: solid;
   border-bottom-width: 1rpx;

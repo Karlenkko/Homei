@@ -16,10 +16,8 @@ App({
         success: function(res) {
       },
       fail: function(){
-      console.log("启用wx.login函数，失败！");
       },
       complete:function(){
-      console.log("已启用wx.login函数");
       }
     });
     let  PromiseArr = [];
