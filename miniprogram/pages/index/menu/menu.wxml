@@ -18,7 +18,7 @@
       </view>
       <view class="sub_title">Menu</view>
       <view wx:for="{{menu_normal}}">
-        <food_card img_url="{{item.food_photo_link}}" name="{{item.food_name}}" ingredients="{{item.ingredients}}" standard_price="{{item.price}}" discount_price="{{item.discount_price}}" bindtap="gotoFood" data-foodid="{{item._id}}" color="{{allergen_alert[index]? '#ffb6c1' : '#ffffff'}}"></food_card>
+        <food_card img_url="{{item.food_photo_link}}" name="{{item.food_name}}" ingredients="{{item.ingredients}}" standard_price="{{item.price}}" discount_price="{{item.discount_price}}" bindtap="gotoFood" data-foodid="{{'' + item._id + ';' + index}}" color="{{allergen_alert[index]? '#ffb6c1' : '#ffffff'}}"></food_card>
       </view>
     </scroll-view>
   </view>

@@ -25,7 +25,7 @@ App({
     });*/
     let  PromiseArr = [];
     var openid;
-    PromiseArr.push(new Promise((reslove,reject)=>{
+    PromiseArr.push(new Promise((resolve,reject)=>{
       wx.cloud.callFunction({
         name: 'login',
         data: {},
@@ -41,7 +41,7 @@ App({
               })
             }
           })
-          reslove();
+          resolve();
         },
         fail: err => {
           wx.navigateTo({

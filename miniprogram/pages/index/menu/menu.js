@@ -23,9 +23,40 @@ Page({
     eta: "",
   },
   gotoFood(e){
-    wx.navigateTo({
-      url: './food/food?id='+e.currentTarget.dataset.foodid+"&eta="+this.data.eta+"&rest="+this.data.name,
-    })
+    var info = e.currentTarget.dataset.foodid.toString().split(/[;]/);
+    var food_id = info[0];
+    if (info.length == 2){
+      var index = parseInt(info[1]);
+      var food_info = this.data.menu_normal[index];
+      if (this.data.allergen_alert[index]){
+        var eta = this.data.eta;
+        var name = this.data.name;
+        wx.showModal({
+          title: 'Warning',
+          content: 'The ' + food_info.food_name + ' contains ' + this.data.allergen_alert[index] + ', which is one of your allergens according to your tags. Do you still want to visit the details page of it?',
+          cancelText: 'Cancel',
+          cancelColor: '#000000',
+          confirmText: 'Confirm',
+          confirmColor: '',
+          success (res) {
+            if (res.confirm) {
+              wx.navigateTo({
+                url: './food/food?id=' + food_id + "&eta=" + eta + "&rest=" + name,
+              })
+            } else if (res.cancel) {
+            }
+          }
+        })
+      }else{
+        wx.navigateTo({
+          url: './food/food?id=' + food_id + "&eta=" + this.data.eta + "&rest=" + this.data.name,
+        })
+      }
+    }else{
+      wx.navigateTo({
+        url: './food/food?id=' + food_id + "&eta=" + this.data.eta + "&rest=" + this.data.name,
+      })
+    }
   },
 
   /**
@@ -128,10 +159,10 @@ Page({
     var food_tag_list = food_tag.split(/[;]/);
     for (var i = 3; i < client_tag.length; i++){
       if (food_tag_list.indexOf(client_tag[i]) != -1){
-        return true;
+        return client_tag[i];
       }
     }
-    return false;
+    return "";
   },
 
   /**

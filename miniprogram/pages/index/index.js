@@ -156,24 +156,82 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow:async function () {
     const location = chooseLocation.getLocation(); // 如果点击确认选点按钮，则返回选点结果对象，否则返回null
     if (location){
-      console.log(location)
       this.setData({
         location: location.address
       })
     }
-    var std_tag;  // client_tag in the standard format
-    var final_tags = [];
-    let  PromiseArr = [];
     var openid = app.globalData.openid;
-    //var openid=this.data.openid;
-    PromiseArr.push(new Promise((reslove,reject)=>{
+    //"oqLxe5AvyOuiJDc5QtMu2G4cqwVA";
+    //app.globalData.openid;
+    console.log(openid)
+    var final_tags = await this.get_client_tag(openid);
+    this.setData({             
+      client_tag: final_tags
+    })
+    var restaurants = await this.get_restaurants();
+    this.setData({
+      restaurants: restaurants
+    })
+    let burger1 = []
+    let burger2 = []
+    let asian1 = []
+    let asian2 = []
+    let dessert1 = []
+    let dessert2 = []
+    let drink1 = []
+    let drink2 = []
+    for (let index = 0; index < this.data.restaurants.length; index++) {
+      const type = this.data.restaurants[index].type;
+      const description = this.data.restaurants[index].description_string;
+      const recommendation = this.recommend(description);
+      if ("burger" == type) {
+        if(recommendation == 1){
+          burger1.push(this.data.restaurants[index])
+        }else if (recommendation == 2) {
+          burger2.push(this.data.restaurants[index])
+        }
+      } else if ("asian" == type) {
+        if(recommendation == 1){
+          asian1.push(this.data.restaurants[index])
+        }else if (recommendation == 2) {
+          asian2.push(this.data.restaurants[index])
+        }
+      } else if ("dessert" == type) {
+        if(recommendation == 1){
+          dessert1.push(this.data.restaurants[index])
+        }else if (recommendation == 2) {
+          dessert2.push(this.data.restaurants[index])
+        }
+      } else if ("drinks" == type) {
+        if(recommendation == 1){
+          drink1.push(this.data.restaurants[index])
+        }else if (recommendation == 2) {
+          drink2.push(this.data.restaurants[index])
+        }
+      }
+    }
+    this.setData({
+      burger_normal: burger2,
+      burger_recom: burger1,
+      asian_normal: asian2,
+      asian_recom: asian1,
+      dessert_normal: dessert2,
+      dessert_recom: dessert1,
+      drink_normal: drink2,
+      drink_recom: drink1
+    })
+  },
+
+  get_client_tag: function (openid) {
+    return new Promise((resolve, reject) => {
       Client.where({_openid : openid}).get({
-        success: function(res){
+        success: function (res) {
           // long tag format stored in the database ==> short tag format displayed at the front-end
-          std_tag = res.data[0].client_tag;
+          var final_tags = [];
+          var std_tag = res.data[0].client_tag;
           var ori_tags = std_tag.split(/[;]/);
           if(ori_tags[0] != "normal"){
             final_tags[final_tags.length] = ori_tags[0];
@@ -187,67 +245,19 @@ Page({
           for (var j = 3; j < ori_tags.length; j++){
             final_tags[final_tags.length] = ori_tags[j];
           }
-          reslove();
+          resolve(final_tags);
         }
-      })
-    }))
-    Promise.all(PromiseArr).then(res=>{
-      this.setData({             
-        client_tag: final_tags
-      })
-      db.collection('Restaurant').limit(20).get().then((res) => {
-        this.setData({
-          restaurants: res.data
-        })
-        let burger1 = []
-        let burger2 = []
-        let asian1 = []
-        let asian2 = []
-        let dessert1 = []
-        let dessert2 = []
-        let drink1 = []
-        let drink2 = []
-        for (let index = 0; index < this.data.restaurants.length; index++) {
-          const type = this.data.restaurants[index].type;
-          const description = this.data.restaurants[index].description_string;
-          const recommendation = this.recommend(description);
-          if ("burger" == type) {
-            if(recommendation == 1){
-              burger1.push(this.data.restaurants[index])
-            }else if (recommendation == 2) {
-              burger2.push(this.data.restaurants[index])
-            }
-          } else if ("asian" == type) {
-            if(recommendation == 1){
-              asian1.push(this.data.restaurants[index])
-            }else if (recommendation == 2) {
-              asian2.push(this.data.restaurants[index])
-            }
-          } else if ("dessert" == type) {
-            if(recommendation == 1){
-              dessert1.push(this.data.restaurants[index])
-            }else if (recommendation == 2) {
-              dessert2.push(this.data.restaurants[index])
-            }
-          } else if ("drinks" == type) {
-            if(recommendation == 1){
-              drink1.push(this.data.restaurants[index])
-            }else if (recommendation == 2) {
-              drink2.push(this.data.restaurants[index])
-            }
-          }
+      });
+    })
+  },
+
+  get_restaurants: function () {
+    return new Promise((resolve, reject) => {
+      db.collection('Restaurant').limit(20).get({
+        success: function (res) {
+          resolve(res.data);
         }
-        this.setData({
-          burger_normal: burger2,
-          burger_recom: burger1,
-          asian_normal: asian2,
-          asian_recom: asian1,
-          dessert_normal: dessert2,
-          dessert_recom: dessert1,
-          drink_normal: drink2,
-          drink_recom: drink1
-        })
-      })
+      });
     })
   },
 
@@ -255,7 +265,7 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-
+   
   },
 
   /**
