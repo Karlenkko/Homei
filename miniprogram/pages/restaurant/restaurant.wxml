@@ -24,8 +24,8 @@
       </scroll-view>
       <scroll-view class='list' scroll-y="{{true}}" >
         <view class="ingredient-list">
-          <view wx:for="{{ingre_id}}"  wx:for-item='item' wx:for-index='index'>
-            <view>
+          <view wx:if="{{ingre_id.length>0 && product_list.length>0}}" wx:for="{{ingre_id}}"  wx:for-item='item' wx:for-index='index'>
+            <view wx:if="{{ingre_id.length>0}}">
               <ingredient_tdw id="{{index}}" name="id:{{item}}" back_color="{{index==ingreChosen?'#FF9F48':'#F4F5F9'}}" bindtap="selectIngre">
               </ingredient_tdw>
             </view>

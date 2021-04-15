@@ -17,6 +17,7 @@ Page({
     order_name:[],
     product_list:[], //当前order所需食材
     product_ok:[], //食材是否已处理
+    choice:[],
     productCur:0,
     ingre_id:[],  //当前product所有可用ingre
     ingreChosen:-1  //选中的ingre，默认不选为-1
@@ -71,7 +72,8 @@ Page({
           product_ok:[],
           productCur:0,
           ingre_id:[],
-          ingreChosen:-1
+          ingreChosen:-1,
+          choice:[]
         })
       }
     });
@@ -85,12 +87,15 @@ Page({
     }).get().then((res) => {
       let ingredients=res.data[0].ingredients.split(";");
       let product_ok=[];
+      let choice=[];
       for (let i=0;i<ingredients.length;i++){
-        product_ok.push(0)
+        product_ok.push(0);
+        choice.push(-1);
       }
       this.setData({
         product_list:ingredients,
-        product_ok:product_ok
+        product_ok:product_ok,
+        choice:choice
       })
       //console.log(this.data.product_ok);
       this.loadIngredient();
@@ -122,32 +127,6 @@ Page({
           ingreChosen:ingreChosen
         })
       })
-    })
-  },
-
-  searchProduct: function(menu_id) {
-    Menu.where({
-      _id:menu_id
-    }).get().then((res) => {
-      this.setData({
-        product_list:res.data[0].ingredients
-      })
-      //console.log(this.data.product_list);
-      //let ingredients=res.data[0].ingredients;
-      
-      /*let ingredient=ingredients.split(";");
-      let productId=new Array(ingredient.length);
-      for (var i=0;i<ingredient.length();i++){
-        db.collection('Product').where({
-          name:ingredient[i]
-        })
-        .get({
-          success: function(res){
-            productId[i]=res.data[0]._id
-          }
-        })
-      }*/
-
     })
   },
 
@@ -217,21 +196,24 @@ Page({
     product_ok[this.data.productCur]=1;
     let id=this.data.ingre_id[event.currentTarget.id]; //要被更新的食材ID
     let order_id=this.data.order_list[this.data.orderCur]._id;
-    Ingredient.doc(id).update({
+    let choice=this.data.choice;
+    choice[this.data.productCur]=id;
+    /*Ingredient.doc(id).update({
       data: {
         order_id:order_id
       },
       success: function(res) {
         console.log("order_id写入成功！")
       }
-    })
+    })*/
     this.setData({
       ingreChosen:event.currentTarget.id,
       product_ok:product_ok,
       productCur:productCur,
-      ingre_id:[]
-    })
-    
+      ingre_id:[],
+      choice:choice
+    });
+    console.log(this.data.choice);
     this.checkOrder();
     this.loadIngredient();
   },
@@ -252,36 +234,84 @@ Page({
           state:"1",
         },
         success: function(res) {
-          console.log("state更新成功！")
+          console.log("state更新成功！");
         }
       })
+      this.writeid();
       this.setData({
         orderCur:0,
-        order_list:[],
-        order_name:[],
+        //order_list:[],
+        //order_name:[],
         product_list:[],
         product_ok:[],
         productCur:0,
         ingre_id:[],
-        ingreChosen:-1
+        ingreChosen:-1,
+        choice:[]
       })
-      this.onShow();
+      
+      
     }
   },
 
-  modifyUsage: function(menu_id){
-    productId=this.searchProduct(menu_id)
-    for (var i=0;i<productId.length();i++){
-      db.collection('Ingredients').where({
-        product_id:productId[i],
-        dish_id:db.command.neq('')
-      })
-      .get({
-        success: function(res){
-          res.data[0].dish_id=order._id //要改
+  writeid:function(){
+    let order_id=this.data.order_list[this.data.orderCur]._id;
+    console.log(this.data.choice.length);
+    for (let i=0;i<this.data.choice.length;i++)
+    {
+      let id=this.data.choice[i];
+      console.log(id);
+      Ingredient.doc(id).update({
+        data: {
+          order_id:order_id
+        },
+        success: function(res) {
+          console.log("order_id写入成功！")
         }
       })
     }
+    //this.onShow();
+    
+    //setTimeout(function () {
+      this.reloadorder();
+    //}, 1000)
+  },
+
+  reloadorder:function(){
+    Order.where({
+      restaurant_id : 5,
+      state:"0"
+    }).get().then((res) => {
+      //console.log(res.data);
+      this.setData({
+        order_list: res.data
+      })
+      let order_name=[];
+      for (let i=0;i<this.data.order_list.length;i++){
+        order_name.push(this.data.order_list[i].food);
+      }
+      //console.log(this.data.order_list);
+      this.setData({
+        order_name:order_name
+      });
+      //console.log(order_name);
+      if (order_name.length>0) {
+        this.loadProduct();
+      }
+      else {
+        this.setData({
+          orderCur:0,
+          order_list:[],
+          order_name:[],
+          product_list:[],
+          product_ok:[],
+          productCur:0,
+          ingre_id:[],
+          ingreChosen:-1,
+          choice:[]
+        })
+      }
+    });
   },
 
   tabSelect(e) {  //导航栏用
