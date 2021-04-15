@@ -11,7 +11,7 @@
         <large_rating name="" rating="{{rating}}" ></large_rating>
       </view>
       <view wx:else>
-        <view class="button_tag" bindtap="gotoRating"><text decode="true">&nbsp;&nbsp;rate it&nbsp;&nbsp;</text></view>
+        <view wx:if="{{state!='0'}}"class="button_tag" bindtap="gotoRating"><text decode="true">&nbsp;&nbsp;rate it&nbsp;&nbsp;</text></view>
       </view>
     </view>
     <view class="order">

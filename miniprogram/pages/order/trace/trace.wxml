@@ -1,2 +1,23 @@
 <!--miniprogram/pages/order/trace/trace.wxml-->
-<text>miniprogram/pages/order/trace/trace.wxml</text>
+<view class="header">
+  <image class="background" src="{{imgurl}}" mode="aspectFill"></image>
+</view>
+<view class="body">
+  <scroll-view scroll-x="true" class="navbar" scroll-with-animation>
+    <view class="nav-item" wx:for="{{product_list}}" wx:key="id" bindtap="tabSelect" data-id="{{index}}">
+      <view class="nav-text">
+        <ingredient_card id="{{index}}" ingredientName="{{item}}" ok="{{product_ok[index]}}" bindtap="selectProduct"></ingredient_card>
+      </view>
+    </view>
+  </scroll-view>
+  <text class="info">Ingredient tracker</text>
+  <view class="history">
+    <view clas="list" wx:for="{{trace}}" wx:for-item='item' wx:for-index='index'>
+      <view class="block">
+        <text class="location">{{item}}\n</text>
+        <text class="time">{{time[index]}}\n</text>
+      </view>
+    </view>
+    <text class="expiration">Expiration date:\n{{expiration}}</text>
+  </view>
+</view>

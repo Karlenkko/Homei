@@ -15,9 +15,17 @@ Page({
     //console.log(e.currentTarget.dataset.id);
     //console.log(e.currentTarget.dataset.name);
     wx.navigateTo({
-      url: './rate_order1/rate_order1?id='+e.currentTarget.dataset.id+"&name="+e.currentTarget.dataset.name,
+      url: './rate_order1/rate_order1?id='+e.currentTarget.dataset.id+'&name='+e.currentTarget.dataset.name,
     })
   },
+
+  gotoTrace: function(e){
+    //console.log(e.currentTarget.dataset);
+    wx.navigateTo({
+      url: '/pages/order/trace/trace?id='+e.currentTarget.dataset.id,
+    });
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -39,12 +47,13 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+
     db.collection('Order').where({client_id: app.globalData.openid}).get().then((res) => {
       function deleteWait(item) {
-        return item.rating > 0;
+        return item.state!="0";
       }
       function leaveWait(item) {
-        return item.rating=="";
+        return item.state=="0";
       }
       this.setData({
         orders_wait: res.data.filter(leaveWait),
@@ -87,4 +96,7 @@ Page({
   onShareAppMessage: function () {
 
   }
+
+  
+
 })

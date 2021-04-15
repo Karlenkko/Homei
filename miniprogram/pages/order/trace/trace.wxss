@@ -1,22 +1,93 @@
 /* miniprogram/pages/order/trace/trace.wxss */
 .header{
-  background-color: #FF9F48;
-  height: 0rpx;
+  height: 450rpx;
   width: 100%;
-  position: fixed;
-  z-index: -1;
-  border-bottom: 50rpx solid #FF9F48;
+  position: absolute;
+  top:0rpx;
+  z-index: 1;
+}
+.background{
+  top:-20rpx;
+  width:100%;
+  height:100%;
 }
 .body{
-  position: fixed;
-  top: 0rpx;
+  position: absolute;
+  background-color: #f4f5f9;
+  top: 420rpx;
   display: flex;
   flex-flow: column;
   bottom: 0;
   width: 100%;
-  z-index: 1;
-  background-color: #FFFFFF;
-  border: 1px solid #FFFFFF;
+  z-index: 2;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
+  align-items: center;
+  -webkit-overflow-scrolling: touch;
+}
+
+.navbar {
+  position: relative;
+  top:100rpx;
+  width: 420rpx;
+  height: 120rpx;
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content:center;
+  white-space: nowrap;
+  z-index: 5;
+  -webkit-overflow-scrolling: touch;
+}
+.nav-item {
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+  height: 100%;
+  display: inline-block;
+  /* 普通文字大小 */
+  font-size: 28rpx;
+  align-items: center;
+  justify-content:center
+}
+
+.nav-text {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 4rpx;
+  box-sizing: border-box;
+}
+
+.info{
+  position: relative;
+  padding-top:160rpx;
+  font-size:40rpx;
+}
+
+.history{
+  position: relative;
+  padding-top:40rpx;
+  font-size:35rpx;
+}
+
+.list{
+  position: relative;
+}
+.block{
+  position: relative;
+  padding-top: 40rpx;
+  padding-bottom: 40rpx;
+}
+.location{
+  font-size: 40rpx;
+}
+.time{
+  font-size: 20rpx;
+  color:#8e9097;
+}
+.expiration{
+  position: relative;
+  padding-top: 50rpx;
 }

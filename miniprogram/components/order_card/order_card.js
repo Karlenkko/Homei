@@ -24,6 +24,9 @@ Component({
     },
     order_id: {
       type:String
+    },
+    state:{
+      type:String
     }
   },
 
@@ -43,15 +46,22 @@ Component({
         order: this.properties.food_name + "  - " + "￥" + this.properties.price + "\n" + this.properties.date,
         order_id: this.properties.order_id
       })
-      if (this.properties.rating > 0) {
-        this.setData({
-          rated: "1",
-          order: this.data.order + " - completed - click to trace it"
-        })
-      } else {
+      if (this.properties.state == "0") {
         this.setData({
           rated: "0",
-          order: this.data.order + " - wating for your comment"
+          order: this.data.order + " - Cooking"
+        })
+      } 
+      else if (this.properties.state=="1") {
+        this.setData({
+          rated: "0",
+          order: this.data.order + " - Wating for your comment"
+        })
+      }
+      else {
+        this.setData({
+          rated: "1",
+          order: this.data.order + " - Completed - click to trace it"
         })
       }
       

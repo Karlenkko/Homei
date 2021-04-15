@@ -159,7 +159,8 @@ Page({
     }).then((res) => {
       db.collection('Order').where({_id: this.data.id}).update({
         data: {
-          rating: this.data.rating_rest
+          rating: this.data.rating_rest,
+          state:"2"
         }
       }).then((res) => {
         wx.switchTab({
