@@ -13,9 +13,15 @@
   <text class="info">Ingredient tracker</text>
   <view class="history">
     <view clas="list" wx:for="{{trace}}" wx:for-item='item' wx:for-index='index'>
-      <view class="block">
-        <text class="location">{{item}}\n</text>
-        <text class="time">{{time[index]}}\n</text>
+      <view class="setting">
+        <image class="icon" wx:if="{{index==0}}" src="images/farm.png" mode="aspectFit">
+        </image>
+        <image class="icon" wx:else src="images/restaurant.png" mode="aspectFit">
+        </image>
+        <view class="block">
+          <text class="location">{{item}}\n</text>
+          <text class="time">{{time[index]}}\n</text>
+        </view>
       </view>
     </view>
     <text class="expiration">Expiration date:\n{{expiration}}</text>

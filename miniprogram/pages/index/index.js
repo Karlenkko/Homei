@@ -13,6 +13,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    //openid:"",
     avatarUrl: './user-unlogin.png',
     userInfo: {},
     hasUserInfo: false,
@@ -105,6 +106,10 @@ Page({
         }); 
       } 
     });
+    /*var id=app.lc(function (id){
+      console.log(id);
+      that.setData({openid:id});
+    });*/
   },
 
   // check whether a restaurant should be recommended
@@ -163,6 +168,7 @@ Page({
     var final_tags = [];
     let  PromiseArr = [];
     var openid = app.globalData.openid;
+    //var openid=this.data.openid;
     PromiseArr.push(new Promise((reslove,reject)=>{
       Client.where({_openid : openid}).get({
         success: function(res){

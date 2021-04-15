@@ -63,22 +63,36 @@
 .info{
   position: relative;
   padding-top:160rpx;
-  font-size:40rpx;
+  font-size:50rpx;
 }
 
 .history{
   position: relative;
-  padding-top:40rpx;
+  padding-top:50rpx;
   font-size:35rpx;
 }
 
 .list{
   position: relative;
 }
+.setting{
+  width:400rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center; 
+  padding-bottom: 40rpx;
+}
+.icon{
+  position: relative;
+  height:100rpx;
+  width:20%;
+  padding-right: 20rpx;
+}
 .block{
   position: relative;
-  padding-top: 40rpx;
-  padding-bottom: 40rpx;
+  width:80%;
+  
 }
 .location{
   font-size: 40rpx;

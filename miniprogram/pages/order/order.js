@@ -26,6 +26,15 @@ Page({
     });
   },
 
+  error:function(e){
+    wx.showModal({
+      title: 'Error',
+      content: 'The merchant is still preparing your order, please wait a few minutes and try again.',
+      showCancel:false,
+      confirmText:'OK',
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
