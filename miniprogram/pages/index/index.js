@@ -34,11 +34,13 @@ Page({
     drink_recom: [],
     currentTab: 0
   },
+
   gotoMenu(e){
     wx.navigateTo({
       url: './menu/menu?name='+e.currentTarget.dataset.name,
     })
   },
+
   changeIndicatorDots() {
     this.setData({
       indicatorDots: !this.data.indicatorDots
@@ -62,12 +64,14 @@ Page({
       duration: e.detail.value
     })
   },
+
   // 滚动切换标签样式
  switchTab:function(e){
   this.setData({
    currentTab:e.detail.current
   });
  },
+
  // 点击标题切换当前页时改变样式
   switchNav:function(e){
     var cur=e.currentTarget.dataset.current;
@@ -78,11 +82,13 @@ Page({
     })
     }
   },
+
   getLocation:function(e){
     wx.navigateTo({
       url: 'plugin://chooseLocation/index?key=' + key + '&referer=' + referer
     })
   },
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -106,10 +112,6 @@ Page({
         }); 
       } 
     });
-    /*var id=app.lc(function (id){
-      console.log(id);
-      that.setData({openid:id});
-    });*/
   },
 
   // check whether a restaurant should be recommended
@@ -157,6 +159,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow:async function () {
+    var load = await this.load();
+    console.log(load)
     const location = chooseLocation.getLocation(); // 如果点击确认选点按钮，则返回选点结果对象，否则返回null
     if (location){
       this.setData({
@@ -164,9 +168,6 @@ Page({
       })
     }
     var openid = app.globalData.openid;
-    //"oqLxe5AvyOuiJDc5QtMu2G4cqwVA";
-    //app.globalData.openid;
-    console.log(openid)
     var final_tags = await this.get_client_tag(openid);
     this.setData({             
       client_tag: final_tags
@@ -223,6 +224,7 @@ Page({
       drink_normal: drink2,
       drink_recom: drink1
     })
+
   },
 
   get_client_tag: function (openid) {
@@ -258,6 +260,18 @@ Page({
           resolve(res.data);
         }
       });
+    })
+  },
+
+  load: function () {
+    return new Promise((resolve, reject) => {
+      if (!app.globalData.openid){
+        setTimeout(function () {
+          resolve(true);
+        }, 2000)
+      }else{
+        resolve(true);
+      }
     })
   },
 
