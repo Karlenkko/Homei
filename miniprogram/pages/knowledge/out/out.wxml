@@ -1,2 +1,4 @@
 <!--miniprogram/pages/knowledge/out/out.wxml-->
-<web-view src="{{url}}"></web-view>
+<text>Please copy the link below and visit the corresponding website:</text>
+<text>\n</text>
+<text>{{url}}</text>
