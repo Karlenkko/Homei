@@ -39,6 +39,19 @@ Component({
       }
     },
   },
+
+  observers:{
+    'self_tags' (val) {
+      let tagArray = [];
+      if (this.properties.self_tags){
+        tagArray = this.properties.self_tags.split(";");
+        this.setData({
+          tags: tagArray,
+        })
+      }
+    }
+  },
+
   /**
    * 组件的方法列表
    */

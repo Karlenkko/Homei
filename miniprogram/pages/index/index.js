@@ -160,7 +160,6 @@ Page({
    */
   onShow:async function () {
     var load = await this.load();
-    console.log(load)
     const location = chooseLocation.getLocation(); // 如果点击确认选点按钮，则返回选点结果对象，否则返回null
     if (location){
       this.setData({

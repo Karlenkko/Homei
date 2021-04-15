@@ -6,7 +6,7 @@ Page({
    */
   data: {
     page_index : 0,  // show the cover
-    total_page : 4,
+    total_page : 1,
   },
 
   start: function() {
