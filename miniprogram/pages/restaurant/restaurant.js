@@ -59,7 +59,21 @@ Page({
         order_name:order_name
       });
       //console.log(order_name);
-      this.loadProduct();
+      if (order_name.length>0) {
+        this.loadProduct();
+      }
+      else {
+        this.setData({
+          orderCur:0,
+          order_list:[],
+          order_name:[],
+          product_list:[],
+          product_ok:[],
+          productCur:0,
+          ingre_id:[],
+          ingreChosen:-1
+        })
+      }
     });
     
   },
