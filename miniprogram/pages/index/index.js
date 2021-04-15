@@ -158,7 +158,7 @@ Page({
         location: location.address
       })
     }
-    var openid = "oqLxe5AvyOuiJDc5QtMu2G4cqwVA";
+    var openid = app.globalData.openid;
     //"oqLxe5AvyOuiJDc5QtMu2G4cqwVA";
     //app.globalData.openid;
     console.log(openid)
