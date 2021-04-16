@@ -136,7 +136,7 @@ Page({
     }
     if (client_tag.indexOf("halal") != -1 ){
       if (description_list.indexOf("halal") == -1){
-        status = 0;
+        status = 2;
       }
     }
     return status;
@@ -265,6 +265,7 @@ Page({
   load: function () {
     return new Promise((resolve, reject) => {
       if (!app.globalData.openid){
+        wx.showToast({title: 'Loading...', icon: 'loading', duration: 2000});
         setTimeout(function () {
           resolve(true);
         }, 2000)
