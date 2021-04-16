@@ -265,6 +265,7 @@ Page({
   load: function () {
     return new Promise((resolve, reject) => {
       if (!app.globalData.openid){
+        wx.showToast({title: 'Loading...', icon: 'loading', duration: 2000});
         setTimeout(function () {
           resolve(true);
         }, 2000)
