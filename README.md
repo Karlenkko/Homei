@@ -19,14 +19,31 @@ You will also see a Restaurant page, which is designed only for restaurant opera
 ## Specialties
 
 - On the knowledge page, you can find academic and popular articles cited from external sites with proper respect to copyrights.
+
 - On the knowledge page, you can also find quizzes which will reward you discount coupons if you have obtained a good score. You can find your coupons in the coupon sector on the account page.
+
 - Personalized annual report on the account page which calculates the average intake of each type of nutrition and gives practical advice so that they can form healthier dietary habits.
+<<<<<<< Updated upstream
 - You can customize your preferences both on the home page and the account page. In the preferences, you can choose your dietary habits and your allergens which will modify the recommendations and allergy-warnings.
+=======
+
+- You can customize your preferences both on the home page and the account page. In the preferences, you can choose your dietary habits such as halal, vegetarian and "on-diet", and your allergens which will modify the recommendations and allergy-warnings.
+
+>>>>>>> Stashed changes
 - If an order is placed (has to be in the Northwest Flavor Restaurant), this time, as the restaurant owner, you can check the incoming orders and select corresponding ingredients in your stock to cook them.
+  
   - Now the restaurant owner selects the ingredients from a list of stock. In the ideal design, he can scan the bar code or the QR code on the ingredient package to record.
+  
 - Once an order is processed, the customer can find the trace information of it on the order page.
+
 - Once an order is processed, the customer can rate this experience, especially the hygiene part, on the order page.
 - As the restaurant owner, you can use the data analysis platform https://github.com/fxy233/DataAnalysis-Plateform.git to learn about different statistics and predictions according to the restaurant data.
+  - Detailed information can be found on the README of https://github.com/fxy233/DataAnalysis-Plateform.git.
+
+- As the restaurant owner, you can use the data analysis platform 
+
+  https://github.com/fxy233/DataAnalysis-Plateform.git to learn about different statistics and predictions according to the restaurant data.
+
   - Detailed information can be found on the README of https://github.com/fxy233/DataAnalysis-Plateform.git.
 
 ## How to use?
@@ -69,7 +86,9 @@ The mini program uses the cloud service of WeChat, no external library used.
 
 When dealing with the orders on the restaurant page as the restaurant owner, due to the communication stability and fluency problem with the Wechat mini program database server, after you finish processing the last order in the page, there is a small chance that a display error will occur, please refresh or re-enter the page to return to normal. Thank you for your comprehension.
 
+## Known bug
 
+When dealing with the orders on the restaurant page as the restaurant owner, due to the communication stability and fluency problem with the WeChat mini program database server, after you finish processing the last order in the page, there is a small chance that a display error will occur, please refresh or re-enter the page to return to normal. Thank you for your comprehension.
 
 ## Author
 
