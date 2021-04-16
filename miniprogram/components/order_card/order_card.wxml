@@ -14,7 +14,7 @@
         <view wx:if="{{state!='0'}}"class="button_tag" bindtap="gotoRating"><text decode="true">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rate it&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text></view>
       </view>
     </view>
-    <view class="order">
+    <view class="order" bindtap="gotoTrace">
       <text style="color:#a0a0a0;" decode="true">{{order}}</text>
     </view>
   </view>

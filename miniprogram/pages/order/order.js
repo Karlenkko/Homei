@@ -11,20 +11,20 @@ Page({
     orders_finish: []
   },
 
-  gotoRating(e) {
-    //console.log(e.currentTarget.dataset.id);
-    //console.log(e.currentTarget.dataset.name);
-    wx.navigateTo({
-      url: './rate_order1/rate_order1?id='+e.currentTarget.dataset.id+'&name='+e.currentTarget.dataset.name,
-    })
-  },
+  // gotoRating(e) {
+  //   //console.log(e.currentTarget.dataset.id);
+  //   //console.log(e.currentTarget.dataset.name);
+  //   wx.navigateTo({
+  //     url: './rate_order1/rate_order1?id='+e.currentTarget.dataset.id+'&name='+e.currentTarget.dataset.name,
+  //   })
+  // },
 
-  gotoTrace: function(e){
-    //console.log(e.currentTarget.dataset);
-    wx.navigateTo({
-      url: '/pages/order/trace/trace?id='+e.currentTarget.dataset.id,
-    });
-  },
+  // gotoTrace: function(e){
+  //   //console.log(e.currentTarget.dataset);
+  //   wx.navigateTo({
+  //     url: '/pages/order/trace/trace?id='+e.currentTarget.dataset.id,
+  //   });
+  // },
 
   error:function(e){
     wx.showModal({

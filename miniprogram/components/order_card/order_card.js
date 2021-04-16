@@ -55,7 +55,7 @@ Component({
       else if (this.properties.state=="1") {
         this.setData({
           rated: "0",
-          order: this.data.order + " - Wating for your comment"
+          order: this.data.order + " - Please comment - click to trace it"
         })
       }
       else {
@@ -80,6 +80,12 @@ Component({
       })*/
       wx.navigateTo({
         url: '/pages/order/rate_order1/rate_order1?id='+this.data.order_id+'&name='+this.properties.rest_name,
+      });
+    },
+    gotoTrace(e){
+      //console.log(e.currentTarget.dataset);
+      wx.navigateTo({
+        url: '/pages/order/trace/trace?id='+this.data.order_id,
       });
     },
   }
