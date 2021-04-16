@@ -1,8 +1,7 @@
 # Homei Data Analysis Platform
 
-The Homei Data Analysis platform is designed for Restaurant Operators on the Homei platform. 
-
-github link: https://github.com/fxy233/DataAnalysis-Plateform.git
+The Homei Data Analysis platform is designed for Restaurant Operators on the Homei platform.
+GitHub link: https://github.com/fxy233/DataAnalysis-Plateform.git
 
 ## Functionality
 

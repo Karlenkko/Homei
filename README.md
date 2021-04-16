@@ -1,6 +1,8 @@
 # Homei mini-program
 
-A food-ordering mini-program prototype aiming to solve problems in the culinary (especially takeaway) industry.
+A food-ordering mini-program prototype aiming to solve problems in the culinary (especially takeaway) industry. 
+
+Our GitHub link is: https://github.com/Karlenkko/Homei.git
 
 ## Page Structure
 
@@ -13,18 +15,34 @@ The mini-program consists of 4 main pages
 
 You will also see a Restaurant page, which is designed only for restaurant operators. It is here only for demonstrative purpose, and will not appear in the operating version for customers. 
 
-## Functionalities
+## Specialties
 
-- basic restaurant-viewing, menu-viewing and order-placement etc.
-- personalize preferences so that restaurant-recommendation and dish-recommendation will change
+- 六大功能
 - 
 
-## Usage
+## How to use?
 
-The mini program uses the cloud service of Wechat, no external library used.
+The mini program uses the cloud service of WeChat, no external library used.
 
-1. clone the code and open it with the Wechat developper tool
-2. test and play it on the tool :) 
+- Clone the code and open it with the WeChat developer tool (most recommended, link here:  https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html). Other IDE tools might not be compatible with some specific files in our project (.wxml and .wxss). Some IDE tools require special plugins, please check before opening our project.
+
+- We published a test version to anyone who's interested, but only authorized user can get access to it. If you are a judge of the HackUST 2021, there are several ways to demand access right:
+
+  1. Please click the link or scan the QR code in the video on YouTube to demand access to the application : https://open.weixin.qq.com/sns/getexpappinfo?appid=wx370b95e539c59426&path=pages%2Findex%2Findex.html#wechat-redirect
+
+  2. Use your official e-mail account to send us an e-mail in which you provide us with your WeChat ID so that we can add it into our white-list. Please DO use your official working e-mail address to prove that you are one of the judges.
+
+     Our captain's e-mail: xuyuantaoxyt@gmail.com
+
+     
+
+## Things to know before testing
+
+1. The ratings of restaurants and annual report should be generated periodically by analyzing fresh data. So after rating an order, the scores of the corresponding restaurant will NOT be changed immediately. The annual report should be generated once a year, so here we only show an example of the annual report from last year, but not a real-time report.
+2.  order流程
+3. By default, the user can only play the role of the owner of a restaurant called "Ta5ty", which means you can only validate the ingredients of each order received by this shop. We suggest you ordering a dish in "Ta5ty" and switch to "Restaurant" page to check orders and then validate the ingredients.
+
+
 
 ## Author
 
