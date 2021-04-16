@@ -48,7 +48,7 @@
         <restaurant_card name="{{item.description}}" eta="{{item.delivery_time}}" rating="{{item.rating}}" self_tags="{{item.description_string}}" image_url="{{item.imgurl}}" bindtap="gotoMenu"  data-name="{{item.description}}"></restaurant_card>
       </view>
     </view>
-    <view wx:if="{{currentTab==1}}" style="height:1000rpx">
+    <view wx:if="{{currentTab==1}}" style="height:1500rpx">
       <view class="title">{{asian_recom.length? 'Recommended Asian Food':'No Recommended Asian Food'}}</view>
       <view wx:for="{{asian_recom}}" style="margin-top:40rpx;margin-bottom:20rpx">
         <restaurant_card name="{{item.description}}" eta="{{item.delivery_time}}" rating="{{item.rating}}" self_tags="{{item.description_string}}" image_url="{{item.imgurl}}" bindtap="gotoMenu" data-name="{{item.description}}"></restaurant_card>
