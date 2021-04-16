@@ -18,8 +18,20 @@ You will also see a Restaurant page, which is designed only for restaurant opera
 
 ## Specialties
 
-- 六大功能
+- On the knowledge page, you can find academic and popular articles cited from external sites with proper respect to copyrights.
+- On the knowledge page, you can also find quizzes which will reward you discount coupons if you have obtained a good score. You can find your coupons in the coupon sector on the account page.
+- Personalized annual report on the account page which calculates the average intake of each type of nutrition and gives practical advice so that they can form healthier dietary habits.
+- You can customize your preferences both on the home page and the account page. In the preferences, you can choose your dietary habits and your allergens which will modify the recommendations and allergy-warnings.
+- If an order is placed (has to be in the Northwest Flavor Restaurant), this time, as the restaurant owner, you can check the incoming orders and select corresponding ingredients in your stock to cook them.
+  - Now the restaurant owner selects the ingredients from a list of stock. In the ideal design, he can scan the bar code or the QR code on the ingredient package to record.
+- Once an order is processed, the customer can find the trace information of it on the order page.
+- Once an order is processed, the customer can rate this experience, especially the hygiene part, on the order page.
 - 
+- Labels on the products make it easier for our customers to know where the ingredients come from and thus have more confidence in food quality. Traceability also helps restaurants reduce their stock pressure since Homei will recommend corresponding dishes.
+- Different types of tags such as allergy information, halal, vegetarian and "on-diet" can meet the needs of all customers to the greatest extent, and fully ensure the possibility of personal customization.
+- As an unavoidable topic in the food industry, hygiene are certainly not to be ignored. We attach great importance to the user's role in the rating system and show their evaluations of the cleanliness directly on the restaurant page.
+- 5
+- 6
 
 ## How to use?
 
