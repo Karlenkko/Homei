@@ -33,21 +33,25 @@ The mini program uses the cloud service of WeChat, no external library used.
 
   2. Use your official e-mail account to send us an e-mail in which you provide us with your WeChat ID so that we can add it into our white-list. Please DO use your official working e-mail address to prove that you are one of the judges.
 
-Please contact this e-mail address: xuyuantaoxyt@gmail.com
+     Please contact this e-mail address: xuyuantaoxyt@gmail.com
 
-     
+​          
 
 ## Things to know before testing
 
 1. The ratings of restaurants and annual report should be generated periodically by analyzing fresh data. So after rating an order, the scores of the corresponding restaurant will NOT be changed immediately. The annual report should be generated once a year, so here we only show an example of the annual report from last year, but not a real-time report.
-2.  order流程
-3. By default, the user can only play the role of the owner of a restaurant called "Ta5ty", which means you can only validate the ingredients of each order received by this shop. We suggest you ordering a dish in "Ta5ty" and switch to "Restaurant" page to check orders and then validate the ingredients.
+
+2. The life cycle of an order: customer order a dish (current order in the order page) ---> restaurant receive this order and scan (validate) the ingredients  --->  we suppose that the customer has received and enjoyed the food (past order in the order page) ---> customer can later rate it
+
+   Please note that we 
+
+3. By default, the user can only play the role of the owner of a restaurant called "Northwest Flavor", which means you can only validate the ingredients of each order received by this shop. We suggest you ordering a dish in "Northwest Flavor" and switch to "Restaurant" page to check orders and then validate the ingredients. Of course, you can see dishes ordered by others in this section, don't feel confused if you see dishes that you haven't ordered.
 
 
 
 ## Author
 
-Team INSAliens, No.078 of HackUST  
+Team INSAliens, No.078 of HackUST  2021
 
 Xinyu FENG, Tuoyuan TAN, Yuantao XU, Shihang ZHOU
 
