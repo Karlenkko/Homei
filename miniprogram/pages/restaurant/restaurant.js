@@ -47,7 +47,6 @@ Page({
       restaurant_id : 0,
       state:"0"
     }).get().then((res) => {
-      //console.log(res.data);
       this.setData({
         order_list: res.data
       })
@@ -55,11 +54,9 @@ Page({
       for (let i=0;i<this.data.order_list.length;i++){
         order_name.push(this.data.order_list[i].food);
       }
-      //console.log(this.data.order_list);
       this.setData({
         order_name:order_name
       });
-      //console.log(order_name);
       if (order_name.length>0) {
         this.loadProduct();
       }
@@ -77,11 +74,9 @@ Page({
         })
       }
     });
-    
   },
 
   loadProduct:function(){
-    //console.log(this.data.order_list[this.data.orderCur].menu_id);
     Menu.where({
       _id:this.data.order_list[this.data.orderCur].menu_id
     }).get().then((res) => {
@@ -97,7 +92,6 @@ Page({
         product_ok:product_ok,
         choice:choice
       })
-      //console.log(this.data.product_ok);
       this.loadIngredient();
     })
   },
@@ -198,14 +192,6 @@ Page({
     let order_id=this.data.order_list[this.data.orderCur]._id;
     let choice=this.data.choice;
     choice[this.data.productCur]=id;
-    /*Ingredient.doc(id).update({
-      data: {
-        order_id:order_id
-      },
-      success: function(res) {
-        console.log("order_id写入成功！")
-      }
-    })*/
     this.setData({
       ingreChosen:event.currentTarget.id,
       product_ok:product_ok,
@@ -213,12 +199,11 @@ Page({
       ingre_id:[],
       choice:choice
     });
-    console.log(this.data.choice);
     this.checkOrder();
     this.loadIngredient();
   },
 
-  checkOrder:function(){
+  checkOrder:async function(){
     let product_ok=this.data.product_ok;
     let finish=1;
     for (let i=0;i<product_ok.length;i++) {
@@ -228,20 +213,17 @@ Page({
     }
     if (finish==1) {
       let order_id=this.data.order_list[this.data.orderCur]._id;
-      console.log(order_id);
+
       Order.doc(order_id).update({
         data: {
           state:"1",
         },
         success: function(res) {
-          console.log("state更新成功！");
         }
       })
-      this.writeid();
+      await this.writeid();
       this.setData({
         orderCur:0,
-        //order_list:[],
-        //order_name:[],
         product_list:[],
         product_ok:[],
         productCur:0,
@@ -249,32 +231,26 @@ Page({
         ingreChosen:-1,
         choice:[]
       })
-      
-      
     }
   },
 
   writeid:function(){
+    return new Promise((resolve, reject) => {
     let order_id=this.data.order_list[this.data.orderCur]._id;
-    console.log(this.data.choice.length);
     for (let i=0;i<this.data.choice.length;i++)
     {
       let id=this.data.choice[i];
-      console.log(id);
       Ingredient.doc(id).update({
         data: {
           order_id:order_id
         },
         success: function(res) {
-          console.log("order_id写入成功！")
         }
       })
     }
-    //this.onShow();
-    
-    //setTimeout(function () {
-      this.reloadorder();
-    //}, 1000)
+    this.reloadorder();
+    resolve(true);
+    })  
   },
 
   reloadorder:function(){
@@ -282,7 +258,6 @@ Page({
       restaurant_id : 0,
       state:"0"
     }).get().then((res) => {
-      //console.log(res.data);
       this.setData({
         order_list: res.data
       })
@@ -290,11 +265,9 @@ Page({
       for (let i=0;i<this.data.order_list.length;i++){
         order_name.push(this.data.order_list[i].food);
       }
-      //console.log(this.data.order_list);
       this.setData({
         order_name:order_name
       });
-      //console.log(order_name);
       if (order_name.length>0) {
         this.loadProduct();
       }
