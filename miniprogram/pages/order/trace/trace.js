@@ -117,11 +117,13 @@ Page({
     }).get().then((res) => {
       //console.log(res.data)
       restaurant=res.data[0].description;
-      console.log(restaurant)
+      console.log(restaurant);
+      //console.log(this.data.ingredient_history[0]-1);
+      let farm_id=(this.data.ingredient_history[0]-1).toString;
       Farm.where({
-        _id:this.data.ingredient_history[0]
+        _id:farm_id
       }).get().then((res) => {
-        //console.log(res.data)
+        console.log(res.data)
         farm=res.data[0].description;
         //console.log(farm);
         let trace=[];

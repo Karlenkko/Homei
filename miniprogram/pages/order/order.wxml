@@ -11,7 +11,7 @@
     </view>
     <view style="margin-top:24rpx"><text decode="true">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Past Orders</text></view>
     <view wx:if="{{orders_finish.length==0}}" class="hint">
-      <text decode="true" style="color:#a0a0a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Make a new order</text>
+      <text decode="true" style="color:#a0a0a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Make a new order or wait for a current order to be completed</text>
     </view>
     <view wx:for="{{orders_finish}}">
       <order_card rest_name="{{item.rest_name}}" food_name="{{item.food}}" price="{{item.price}}" rating="{{item.rating}}" img_url="{{item.imgurl}}" order_id="{{item._id}}" date="{{item.created_at}}" state="{{item.state}}" data-name="{{item.rest_name}}"  data-id="{{item._id}}" bindtap="gotoTrace"></order_card>
