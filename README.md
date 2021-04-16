@@ -1,6 +1,6 @@
 # Homei mini-program
 
-A food-ordering mini-program prototype aiming to solve problems in the culinary (especially takeaway) industry. 
+A food-ordering mini-program with its Data Analysis platform aiming to solve problems in the culinary (especially takeaway) industry. 
 
 Our GitHub link is: https://github.com/Karlenkko/Homei.git     
 The Homei Data Analysis platform GitHub link: https://github.com/fxy233/DataAnalysis-Plateform.git
