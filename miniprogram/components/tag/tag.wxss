@@ -4,7 +4,7 @@
   height: 40rpx;
   padding-top: 8rpx;
   
-  font-size: 22rpx;
+  font-size: 28rpx;
   background-color: #eeeeee;
   width: fit-content;
   vertical-align: bottom;
