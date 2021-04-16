@@ -10,5 +10,10 @@
       <text bindtap="edit">Edit my preferences</text>
     </view>
   </view>
+  <view class="uploader">
+    <view class="uploader-text">
+      <text bindtap="coupon">View my coupons</text>
+    </view>
+  </view>
 
 </view>

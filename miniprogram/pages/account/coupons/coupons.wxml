@@ -1,0 +1,14 @@
+<!--miniprogram/pages/account/coupons/coupons.wxml-->
+<view class="header" ><text decode="true">Your Coupons&nbsp;&nbsp;&nbsp;&nbsp;</text></view>
+<view class="body">
+  <scroll-view scroll-y="true" class="scrollv" style="height:90vh;">
+    <view><text decode="true">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Available Coupons</text></view>
+    <view wx:if="{{coupon_list.length==0}}" class="hint">
+      <text decode="true" style="color:#a0a0a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Take a quiz</text>
+    </view>
+    <view wx:for="{{coupon_list}}">
+      <coupon price="{{item.amount}}"  date="{{item.created_at}}"></coupon>
+    </view>
+    
+</scroll-view>
+</view>

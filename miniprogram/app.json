@@ -16,7 +16,8 @@
     "pages/order/rate_order3/rate_order3",
     "pages/knowledge/out/out",
     "pages/order/trace/trace",
-    "pages/restaurant/restaurant"
+    "pages/restaurant/restaurant",
+    "pages/account/coupons/coupons"
   ],
   "window": {
     "backgroundColor": "#FF9F48",
