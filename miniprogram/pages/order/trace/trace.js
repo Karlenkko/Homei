@@ -24,6 +24,7 @@ Page({
     trace:[],
     time:[],
     expiration:"",
+    restaurant_id:0
   },
 
   /**
@@ -73,7 +74,8 @@ Page({
       }
       this.setData({
         product_list:ingredients,
-        product_ok:product_ok
+        product_ok:product_ok,
+        restaurant_id:res.data[0].restaurant_id
       })
       //console.log(this.data.product_list);
       this.loadHistory();
@@ -87,12 +89,12 @@ Page({
       name:product
     }).get().then((res) => {
       let product_id=res.data[0]._id;
-      console.log(order_id);
+      //console.log(order_id);
       Ingredient.where({
         product_id:product_id,
         order_id:order_id
       }).get().then((res) => {
-        console.log(res.data);
+        //console.log(res.data);
         let history=res.data[0].history.split(";");
         let time=[];
         time.push(res.data[0].created_at);
@@ -112,18 +114,24 @@ Page({
     //console.log(this.data.ingredient_history[1]);
     let farm="";
     let restaurant="";
+    console.log(this.data.restaurant_id);
+    let id=this.data.restaurant_id;
+    if (this.data.restaurant_id==0) {
+      id="0";
+    }
+    
     Restaurant.where({
-      _id:parseInt(this.data.ingredient_history[1])
+      _id:id
     }).get().then((res) => {
       //console.log(res.data)
       restaurant=res.data[0].description;
-      console.log(restaurant);
+      //console.log(restaurant);
       //console.log(this.data.ingredient_history[0]-1);
       let farm_id=(this.data.ingredient_history[0]-1).toString;
       Farm.where({
         _id:farm_id
       }).get().then((res) => {
-        console.log(res.data)
+        //console.log(res.data)
         farm=res.data[0].description;
         //console.log(farm);
         let trace=[];
@@ -132,9 +140,9 @@ Page({
         this.setData({
           trace:trace
         })
-        //console.log(this.data.trace);
-        //console.log(this.data.time);
-        //console.log(this.data.expiration);
+        console.log(this.data.trace);
+        console.log(this.data.time);
+        console.log(this.data.expiration);
       });
     });
   },
