@@ -35,7 +35,7 @@ The mini program uses the cloud service of WeChat, no external library used.
 
 - Public release version of our project is already online, please scan the QR code below:
 
-  <img src="C:\Users\Oscar. Tan\Desktop\hackUST\QR_code.jpg" alt="QR_code" style="zoom:50%;" />
+  <img src="gh_92a017174895_1280.jpg" alt="QR_code" style="zoom:50%;" />
 
 - Test version of our project contains latest changes, but only authorized user can get access to it. If you are a judge of the HackUST 2021, there are several ways to demand access right:
 
