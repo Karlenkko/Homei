@@ -1,0 +1,28 @@
+/* components/coupon/coupon.wxss */
+.container{
+  width: 88%;
+  height: 60rpx;
+  position: relative;
+  margin: 1% 6% 1% 6%;
+  background-color: #ffffff;
+  border-bottom-color: #c0c0c0;
+  border-bottom-style: solid;
+  border-bottom-width: 1rpx;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+}
+.item{
+  padding-top: 10rpx;
+  width: 50%;
+  max-width: 50%;
+  font-size: 28rpx;
+}
+.date{
+  padding-top: 18rpx;
+  width: 50%;
+  max-width: 50%;
+  font-size: 18rpx;
+}

@@ -1,0 +1,9 @@
+<!--components/coupon/coupon.wxml-->
+<view class="container">
+  <view class="item">
+    <text>Coupon of ￥ {{price}}</text>
+  </view>
+  <view class="date">
+    <text style="color:#a0a0a0">Obtained on {{date}}</text>
+  </view>
+</view>
