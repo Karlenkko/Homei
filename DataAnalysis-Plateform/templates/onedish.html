@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="../static/echarts.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<title>Analysis</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/font-awesome.min.css">
+	<link rel="stylesheet" href="tabbar.css">
+</head>
+<body>
+
+	<div class="w3-top">
+	  <div class="w3-bar" id="myNavbar" >
+	    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+	      <i class="fa fa-bars"></i>
+	    </a>
+	    <a href="." class="w3-bar-item w3-button">HOME</a>
+	    <a href="/topTen" class="w3-bar-item w3-button w3-hide-small"> TopTen</a>
+	    <a href="/onedish" class="w3-bar-item w3-button w3-hide-small"> Timeline</a>
+	    <a href="/orders" class="w3-bar-item w3-button w3-hide-small">Customer Flow</a>
+	    <a href="/stock" class="w3-bar-item w3-button w3-hide-small"> Stocks </a>
+	    <a href="/predict" class="w3-bar-item w3-button w3-hide-small"> Predict </a>
+	  </div>
+	</div>
+	<br><br><br>
+
+	<div style="display: flex; flex-direction: column; justify-content: space-around; align-items: center;">
+
+		<div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
+		  <div class="w3-display-middle" style="white-space:nowrap;">
+		    <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">Analysis <span class="w3-hide-small">Of</span> {{food}}</span>
+		  </div>
+		</div>
+
+		<br><br>
+		<label class="w3-xlarge">Analyse the evolution of one dish</label>
+		<br><br><br>
+
+		<div style="display: flex; flex-direction: row; justify-content: space-around;">
+
+			<label style="margin-right: 20px; font-size: 20px">START FROM:</label>
+
+			<input type="date" id="dateEnd"
+				value={{date2}} 
+			       min="2017-04-08" max="2019-07-30" style="margin-right: 40px;">
+
+			<label style="margin-right: 20px; font-size: 20px">TO: </label>
+
+			<input type="date" id="dateStart"
+				value={{date1}} 
+			       min="2017-04-08" max="2019-07-30" style="margin-right: 40px">
+			
+
+			<label for="food" style="margin-right: 20px; font-size: 20px">FOR DISH:</label>
+
+			<select name="food" id="food">
+				<option value="{{ food }}">{{ food }}</option>
+				{% for item in foodlist %}
+				<option value="{{ item }}">{{ item }}</option>
+				{% endfor %}
+			</select>
+
+			<button onclick="changeDate()"> Confirm </button>
+
+		</div>
+
+		<div id="main" style="width:800px; height:500px;"></div>
+
+	</div>
+
+	
+
+	<script type="text/javascript">
+		var chartDom = document.getElementById('main');
+		var myChart = echarts.init(chartDom);
+		var option;
+
+		date = [{% for item in date %}'{{ item }}',{% endfor %}]
+		data1 = [{% for item in total %}'{{ item }}',{% endfor %}]
+		data2 = [{% for item in dish %}'{{ item }}',{% endfor %}]
+		let foodname = '{{food}}'
+
+		option = {
+		    tooltip: {
+		        trigger: 'axis'
+		    },
+		    grid: {
+		        left: '3%',
+		        right: '4%',
+		        bottom: '3%',
+		        containLabel: true
+		    },
+		    toolbox: {
+		        feature: {
+		            saveAsImage: {}
+		        }
+		    },
+		    xAxis: {
+		        type: 'category',
+		        boundaryGap: false,
+		        data: date
+		    },
+		    yAxis: {
+		        type: 'value'
+		    },
+		    series: [
+		        {
+		            name: 'Total Orders',
+		            type: 'line',
+		            data: data1
+		        },
+		        {
+		            name: foodname,
+		            type: 'line',
+		            data: data2
+		        }
+		    ]
+		};
+
+		option && myChart.setOption(option);
+
+		function changeDate(){
+		    let date1 = document.getElementById("dateStart").value
+		    let date2 = document.getElementById("dateEnd").value
+		    let food = document.getElementById("food").value
+		    console.log(food)
+		    window.location.href = "http://localhost:5000/onedish?date1="+date1+"&date2="+date2+"&food="+food
+		};
+
+	</script>
+
+</body>
+</html>

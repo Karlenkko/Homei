@@ -1,0 +1,32 @@
+ItemName,Ingredient,UseQuantity,Price
+Chicken Burger,chicken, 1, 14
+Chicken Burger,bread, 2, 14
+Chicken Burger,lettuce, 1, 14
+Chicken Curry,chicken, 2, 18
+Chicken Curry,potato, 2, 18
+Chicken Curry,carotte, 2, 18
+Chicken Curry,rice, 2, 18
+Spring Roll,lettuce, 1, 8
+Spring Roll,pork, 1, 8
+Spring Roll,carotte, 1, 8
+Vegetable Soup,mushroom, 2, 13
+Vegetable Soup,tomato, 2, 13
+Vegetable Soup,egg, 2, 13
+Roast Pork,pork, 2, 22
+Roast Pork,lettuce, 2, 22
+Thai Fried Rice,rice, 1, 14
+Thai Fried Rice,pineapple, 1, 14
+Thai Fried Rice,chicken, 1, 14
+Satay Beef,beef, 2, 20
+Sweet Sour Pork,pork, 1, 14
+Kong Pao Chicken,chicken, 1, 16
+Kong Pao Chicken,carotte, 1, 16
+Kong Pao Chicken,cucumber, 1, 16
+Honey Sesame Chicken,chicken, 1, 20
+Black Pepper Angus Steak,beef, 1, 24
+Salad,lettuce, 3, 10
+Salad,tomato, 2, 10
+Super Green,lettuce, 2, 14
+Super Green,mushroom, 2, 14
+
+
