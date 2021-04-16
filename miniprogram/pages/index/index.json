@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "restaurant_card": "/components/restaurant_card/restaurant_card",
-    "tag": "/components/tag/tag"
+    "tag": "/components/tag/tag",
+    "client_mini_tag": "/components/client_mini_tag/client_mini_tag"
   }
 }

@@ -1,0 +1,5 @@
+<!--components/client_mini_tag/client_mini_tag.wxml-->
+<view class="client_mini_tag">
+  <text decode="true" style="color:{{color}}">&nbsp;&nbsp;&nbsp;{{name? name:'name'}}&nbsp;&nbsp;&nbsp;</text>
+</view>
+
