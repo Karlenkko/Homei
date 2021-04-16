@@ -2,7 +2,7 @@
 
 A food-ordering mini-program prototype aiming to solve problems in the culinary (especially takeaway) industry. 
 
-Our GitHub link is: https://github.com/Karlenkko/Homei.git
+Our GitHub link is: https://github.com/Karlenkko/Homei.git     
 The Homei Data Analysis platform github link: https://github.com/fxy233/DataAnalysis-Plateform.git
 
 ## Page Structure
