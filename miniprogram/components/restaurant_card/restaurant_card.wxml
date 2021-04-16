@@ -1,6 +1,6 @@
 <!--components/restaurant_card/restaurant_card.wxml-->
 <view class="container">
-  <image class="briefbackground" src="{{image_url?image_url:'images/cover1.png'}}" mode="aspectFill"></image>
+  <image class="briefbackground" src="{{image_url?image_url:'cloud://cloud1-5g29tvav9c043e9d.636c-cloud1-5g29tvav9c043e9d-1305402077/restaurant_card/cover1.png'}}" mode="aspectFill"></image>
   <view class="brief">
     <small_rating rating="{{rating?rating:3}}" style="margin-top:20rpx;position:relative;"></small_rating>
   </view>

@@ -44,7 +44,7 @@ Page({
    */
   onShow: function () {
     Order.where({
-      restaurant_id : 5,
+      restaurant_id : 0,
       state:"0"
     }).get().then((res) => {
       //console.log(res.data);
@@ -279,7 +279,7 @@ Page({
 
   reloadorder:function(){
     Order.where({
-      restaurant_id : 5,
+      restaurant_id : 0,
       state:"0"
     }).get().then((res) => {
       //console.log(res.data);
